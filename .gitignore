@@ -33,8 +33,13 @@ Thumbs.db
 *.swp
 *.swo
 
-# claude
+# local docs
 CLAUDE.md
+HANDOFF.md
+AGENTS.md
+
+# private planning docs
+/private-docs/
 
 # typescript
 *.tsbuildinfo
