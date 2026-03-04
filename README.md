@@ -1,6 +1,39 @@
-# DevTools-Lab
+# Chrome DevTools Guide
 
 Chrome DevTools 학습을 위한 인터랙티브 실습 플랫폼
+
+---
+
+## 현재 구현 상태 (2026-02-25)
+
+- 기본 플랫폼
+  - Next.js(App Router) 기반 프로젝트 구성 완료
+  - 패널 라우팅 8종(`elements`, `console`, `network`, `sources`, `performance`, `memory`, `application`, `security`) 동작
+  - Vercel 배포 운영 중: `<배포 URL>`
+  - 전역 폭 레이아웃 적용(고정 최대폭 제거)
+
+- 헤더 정보구조(IA) 선반영
+  - Chrome DevTools 문서 메뉴 기준 대메뉴/소메뉴 구조를 헤더 드롭다운으로 반영
+  - 데이터 소스: `src/lib/devtoolsDocsMenu.ts`
+  - 대메뉴: `요소`, `콘솔`, `소스`, `네트워크`, `Performance`, `Lighthouse`, `메모리`, `Application`, `녹음기`, `렌더링`, `패널 더보기`, `원격 디버깅`, `접근성`, `설정`, `리소스`
+  - `요소` 대메뉴는 콘솔 이전 11개 항목(개요 1 + DOM 3 + CSS 7) 기준으로 정렬
+  - `요소` 소메뉴: 개요 / DOM 보기 및 변경 / DOM 객체의 속성 보기 / 배지 참조 / CSS 보기 및 변경 / 잘못된 CSS, 재정의된 CSS, 비활성 CSS 및 기타 CSS 찾기 / 색상 선택 도구로 CSS 색상 검사 및 디버그 / 그리드 검사 / Flexbox 검사 및 디버그 / 컨테이너 쿼리 검사 및 디버그 / CSS 기능 참조
+
+- Elements 패널(현재 가장 많이 구현된 영역)
+  - 문서형 3열 레이아웃 적용
+    - 좌측: 공식 문서 11개 항목 목록(개요/DOM/CSS)
+    - 중앙: 선택 항목의 개념, 핵심 항목, 사용 방법, 예시 설명
+    - 우측: Preview + DevTools
+  - 공식 문서 반영 방식
+    - 내용 구조와 항목명은 Chrome DevTools 공식 문서 기준으로 맞춤
+    - 실습 맥락에 맞게 한국어 설명과 예시를 함께 제공
+  - Preview 영역 DevTools 연동
+    - 헤더의 `DevTools Panels 열기` 제어 유지
+    - Preview 로드 시 DevTools 자동 오픈
+
+- 콘텐츠 방향
+  - 패널별 페이지는 공식 문서 기준의 주제형 문서 구조를 우선
+  - 주제별 설명과 Preview 실습을 함께 확인하는 방식으로 구성
 
 ---
 
@@ -34,6 +67,14 @@ Chrome DevTools 학습을 위한 인터랙티브 실습 플랫폼
 - **Styling:** Tailwind + ShadCN
 - **상태관리:** Zustand
 - **데이터 페칭:** TanStack Query
+
+### Backend
+
+- **DB:** Vercel Postgres
+- **ORM:** Prisma
+- **인증:** NextAuth.js (Google OAuth)
+  - 팁 열람은 로그인 불필요
+  - 팁 작성/수정/삭제 시에만 Google 로그인 필요
 
 ### 실습 환경
 
@@ -78,8 +119,8 @@ refactor: LabViewer 컴포넌트 분리
 ## 시작하기
 
 ```bash
-git clone https://github.com/hyeonseong2023/DevTools-Lab.git
-cd DevTools-Lab
+git clone <repository-url>
+cd <project-directory>
 npm install
 npm run dev
 ```
@@ -92,6 +133,7 @@ npm run dev
 src/
 ├── app/
 │   ├── api/
+│   │   ├── auth/[...nextauth]/route.ts # NextAuth.js (Google OAuth)
 │   │   ├── tips/route.ts              # 사용자 팁 목록
 │   │   ├── tips/[id]/route.ts
 │   │   └── labs/
@@ -217,6 +259,21 @@ LabViewer (iframe)
 /public/labs/*
   ↓
 DevTools로 실습
+```
+
+## 커뮤니티 팁 인증 플로우
+
+```
+[비로그인]
+- 팁 목록 열람 가능
+- 작성 입력창 없음
+- "팁을 작성하려면 로그인하세요" 문구 + [Google로 로그인] 버튼
+
+[로그인 후]
+- 팁 작성 입력창 + 닉네임 표시
+- 본인 팁에만 [수정] [삭제] 버튼 활성화
+- 타인 팁에는 버튼 없음
+- 페이지 이동 시에도 세션 유지
 ```
 
 ---
@@ -363,9 +420,10 @@ DevTools로 실습
 #### 10주차 - 커뮤니티 기능
 
 **작업:**
-- 팁 등록 UI
-- 패널별 팁 목록
-- 관리자 승인 구조 (임시 in-memory)
+- Vercel Postgres + Prisma 연동
+- NextAuth.js Google OAuth 설정
+- 팁 등록 UI (로그인 시에만 작성/수정/삭제 가능)
+- 패널별 팁 목록 (비로그인 열람 가능)
 
 **결과:** 사용자 간 팁 공유 가능
 

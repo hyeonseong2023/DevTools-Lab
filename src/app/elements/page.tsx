@@ -1,6 +1,5 @@
-import { ComingSoonPanel } from "@/components/guide/ComingSoonPanel";
-import { getPanelOrThrow } from "@/lib/panels";
+import { ElementsLabWorkspace } from "@/components/labs/elements/ElementsLabWorkspace";
 
 export default function ElementsPage() {
-  return <ComingSoonPanel panel={getPanelOrThrow("elements")} />;
+  return <ElementsLabWorkspace />;
 }

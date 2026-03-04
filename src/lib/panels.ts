@@ -3,6 +3,7 @@ export const PANEL_SLUGS = [
   "console",
   "network",
   "sources",
+  "recorder",
   "performance",
   "memory",
   "application",
@@ -37,6 +38,11 @@ export const PANEL_DEFINITIONS: PanelDefinition[] = [
     slug: "sources",
     name: "Sources",
     description: "브레이크포인트, Call Stack, 변수 상태 추적을 실습합니다.",
+  },
+  {
+    slug: "recorder",
+    name: "Recorder",
+    description: "사용자 플로우를 기록, 재생, 측정합니다.",
   },
   {
     slug: "performance",

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Structure Preview</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="lab-shell">
+      <header class="lab-header">
+        <p class="lab-kicker">DOM Structure Preview</p>
+        <h1 id="store-title">DOM Structure Index</h1>
+        <p class="lab-description">
+          구조 확인, 노드 선택, 속성 편집, 경로 복사에 집중한 인덱스 기반 예제입니다.
+        </p>
+
+        <div id="index-banner" class="index-banner" role="note">
+          <strong>NODE INDEX</strong>
+          <span>data-node-index 기준으로 노드를 빠르게 찾을 수 있습니다.</span>
+        </div>
+      </header>
+
+      <main class="product-grid" id="card-grid">
+        <article class="product-card" id="first-card" data-card="a" data-node-index="01">
+          <div class="card-head">
+            <span class="product-badge">01</span>
+            <h2 class="product-title">container-node</h2>
+          </div>
+          <p class="product-description">
+            루트 컨테이너와 속성 편집을 확인하기 위한 기준 노드입니다.
+          </p>
+          <button id="first-card-action" class="product-action" disabled>
+            status: disabled
+          </button>
+        </article>
+
+        <article class="product-card" id="inspect-target" data-card="b" data-node-index="02">
+          <div class="card-head">
+            <span class="product-badge">02</span>
+            <h2 class="product-title">inspect-target-node</h2>
+          </div>
+          <p class="product-description">
+            검사, 검색, 경로 복사, 콘솔 참조 확인에 사용하는 핵심 노드입니다.
+          </p>
+          <button class="product-action">action: inspect</button>
+        </article>
+
+        <article class="product-card" data-card="c" data-node-index="03">
+          <div class="card-head">
+            <span class="product-badge">03</span>
+            <h2 class="product-title">reference-node</h2>
+          </div>
+          <p class="product-description">
+            순서 비교와 복제/삭제 동작 확인에 쓰는 기준 노드입니다.
+          </p>
+          <button class="product-action">action: reference</button>
+        </article>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

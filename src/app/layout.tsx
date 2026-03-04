@@ -1,7 +1,7 @@
 import { Header } from "@/components/layout/Header";
-import { Sidebar } from "@/components/layout/Sidebar";
+import { PageShell } from "@/components/layout/PageShell";
 import { QueryProvider } from "@/providers/QueryProvider";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 
@@ -11,9 +11,82 @@ const notoSansKr = Noto_Sans_KR({
   variable: "--font-noto-sans-kr",
 });
 
+const DEFAULT_SITE_URL = "http://localhost:3000";
+
+const siteUrl = (() => {
+  const envSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (!envSiteUrl) return DEFAULT_SITE_URL;
+  if (envSiteUrl.startsWith("http://") || envSiteUrl.startsWith("https://")) return envSiteUrl;
+  return `https://${envSiteUrl}`;
+})();
+
 export const metadata: Metadata = {
-  title: "DevTools-Lab",
-  description: "Chrome DevTools 학습을 위한 인터랙티브 실습 플랫폼",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "DevTools Lab",
+    template: "%s | DevTools Lab",
+  },
+  description:
+    "Chrome DevTools 사용법을 단계별로 익히는 인터랙티브 가이드와 Preview Lab 실습 플랫폼",
+  applicationName: "DevTools Lab",
+  keywords: [
+    "Chrome DevTools",
+    "DevTools 학습",
+    "DOM 디버깅",
+    "CSS 디버깅",
+    "Frontend Tools",
+    "Preview Lab",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    url: "/",
+    siteName: "DevTools Lab",
+    title: "DevTools Lab",
+    description:
+      "Chrome DevTools 사용법을 단계별로 익히는 인터랙티브 가이드와 Preview Lab 실습 플랫폼",
+    images: [
+      {
+        url: "/branding/options/logo-option-a-v6.svg",
+        width: 512,
+        height: 512,
+        alt: "DevTools Lab Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DevTools Lab",
+    description:
+      "Chrome DevTools 사용법을 단계별로 익히는 인터랙티브 가이드와 Preview Lab 실습 플랫폼",
+    images: ["/branding/options/logo-option-a-v6.svg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  icons: {
+    icon: [{ url: "/branding/options/favicon-option-a-v6.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/branding/options/favicon-option-a-v6.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/branding/options/favicon-option-a-v6.svg" }],
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -23,14 +96,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <link rel="icon" href="/branding/options/favicon-option-a-v6.svg" type="image/svg+xml" sizes="any" />
+        <link rel="preconnect" href="https://developer.chrome.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="//developer.chrome.com" />
+        <link rel="preconnect" href="https://www.gstatic.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="//www.gstatic.com" />
+      </head>
       <body className={`${notoSansKr.variable} bg-slate-50 text-slate-900 antialiased`}>
         <QueryProvider>
           <div className="min-h-screen">
             <Header />
-            <div className="mx-auto flex w-full max-w-7xl gap-6 px-4 py-6 sm:px-6 lg:px-8">
-              <Sidebar />
-              <main className="min-w-0 flex-1">{children}</main>
-            </div>
+            <PageShell>{children}</PageShell>
           </div>
         </QueryProvider>
       </body>

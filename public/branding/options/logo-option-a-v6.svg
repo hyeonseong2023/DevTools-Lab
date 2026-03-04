@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" role="img" aria-label="DevTools Lab logo option A version 6">
+  <rect width="480" height="120" fill="transparent"/>
+  <g transform="translate(16 12)">
+    <path d="M44 8 A36 36 0 0 1 80 44" fill="none" stroke="#ea4335" stroke-width="17" stroke-linecap="round"/>
+    <path d="M80 44 A36 36 0 0 1 44 80" fill="none" stroke="#fbbc05" stroke-width="17" stroke-linecap="round"/>
+    <path d="M44 80 A36 36 0 0 1 8 44" fill="none" stroke="#34a853" stroke-width="17" stroke-linecap="round"/>
+    <path d="M8 44 A36 36 0 0 1 44 8" fill="none" stroke="#4285f4" stroke-width="17" stroke-linecap="round"/>
+    <circle cx="44" cy="44" r="18.3" fill="#ffffff"/>
+    <path d="M34.2 33 L25.7 44 L34.2 55" fill="none" stroke="#0f172a" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M41 56 L46.4 32" fill="none" stroke="#0f172a" stroke-width="3.9" stroke-linecap="round"/>
+    <path d="M53.7 33 L62.4 44 L53.7 55" fill="none" stroke="#0f172a" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="124" y="58" fill="#0f172a" font-size="38" font-family="Arial, Helvetica, sans-serif" font-weight="700" letter-spacing="0.2">DevTools Lab</text>
+  <text x="126" y="86" fill="#64748b" font-size="16" font-family="Arial, Helvetica, sans-serif" font-weight="500">Interactive Chrome DevTools Practice</text>
+</svg>

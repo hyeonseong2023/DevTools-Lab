@@ -1,0 +1,464 @@
+<p>동영상을 시청하고 대화형 튜토리얼을 완료하여 Chrome DevTools로 페이지의 DOM을 보고 변경하는 기본사항을 알아보세요.</p>
+
+<p><devsite-video video-id="J-02VNxE7lE"></devsite-video></p>
+
+<p>이 튜토리얼에서는 DOM과 HTML의 차이점을 알고 있다고 가정합니다.
+<a href="#html_dom">부록: HTML과 DOM 비교</a>에서 복습하세요.</p>
+
+<h2 data-text="DOM 노드 보기" id="view" tabindex="-1">DOM 노드 보기</h2>
+
+<p><strong>요소</strong> 패널의 DOM 트리는 DevTools에서 모든 DOM 관련 활동을 수행하는 곳입니다.</p>
+
+<h3 data-text="노드 검사" id="inspect" tabindex="-1">노드 검사</h3>
+
+<p>특정 DOM 노드에 관심이 있는 경우 <strong>검사</strong>는 DevTools를 열고 해당 노드를 조사하는 빠른 방법입니다.</p>
+
+<ol>
+<li><p>다음 목록에서 <strong>Michelangelo</strong>를 마우스 오른쪽 버튼으로 클릭합니다. 메뉴에서 <strong>검사</strong>를 선택합니다.</p>
+
+<ul>
+<li>미켈란젤로</li>
+<li>라파엘
+DevTools의 <strong>요소</strong> 패널이 열립니다.
+<code dir="ltr" translate="no">&lt;li&gt;Michelangelo&lt;/li&gt;</code>이 <strong>DOM 트리</strong>에서 강조 표시됩니다.</li>
+</ul>
+
+<p><img alt="미켈란젤로 노드 강조 표시" height="810" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/highlight-node.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/highlight-node_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/highlight-node_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/highlight-node_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/highlight-node_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/highlight-node_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/highlight-node_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/highlight-node_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/highlight-node_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/highlight-node_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/highlight-node_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/highlight-node_2880.png?hl=ko 2880w" width="1200" /></p></li>
+<li><p><img alt="" aria-hidden="true" class="inline-icon" role="img" src="https://developer.chrome.com/docs/devtools/images/icons/select-element.svg?hl=ko" />
+<strong>요소 선택</strong>을 클릭합니다.</p></li>
+<li><p>다음 목록에서 <strong>도쿄</strong>를 선택합니다.</p>
+
+<ul>
+<li>도쿄</li>
+<li>베이루트</li>
+</ul>
+
+<p><code dir="ltr" translate="no">&lt;li&gt;Tokyo&lt;/li&gt;</code>이 DOM 트리에서 강조 표시됩니다.</p></li>
+</ol>
+
+<p>노드를 검사하는 것은 노드의 <a href="https://developer.chrome.com/docs/devtools/css?hl=ko">스타일과 CSS</a>를 보고 변경하는 첫 번째 단계이기도 합니다.</p>
+
+<h3 data-text="키보드로 DOM 트리 탐색" id="keynav" tabindex="-1">키보드로 DOM 트리 탐색</h3>
+
+<p>DOM 트리에서 노드를 선택하면 키보드로 DOM 트리를 탐색할 수 있습니다.</p>
+
+<ol>
+<li><p>다음 목록에서 <strong>Ringo</strong>를 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다.
+DOM 트리에서 <code dir="ltr" translate="no">&lt;li&gt;Ringo&lt;/li&gt;</code>이 선택되어 있습니다.</p>
+
+<ul>
+<li>George</li>
+<li>링고</li>
+<li>Paul</li>
+<li><p>존</p>
+
+<p><img alt="Ringo 노드 검사" height="545" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ringo-node-a30eb2ec496a8.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ringo-node-a30eb2ec496a8_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ringo-node-a30eb2ec496a8_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ringo-node-a30eb2ec496a8_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ringo-node-a30eb2ec496a8_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ringo-node-a30eb2ec496a8_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ringo-node-a30eb2ec496a8_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ringo-node-a30eb2ec496a8_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ringo-node-a30eb2ec496a8_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ringo-node-a30eb2ec496a8_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ringo-node-a30eb2ec496a8_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ringo-node-a30eb2ec496a8_2880.png?hl=ko 2880w" width="800" /></p></li>
+</ul></li>
+<li><p><kbd>위쪽</kbd> 화살표 키를 두 번 누릅니다. <code dir="ltr" translate="no">&lt;ul&gt;</code>이(가) 선택되었습니다.</p>
+
+<p><img alt="ul 노드 검사" height="545" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ul-node-d23485a3dcc19.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ul-node-d23485a3dcc19_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ul-node-d23485a3dcc19_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ul-node-d23485a3dcc19_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ul-node-d23485a3dcc19_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ul-node-d23485a3dcc19_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ul-node-d23485a3dcc19_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ul-node-d23485a3dcc19_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ul-node-d23485a3dcc19_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ul-node-d23485a3dcc19_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ul-node-d23485a3dcc19_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/inspecting-ul-node-d23485a3dcc19_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><kbd>왼쪽</kbd> 화살표 키를 누릅니다. <code dir="ltr" translate="no">&lt;ul&gt;</code> 목록이 접힙니다.</p></li>
+<li><p><kbd>왼쪽</kbd> 화살표 키를 다시 누릅니다. <code dir="ltr" translate="no">&lt;ul&gt;</code> 노드의 상위 항목이 선택됩니다. 이 경우 1단계 안내가 포함된 <code dir="ltr" translate="no">&lt;li&gt;</code> 노드입니다.</p></li>
+<li><p><kbd>아래쪽</kbd> 화살표 키를 세 번 눌러 방금 접은 <code dir="ltr" translate="no">&lt;ul&gt;</code> 목록을 다시 선택합니다. 다음과 같이 표시됩니다. <code dir="ltr" translate="no">&lt;ul&gt;...&lt;/ul&gt;</code></p></li>
+<li><p><kbd>오른쪽</kbd> 화살표 키를 누릅니다. 목록이 펼쳐집니다.</p></li>
+</ol>
+
+<h3 data-text="보기로 스크롤" id="scroll1" tabindex="-1">보기로 스크롤</h3>
+
+<p>DOM 트리를 볼 때 뷰포트에 없는 DOM 노드에 관심이 있는 경우가 있습니다. 예를 들어 페이지 하단으로 스크롤했는데 페이지 상단의 <code dir="ltr" translate="no">&lt;h1&gt;</code> 노드에 관심이 있다고 가정해 보겠습니다. <strong>보기로 스크롤</strong>을 사용하면 노드를 볼 수 있도록 표시 영역의 위치를 빠르게 변경할 수 있습니다.</p>
+
+<ol>
+<li><p>아래의 <strong>Magritte</strong>를 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다.</p>
+
+<ul>
+<li>마그리트</li>
+<li>Soutine</li>
+</ul></li>
+<li><p>자세한 내용은 부록 섹션 <a href="#scroll2">화면으로 스크롤</a>을 참고하세요.</p></li>
+</ol>
+
+<p>완료되면 이 섹션으로 다시 돌아와야 합니다.</p>
+
+<h3 data-text="눈금자 표시" id="rulers" tabindex="-1">눈금자 표시</h3>
+
+<p>표시 영역에 눈금이 있으면 <strong>요소</strong> 패널에서 요소 위로 마우스를 가져갈 때 요소의 너비와 높이를 측정할 수 있습니다.</p>
+
+<p><img alt="" height="552" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/rulers-ab676cf17b11.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/rulers-ab676cf17b11_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/rulers-ab676cf17b11_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/rulers-ab676cf17b11_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/rulers-ab676cf17b11_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/rulers-ab676cf17b11_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/rulers-ab676cf17b11_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/rulers-ab676cf17b11_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/rulers-ab676cf17b11_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/rulers-ab676cf17b11_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/rulers-ab676cf17b11_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/rulers-ab676cf17b11_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p>다음 두 가지 방법 중 하나로 눈금자를 사용 설정합니다.</p>
+
+<ul>
+<li><kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> 또는 <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (macOS)를 눌러 <strong>명령어 메뉴</strong>를 열고 <code dir="ltr" translate="no">Show rulers on hover</code>를 입력한 후 <kbd>Enter</kbd>를 누릅니다.</li>
+<li><span aria-hidden="true" class="material-symbols-outlined">설정</span>
+<strong>설정</strong> > <strong>환경설정</strong> > <strong>요소</strong> > <strong>마우스를 가져가면 눈금자 표시</strong>를 확인합니다.</li>
+</ul>
+
+<p>눈금자의 크기 조정 단위는 픽셀입니다.</p>
+
+<h3 data-text="노드 검색" id="search" tabindex="-1">노드 검색</h3>
+
+<p>문자열, CSS 선택기 또는 XPath 선택기로 DOM 트리를 검색할 수 있습니다.</p>
+
+<ol>
+<li><strong>요소</strong> 패널에 커서를 가져갑니다.</li>
+<li><kbd>Control</kbd>+<kbd>F</kbd> 또는 <kbd>Command</kbd>+<kbd>F</kbd> (macOS)를 누릅니다.
+DOM 트리 하단에 검색창이 열립니다.</li>
+<li><p><code dir="ltr" translate="no">The Moon is a Harsh Mistress</code>를 입력합니다. 마지막 문장이 DOM 트리에서 강조 표시됩니다.</p>
+
+<p><img alt="검색창에서 쿼리를 강조 표시합니다." height="690" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/search-for-nodes.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/search-for-nodes_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/search-for-nodes_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/search-for-nodes_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/search-for-nodes_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/search-for-nodes_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/search-for-nodes_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/search-for-nodes_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/search-for-nodes_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/search-for-nodes_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/search-for-nodes_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/search-for-nodes_2880.png?hl=ko 2880w" width="1200" /></p></li>
+</ol>
+
+<p>검색창은 CSS 및 XPath 선택기도 지원합니다.</p>
+
+<p><strong>요소</strong> 패널은 DOM 트리에서 일치하는 첫 번째 결과를 선택하고 뷰포트에서 이를 표시합니다. 기본적으로 입력하는 동안 이 작업이 실행됩니다. 항상 긴 검색어를 사용하는 경우 <kbd>Enter</kbd> 키를 누를 때만 DevTools에서 검색을 실행하도록 설정할 수 있습니다.</p>
+
+<p>노드 간 불필요한 이동을 방지하려면 <span aria-hidden="true" class="material-symbols-outlined">설정</span>
+<strong>설정</strong> > <strong>환경설정</strong> > <strong>전역</strong> > <strong>입력 시 검색</strong> 체크박스를 선택 해제합니다.</p>
+
+<p><img alt="설정에서 입력 시 검색 체크박스를 선택 해제했습니다." height="345" src="https://developer.chrome.com/static/docs/devtools/dom/image/preferences-uncheck-search-type.png?hl=ko" width="1200" /></p>
+
+<h2 data-text="DOM 수정" id="edit" tabindex="-1">DOM 수정</h2>
+
+<p>DOM을 즉석에서 수정하고 이러한 변경사항이 페이지에 미치는 영향을 확인할 수 있습니다.</p>
+
+<h3 data-text="콘텐츠 수정" id="content" tabindex="-1">콘텐츠 수정</h3>
+
+<p>노드의 콘텐츠를 수정하려면 DOM 트리에서 콘텐츠를 더블클릭합니다.</p>
+
+<ol>
+<li><p>다음 목록에서 <strong>Michelle</strong>을 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다.</p>
+
+<ul>
+<li>튀김</li>
+<li>Michelle</li>
+</ul></li>
+<li><p>DOM 트리에서 <code dir="ltr" translate="no">Michelle</code>를 더블클릭합니다. 즉, <code dir="ltr" translate="no">&lt;li&gt;</code>와 <code dir="ltr" translate="no">&lt;/li&gt;</code> 사이의 텍스트를 더블클릭합니다. 선택되었음을 나타내기 위해 텍스트가 파란색으로 강조 표시됩니다.</p>
+
+<p><img alt="텍스트 수정" height="908" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/edit-text.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/edit-text_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-text_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-text_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-text_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-text_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-text_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-text_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-text_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-text_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-text_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-text_2880.png?hl=ko 2880w" width="1600" /></p></li>
+<li><p><code dir="ltr" translate="no">Michelle</code>를 삭제하고 <code dir="ltr" translate="no">Leela</code>를 입력한 다음 <kbd>Enter</kbd>를 눌러 변경사항을 확인합니다. 텍스트가 <strong>미셸</strong>에서 <strong>리라</strong>로 변경됩니다.</p></li>
+</ol>
+
+<h3 data-text="속성 수정" id="attributes" tabindex="-1">속성 수정</h3>
+
+<p>속성을 수정하려면 속성 이름 또는 값을 더블클릭합니다. 다음 안내에 따라 노드에 속성을 추가하는 방법을 알아보세요.</p>
+
+<ol>
+<li><p>다음 목록에서 <strong>Howard</strong>를 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다.</p>
+
+<ul>
+<li>Howard</li>
+<li>빈스</li>
+</ul></li>
+<li><p><code dir="ltr" translate="no">&lt;ul&gt;</code>를 펼친 다음 <code dir="ltr" translate="no">&lt;li&gt;</code>을 더블클릭하여 수정합니다. 노드가 선택되었음을 나타내기 위해 텍스트가 강조 표시됩니다.</p>
+
+<p><img alt="클릭하면 선택을 나타내기 위해 노드가 강조 표시됩니다." height="908" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/edit-list-node.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/edit-list-node_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-list-node_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-list-node_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-list-node_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-list-node_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-list-node_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-list-node_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-list-node_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-list-node_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-list-node_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-list-node_2880.png?hl=ko 2880w" width="1600" /></p></li>
+<li><p><kbd>오른쪽</kbd> 화살표 키를 누르고 공백을 추가한 다음 <code dir="ltr" translate="no">style=&quot;background-color:gold&quot;</code>를 입력하고 <kbd>Enter</kbd> 키를 누릅니다. 노드의 배경색이 금색으로 변경됩니다.</p>
+
+<p><img alt="노드에 스타일 속성 추가" height="908" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/edit-style-node.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/edit-style-node_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-style-node_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-style-node_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-style-node_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-style-node_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-style-node_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-style-node_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-style-node_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-style-node_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-style-node_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/edit-style-node_2880.png?hl=ko 2880w" width="1600" /></p></li>
+</ol>
+
+<h3 data-text="노드 유형 수정" id="type" tabindex="-1">노드 유형 수정</h3>
+
+<p>노드의 유형을 수정하려면 유형을 더블클릭한 다음 새 유형을 입력합니다.</p>
+
+<ol>
+<li><p>다음 목록에서 <strong>Hank</strong>를 마우스 오른쪽 버튼으로 클릭하고 <strong>Inspect</strong>를 선택합니다.</p>
+
+<ul>
+<li>딘</li>
+<li>CANNOT TRANSLATE</li>
+<li>Thaddeus</li>
+<li>Brock</li>
+</ul></li>
+<li><p><code dir="ltr" translate="no">&lt;li&gt;</code>을 더블클릭합니다. <code dir="ltr" translate="no">li</code> 텍스트가 강조 표시됩니다.</p></li>
+<li><p><code dir="ltr" translate="no">li</code>를 삭제하고 <code dir="ltr" translate="no">button</code>를 입력한 다음 <kbd>Enter</kbd> 키를 누릅니다. <code dir="ltr" translate="no">&lt;li&gt;</code> 노드가 <code dir="ltr" translate="no">&lt;button&gt;</code> 노드로 변경됩니다.</p>
+
+<p><img alt="노드 유형을 버튼으로 변경" height="908" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/change-node.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/change-node_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/change-node_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/change-node_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/change-node_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/change-node_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/change-node_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/change-node_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/change-node_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/change-node_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/change-node_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/change-node_2880.png?hl=ko 2880w" width="1600" /></p></li>
+</ol>
+
+<h3 data-text="HTML로 수정" id="as-html" tabindex="-1">HTML로 수정</h3>
+
+<p>구문 강조 표시 및 자동 완성 기능이 있는 HTML로 노드를 수정하려면 노드의 드롭다운 메뉴에서 <strong>HTML로 수정</strong>을 선택합니다.</p>
+
+<ol>
+<li><p>아래의 <strong>Leonard</strong>를 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다.</p>
+
+<ul>
+<li>페니</li>
+<li>Howard</li>
+<li>Rajesh</li>
+<li>Leonard</li>
+</ul></li>
+<li><p><strong>요소</strong> 패널에서 현재 노드를 마우스 오른쪽 버튼으로 클릭하고 드롭다운 메뉴에서 <strong>HTML로 수정</strong>을 선택합니다.</p>
+
+<p><img alt="노드의 드롭다운 메뉴" height="1050" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/dropdown-edit-html.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/dropdown-edit-html_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/dropdown-edit-html_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/dropdown-edit-html_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/dropdown-edit-html_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/dropdown-edit-html_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/dropdown-edit-html_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/dropdown-edit-html_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/dropdown-edit-html_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/dropdown-edit-html_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/dropdown-edit-html_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/dropdown-edit-html_2880.png?hl=ko 2880w" width="1600" /></p></li>
+<li><p><kbd>Enter</kbd> 키를 눌러 새 줄을 시작하고 <code dir="ltr" translate="no">&lt;l</code>를 입력합니다. DevTool은 HTML 구문을 강조 표시하고 자동 완성할 태그를 제안합니다.</p>
+
+<p><img alt="HTML 태그 자동 완성" height="908" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete_2880.png?hl=ko 2880w" width="1600" /></p>
+
+<aside class="note"><b>참고:</b> DevTools는 DOM 속성을 자동 완성할 수도 있습니다.</aside></li>
+<li><p>자동 완성 메뉴에서 <code dir="ltr" translate="no">li</code> 요소를 선택하고 <code dir="ltr" translate="no">&gt;</code>을 입력합니다. DevTools는 커서 뒤에 닫는 <code dir="ltr" translate="no">&lt;/li&gt;</code> 태그를 자동으로 추가합니다.</p>
+
+<p><img alt="DevTools에서 태그를 자동으로 닫습니다." height="908" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete-closetag.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete-closetag_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete-closetag_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete-closetag_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete-closetag_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete-closetag_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete-closetag_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete-closetag_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete-closetag_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete-closetag_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete-closetag_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/autocomplete-closetag_2880.png?hl=ko 2880w" width="1600" /></p></li>
+<li><p>태그 내에 <code dir="ltr" translate="no">Sheldon</code>를 입력하고 <kbd>Control</kbd> 또는 <kbd>Command</kbd> + <kbd>Enter</kbd>를 눌러 변경사항을 적용합니다.</p></li>
+</ol>
+
+<h3 data-text="노드 복제" id="duplicate" tabindex="-1">노드 복제</h3>
+
+<p><strong>요소 복제</strong> 마우스 오른쪽 버튼 클릭 옵션을 사용하여 요소를 복제할 수 있습니다.</p>
+
+<ol>
+<li><p>다음 목록에서 <strong>Nana</strong>를 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다.</p>
+
+<ul>
+<li>허영의 모닥불</li>
+<li>Nana</li>
+<li>올란도</li>
+<li>백색 소음</li>
+</ul></li>
+<li><p><strong>요소</strong> 패널에서 <code dir="ltr" translate="no">&lt;li&gt;Nana&lt;/li&gt;</code>를 마우스 오른쪽 버튼으로 클릭하고 드롭다운 메뉴에서 <strong>요소 복제</strong>를 선택합니다.</p>
+
+<p><img alt="드롭다운에서 강조 표시된 요소 복제 옵션" height="908" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/duplicate-element.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/duplicate-element_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/duplicate-element_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/duplicate-element_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/duplicate-element_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/duplicate-element_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/duplicate-element_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/duplicate-element_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/duplicate-element_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/duplicate-element_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/duplicate-element_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/duplicate-element_2880.png?hl=ko 2880w" width="1600" /></p></li>
+<li><p>페이지로 돌아갑니다. 목록 항목이 중복되었습니다.</p></li>
+</ol>
+
+<p>단축키 <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>아래쪽</kbd> 화살표 (Windows 및 Linux) 및 <kbd>Shift</kbd> + <kbd>Option</kbd> + <kbd>아래쪽</kbd> 화살표 (macOS)를 사용할 수도 있습니다.</p>
+
+<h3 data-text="노드 스크린샷 캡처" id="screenshot" tabindex="-1">노드 스크린샷 캡처</h3>
+
+<p>DOM 트리에서 개별 노드를 스크린샷할 수 있습니다.</p>
+
+<ol>
+<li><p>이 페이지의 이미지를 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다.</p></li>
+<li><p><strong>요소</strong> 패널에서 이미지 URL을 마우스 오른쪽 버튼으로 클릭하고 드롭다운 메뉴에서 <strong>노드 스크린샷 캡처</strong>를 선택합니다.</p>
+
+<p><img alt="노드 스크린샷이 캡처되고 있습니다." height="950" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/capture-node-screenshot.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/capture-node-screenshot_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/capture-node-screenshot_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/capture-node-screenshot_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/capture-node-screenshot_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/capture-node-screenshot_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/capture-node-screenshot_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/capture-node-screenshot_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/capture-node-screenshot_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/capture-node-screenshot_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/capture-node-screenshot_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/capture-node-screenshot_2880.png?hl=ko 2880w" width="1600" /></p></li>
+<li><p>스크린샷은 다운로드에 저장됩니다(<a href="https://support.microsoft.com/windows/file-explorer-in-windows-ef370130-1cca-9dc5-e0df-2f7416fe1cb1">Windows</a> 및 <a href="https://support.apple.com/guide/mac-help/organize-your-files-in-the-finder-mchlp2605/mac">macOS</a>).</p></li>
+</ol>
+
+<p><a href="https://developer.chrome.com/blog/devtools-tips-33?hl=ko">DevTools로 스크린샷을 캡처하는 4가지 방법</a>에서 자세히 알아보세요.</p>
+
+<h3 data-text="DOM 노드 재정렬" id="reorder" tabindex="-1">DOM 노드 재정렬</h3>
+
+<p>노드를 드래그하여 순서를 변경합니다.</p>
+
+<ol>
+<li><p>아래의 <strong>엘비스 프레슬리</strong>를 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다. 목록의 마지막 항목입니다.</p>
+
+<p></p><ul>
+   <li>스티비 원더</li>
+   <li>톰 웨이츠</li>
+   <li>Chris Thile</li>
+   <li>엘비스 프레슬리</li>
+ </ul><p></p></li>
+<li><p>DOM 트리에서 <code dir="ltr" translate="no">&lt;li&gt;Elvis Presley&lt;/li&gt;</code>를 목록의 맨 위로 드래그합니다.</p></li>
+</ol>
+
+<h3 data-text="강제 상태" id="state" tabindex="-1">강제 상태</h3>
+
+<p>노드가 <code dir="ltr" translate="no">:active</code>, <code dir="ltr" translate="no">:hover</code>, <code dir="ltr" translate="no">:focus</code>, <code dir="ltr" translate="no">:visited</code>, <code dir="ltr" translate="no">:focus-within</code>과 같은 상태를 유지하도록 강제할 수 있습니다.</p>
+
+<style>
+  .demo--hover:hover {
+    background-color: orange;
+  }
+</style>
+
+<ol>
+<li><p><strong>파리 대왕</strong> 목록 항목 위로 마우스를 가져갑니다. 배경색이 주황색으로 바뀝니다.</p>
+
+<p></p><ul>
+   <li class="demo--hover">The Lord of the Flies</li>
+   <li>죄와 벌</li>
+   <li>모비딕</li>
+ </ul><p></p></li>
+<li><p><strong>파리 대왕</strong> 목록 항목을 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다.</p></li>
+<li><p><code dir="ltr" translate="no">&lt;li class=&quot;demo--hover&quot;&gt;The Lord of the Flies&lt;/li&gt;</code>를 마우스 오른쪽 버튼으로 클릭하고 <strong>강제 상태</strong> > <strong>:hover</strong>를 선택합니다. 이 옵션이 표시되지 않으면 <a href="#options">누락된 옵션</a>에 관한 부록을 읽어보세요.</p>
+
+<p>실제로 노드 위로 마우스를 가져가지 않더라도 배경색은 주황색으로 유지됩니다.</p></li>
+</ol>
+
+<h3 data-text="노드 숨기기" id="hide" tabindex="-1">노드 숨기기</h3>
+
+<p><kbd>H</kbd> 키를 눌러 노드를 숨깁니다.</p>
+
+<ol>
+<li><p>다음 목록에서 <strong>The Stars My Destination</strong>을 마우스 오른쪽 버튼으로 클릭하고 <strong>Inspect</strong>를 선택합니다.</p>
+
+<ul>
+<li>몬테크리스토 백작</li>
+<li>The Stars My Destination</li>
+</ul></li>
+<li><p><kbd>H</kbd> 키를 누릅니다. 노드가 숨겨져 있습니다. 노드를 마우스 오른쪽 버튼으로 클릭하고 <strong>요소 숨기기</strong> 옵션을 사용할 수도 있습니다.</p>
+
+<p><img alt="숨겨진 후 DOM 트리에서 노드가 표시되는 방식" height="920" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/hide-node.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/hide-node_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/hide-node_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/hide-node_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/hide-node_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/hide-node_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/hide-node_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/hide-node_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/hide-node_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/hide-node_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/hide-node_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/hide-node_2880.png?hl=ko 2880w" width="1600" /></p></li>
+<li><p><kbd>H</kbd> 키를 다시 누릅니다. 노드가 다시 표시됩니다.</p></li>
+</ol>
+
+<h3 data-text="노드 삭제" id="delete" tabindex="-1">노드 삭제</h3>
+
+<p><kbd>Delete</kbd>를 눌러 노드를 삭제합니다.</p>
+
+<ol>
+<li><p>다음 목록에서 <strong>Foundation</strong>을 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다.</p>
+
+<ul>
+<li>The Illustrated Man</li>
+<li>거울 나라의 앨리스</li>
+<li>기반</li>
+</ul></li>
+<li><p><kbd>Delete</kbd> 키를 누릅니다. 노드가 삭제됩니다. 노드를 마우스 오른쪽 버튼으로 클릭하고 <strong>요소 삭제</strong> 옵션을 사용할 수도 있습니다.</p></li>
+<li><p><kbd>Control</kbd>+<kbd>Z</kbd> 또는 <kbd>Command</kbd>+<kbd>Z</kbd> (macOS)를 누릅니다.
+마지막 작업이 실행취소되고 노드가 다시 표시됩니다.</p></li>
+</ol>
+
+<h2 data-text="콘솔에서 노드에 액세스" id="console" tabindex="-1">콘솔에서 노드에 액세스</h2>
+
+<p>DevTools는 콘솔에서 DOM 노드에 액세스하거나 JavaScript 참조를 가져오는 몇 가지 단축키를 제공합니다.</p>
+
+<h3 data-text="$0으로 현재 선택된 노드 참조" id="current" tabindex="-1">$0으로 현재 선택된 노드 참조</h3>
+
+<p>노드를 검사할 때 노드 옆에 있는 <code dir="ltr" translate="no">== $0</code> 텍스트는 변수 <code dir="ltr" translate="no">$0</code>을 사용하여 콘솔에서 이 노드를 참조할 수 있음을 의미합니다.</p>
+
+<ol>
+<li><p><strong>The Left Hand of Darkness</strong> 목록 항목을 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다.</p>
+
+<ul>
+<li>어둠의 왼손</li>
+<li>모래 언덕</li>
+</ul></li>
+<li><p><kbd>Escape</kbd> 키를 눌러 콘솔 드로어를 엽니다. <strong>콘솔</strong>을 선택하여 열어야 할 수도 있습니다.</p></li>
+<li><p><code dir="ltr" translate="no">$0</code>를 입력하고 <kbd>Enter</kbd> 키를 누릅니다. 표현식의 결과는 <code dir="ltr" translate="no">$0</code>가 <code dir="ltr" translate="no">&lt;li&gt;The Left Hand of Darkness&lt;/li&gt;</code>로 평가된다는 것입니다.</p>
+
+<p><img alt="콘솔에 있는 첫 번째 $0 표현의 결과입니다." height="920" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/console-lefthand-darkness.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/console-lefthand-darkness_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/console-lefthand-darkness_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/console-lefthand-darkness_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/console-lefthand-darkness_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/console-lefthand-darkness_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/console-lefthand-darkness_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/console-lefthand-darkness_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/console-lefthand-darkness_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/console-lefthand-darkness_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/console-lefthand-darkness_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/console-lefthand-darkness_2880.png?hl=ko 2880w" width="1600" /></p></li>
+<li><p>결과 위로 마우스를 가져갑니다. 노드가 표시 영역에서 강조 표시됩니다.</p></li>
+<li><p>DOM 트리에서 <code dir="ltr" translate="no">&lt;li&gt;Dune&lt;/li&gt;</code>를 클릭하고 콘솔에 <code dir="ltr" translate="no">$0</code>를 다시 입력한 다음 <kbd>Enter</kbd> 키를 다시 누릅니다. 이제 <code dir="ltr" translate="no">$0</code>은 <code dir="ltr" translate="no">&lt;li&gt;Dune&lt;/li&gt;</code>로 평가됩니다.</p>
+
+<p><img alt="콘솔의 두 번째 $0 표현식 결과" height="920" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/console-dune.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/console-dune_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/console-dune_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/console-dune_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/console-dune_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/console-dune_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/console-dune_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/console-dune_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/console-dune_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/console-dune_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/console-dune_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/console-dune_2880.png?hl=ko 2880w" width="1600" /></p></li>
+</ol>
+
+<h3 data-text="전역 변수로 저장" id="global" tabindex="-1">전역 변수로 저장</h3>
+
+<p>노드를 여러 번 다시 참조해야 하는 경우 전역 변수로 저장합니다.</p>
+
+<ol>
+<li><p>아래의 <strong>The Big Sleep</strong>을 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다.</p>
+
+<ul>
+<li>빅 슬립</li>
+<li>The Long Goodbye</li>
+</ul></li>
+<li><p>DOM 트리에서 <code dir="ltr" translate="no">&lt;li&gt;The Big Sleep&lt;/li&gt;</code>를 마우스 오른쪽 버튼으로 클릭하고 <strong>전역 변수로 저장</strong>을 선택합니다. 이 옵션을 찾을 수 없는 경우 <a href="#options">누락된 옵션</a>에 관한 부록을 참고하세요.</p></li>
+<li><p>콘솔에 <code dir="ltr" translate="no">temp1</code>를 입력한 다음 <kbd>Enter</kbd> 키를 누릅니다. 표현식의 결과는 변수가 노드로 평가됨을 보여줍니다. 목록 항목을 펼치려면 노드를 클릭합니다.</p>
+
+<p><img alt="temp1 표현식의 결과입니다." height="690" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/temp1-result.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/temp1-result_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/temp1-result_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/temp1-result_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/temp1-result_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/temp1-result_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/temp1-result_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/temp1-result_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/temp1-result_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/temp1-result_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/temp1-result_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/temp1-result_2880.png?hl=ko 2880w" width="1200" /></p></li>
+</ol>
+
+<h3 data-text="JS 경로 복사" id="path" tabindex="-1">JS 경로 복사</h3>
+
+<p>자동화된 테스트에서 참조할 수 있도록 노드의 JavaScript 경로를 복사합니다.</p>
+
+<ol>
+<li><p>아래의 <strong>카라마조프가의 형제들</strong>을 마우스 오른쪽 버튼으로 클릭하고 <strong>검사</strong>를 선택합니다.</p>
+
+<ul>
+<li>카라마조프가의 형제들</li>
+<li>죄와 벌</li>
+</ul></li>
+<li><p>DOM 트리에서 <code dir="ltr" translate="no">&lt;li&gt;The Brothers Karamazov&lt;/li&gt;</code>를 마우스 오른쪽 버튼으로 클릭하고 <strong>복사</strong> > <strong>JS 경로 복사</strong>를 선택합니다. 노드로 확인되는 <code dir="ltr" translate="no">document.querySelector()</code> 표현식이 클립보드에 복사되었습니다.</p></li>
+<li><p><kbd>Control</kbd>+<kbd>V</kbd> 또는 <kbd>Command</kbd>+<kbd>V</kbd> (macOS)를 눌러 표현식을 콘솔에 붙여넣습니다.</p></li>
+<li><p><kbd>Enter</kbd> 키를 눌러 표현식을 평가합니다.</p>
+
+<p><img alt="Copy JS Path 표현식의 결과" height="636" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/the-result-the-copy-js-p-7a9d5a4875212.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/the-result-the-copy-js-p-7a9d5a4875212_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/the-result-the-copy-js-p-7a9d5a4875212_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/the-result-the-copy-js-p-7a9d5a4875212_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/the-result-the-copy-js-p-7a9d5a4875212_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/the-result-the-copy-js-p-7a9d5a4875212_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/the-result-the-copy-js-p-7a9d5a4875212_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/the-result-the-copy-js-p-7a9d5a4875212_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/the-result-the-copy-js-p-7a9d5a4875212_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/the-result-the-copy-js-p-7a9d5a4875212_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/the-result-the-copy-js-p-7a9d5a4875212_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/the-result-the-copy-js-p-7a9d5a4875212_2880.png?hl=ko 2880w" width="800" /></p></li>
+</ol>
+
+<h2 data-text="DOM 변경 시 중단" id="breakpoints" tabindex="-1">DOM 변경 시 중단</h2>
+
+<p>JavaScript가 DOM을 수정할 때 DevTools를 사용하면 페이지의 JavaScript를 일시중지할 수 있습니다.
+<a href="https://developer.chrome.com/docs/devtools/javascript/breakpoints?hl=ko#dom">DOM 변경 중단점</a>에 대해 알아보세요.</p>
+
+<h2 data-text="다음 단계" id="next" tabindex="-1">다음 단계</h2>
+
+<p>이로써 DevTools의 DOM 관련 기능 대부분을 다루었습니다. DOM 트리에서 노드를 마우스 오른쪽 버튼으로 클릭하고 이 튜토리얼에서 다루지 않은 옵션을 실험하여 나머지 옵션을 알아볼 수 있습니다.</p>
+
+<p>계속 읽기:</p>
+
+<ul>
+<li><a href="https://developer.chrome.com/docs/devtools/shortcuts?hl=ko#elements">요소 패널 단축키</a>에 대해 알아보세요.</li>
+<li><a href="https://developer.chrome.com/docs/devtools?hl=ko">DevTools 문서</a>를 자세히 읽고 DevTools로 할 수 있는 다른 모든 작업을 알아보세요.</li>
+</ul>
+
+<p><a href="https://developer.chrome.com/docs/devtools/overview?hl=ko#community">DevTools 커뮤니티</a>에 참여하여 DevTools팀에 문의하거나 다른 개발자의 도움을 받으세요.</p>
+
+<h2 data-text="부록" id="appendix" tabindex="-1">부록</h2>
+
+<p>특정 주제에 대해 자세히 알아봅니다.</p>
+
+<h3 data-text="HTML과 DOM" id="html_dom" tabindex="-1">HTML과 DOM</h3>
+
+<p>이 섹션에서는 HTML과 DOM의 차이점을 간략하게 설명합니다.</p>
+
+<p>웹브라우저를 사용하여 <code dir="ltr" translate="no">https://example.com</code>와 같은 페이지를 요청하면 서버에서 HTML 문서를 반환합니다.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="HTML"><code translate="no" dir="ltr">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Hello, world!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;p&gt;This is a hypertext document on the World Wide Web.&lt;/p&gt;
+    &lt;script src="/script.js" async&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></devsite-code>
+<p>브라우저가 HTML을 파싱하고 객체 트리를 만듭니다.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">html
+  head
+    title
+  body
+    h1
+    p
+    script
+</code></pre></devsite-code>
+<p>이 객체 또는 노드 트리는 페이지의 콘텐츠를 나타냅니다. 이를 문서 객체 모델(DOM)이라고 합니다. 현재 객체는 DOM과 HTML에서 동일합니다.</p>
+
+<p>HTML 하단의 <code dir="ltr" translate="no">script.js</code> 파일에 다음 함수가 포함되어 있다고 가정해 보겠습니다.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="JavaScript"><code translate="no" dir="ltr"><span class="devsite-syntax-kd">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">h1</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nb">document</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">querySelector</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s1">'h1'</span><span class="devsite-syntax-p">);</span>
+<span class="devsite-syntax-nx">h1</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">parentElement</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">removeChild</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">h1</span><span class="devsite-syntax-p">);</span>
+<span class="devsite-syntax-kd">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">p</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nb">document</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">createElement</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s1">'p'</span><span class="devsite-syntax-p">);</span>
+<span class="devsite-syntax-nx">p</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">textContent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Wildcard!'</span><span class="devsite-syntax-p">;</span>
+<span class="devsite-syntax-nb">document</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">body</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">appendChild</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">p</span><span class="devsite-syntax-p">);</span>
+</code></pre></devsite-code>
+<p>이 스크립트는 <code dir="ltr" translate="no">h1</code> 노드를 삭제하고 다른 <code dir="ltr" translate="no">p</code> 노드를 DOM에 추가합니다. 이제 DOM은 다음과 같이 표시됩니다.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only"><code translate="no" dir="ltr">html
+  head
+    title
+  body
+    p
+    script
+    p
+</code></pre></devsite-code>
+<p>이제 페이지의 HTML이 DOM과 다릅니다.</p>
+
+<p>HTML은 초기 페이지 콘텐츠를 나타내고 DOM은 활성 상태의 현재 페이지 콘텐츠를 나타냅니다. JavaScript가 노드를 추가, 삭제 또는 수정하면 DOM이 HTML과 달라집니다.</p>
+
+<p>MDN의 <a href="https://developer.mozilla.org/docs/Web/API/Document_Object_Model">DOM 소개</a>에서 자세히 알아보세요.</p>
+
+<h3 data-text="보기로 스크롤" id="scroll2" tabindex="-1">보기로 스크롤</h3>
+
+<p><a href="#scroll1">화면으로 스크롤</a> 섹션의 연속입니다. 안내에 따라 섹션을 완료합니다.</p>
+
+<ol>
+<li><code dir="ltr" translate="no">&lt;li&gt;Magritte&lt;/li&gt;</code> 노드가 DOM 트리에서 선택된 상태여야 합니다. 아니면 <a href="#scroll1">보기로 스크롤</a>로 돌아가 다시 시작합니다.</li>
+<li><p><code dir="ltr" translate="no">&lt;li&gt;Magritte&lt;/li&gt;</code> 노드를 마우스 오른쪽 버튼으로 클릭하고 <strong>보기로 스크롤</strong>을 선택합니다.
+<strong>Magritte</strong> 노드를 볼 수 있도록 뷰포트가 다시 위로 스크롤됩니다.
+<strong>보기로 스크롤</strong>이 누락된 경우 <a href="#options">누락된 옵션</a>을 참고하세요.</p>
+
+<p><img alt="" height="603" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/dom/image/scroll-view-640c169d78f0e.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/dom/image/scroll-view-640c169d78f0e_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/dom/image/scroll-view-640c169d78f0e_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/dom/image/scroll-view-640c169d78f0e_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/dom/image/scroll-view-640c169d78f0e_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/dom/image/scroll-view-640c169d78f0e_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/dom/image/scroll-view-640c169d78f0e_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/dom/image/scroll-view-640c169d78f0e_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/dom/image/scroll-view-640c169d78f0e_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/dom/image/scroll-view-640c169d78f0e_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/dom/image/scroll-view-640c169d78f0e_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/dom/image/scroll-view-640c169d78f0e_2880.png?hl=ko 2880w" width="800" /></p></li>
+</ol>
+
+<h3 data-text="누락된 옵션" id="options" tabindex="-1">누락된 옵션</h3>
+
+<p>이 튜토리얼의 많은 안내에서는 DOM 트리에서 노드를 마우스 오른쪽 버튼으로 클릭한 다음 팝업되는 컨텍스트 메뉴에서 옵션을 선택하도록 안내합니다. 컨텍스트 메뉴에 지정된 옵션이 표시되지 않으면 노드 텍스트에서 멀리 떨어진 곳을 마우스 오른쪽 버튼으로 클릭해 보세요.</p>
+
+<p><img alt="모든 옵션이 표시되지 않는 경우 클릭해야 하는 위치" height="545" src="https://developer.chrome.com/static/docs/devtools/dom/image/where-click-youre-see-7b901ba2f1219.png?hl=ko" width="800" /></p>
