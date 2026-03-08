@@ -1,5 +1,10 @@
 "use client";
 
+import {
+  createLabTriggerButton,
+  LAB_TRIGGER_DOC_BUTTON_CLASS_NAME,
+  LabTriggerButton,
+} from "@/components/labs/LabTrigger";
 import { LabViewer } from "@/components/labs/LabViewer";
 import { usePathname, useRouter } from "next/navigation";
 import { type CSSProperties, type MouseEvent, useEffect, useMemo, useRef, useState } from "react";
@@ -559,19 +564,15 @@ function normalizeOfficialDocHtml(rawHtml: string, topicId?: TopicId) {
         return;
       }
 
-      const triggerButton = parsed.createElement("button");
-      triggerButton.type = "button";
-      triggerButton.className = "dom-practice-trigger";
-      triggerButton.dataset.runDomPractice = "true";
-      triggerButton.dataset.labSection = sectionId;
-      triggerButton.dataset.labScenario = scenarioId;
-      triggerButton.dataset.labTitle = headingElement.textContent?.trim() ?? sectionId;
-      triggerButton.setAttribute(
-        "aria-label",
-        `${headingElement.textContent?.trim() ?? sectionId} 사용법 숙지 예시 반영`,
-      );
-      triggerButton.title = "Preview Lab에 사용법 숙지 예시 반영";
-      triggerButton.textContent = ">>";
+      const triggerButton = createLabTriggerButton({
+        parsed,
+        dataset: {
+          runDomPractice: "true",
+          labSection: sectionId,
+          labScenario: scenarioId,
+          labTitle: headingElement.textContent?.trim() ?? sectionId,
+        },
+      });
       headingElement.appendChild(triggerButton);
     });
   }
@@ -626,7 +627,9 @@ function extractSectionsFromNormalizedHtml(normalizedHtml: string): ReadonlyArra
   return Array.from(headings)
     .map((heading) => {
       const labelElement = heading.cloneNode(true) as HTMLElement;
-      labelElement.querySelectorAll(".dom-practice-trigger").forEach((button) => button.remove());
+      labelElement
+        .querySelectorAll(`.${LAB_TRIGGER_DOC_BUTTON_CLASS_NAME}`)
+        .forEach((button) => button.remove());
 
       return {
         id: heading.id.trim(),
@@ -772,6 +775,10 @@ const OVERVIEW_PAGE_SECTIONS = [
   { id: "open_the_elements_panel", label: "요소 패널 열기" },
 ] as const;
 
+const ELEMENTS_OVERVIEW_LAB_SCENARIOS: Partial<Record<string, string>> = {
+  overview: "elements-overview:overview",
+};
+
 const DOM_VIEW_EDIT_LAB_SCENARIOS: Partial<Record<string, string>> = {
   inspect: "inspect",
   keynav: "keynav",
@@ -875,6 +882,7 @@ const CSS_REFERENCE_LAB_SCENARIOS: Partial<Record<string, string>> = {
 };
 
 const TOPIC_LAB_SCENARIOS: Partial<Record<TopicId, Partial<Record<string, string>>>> = {
+  "elements-overview": ELEMENTS_OVERVIEW_LAB_SCENARIOS,
   "dom-view-edit": DOM_VIEW_EDIT_LAB_SCENARIOS,
   "dom-properties": DOM_PROPERTIES_LAB_SCENARIOS,
   "badges-reference": BADGES_REFERENCE_LAB_SCENARIOS,
@@ -941,6 +949,44 @@ export function ElementsLabWorkspace({ initialTopicId = "elements-overview" }: E
     [activeTopic.id, topicSectionsById],
   );
   const activeTopicLabScenarios = TOPIC_LAB_SCENARIOS[activeTopic.id];
+  const defaultLabScenario = useMemo<PendingLabScenario | null>(() => {
+    if (!activeTopicLabScenarios) {
+      return null;
+    }
+
+    const firstMappedSection = pageContentsSections.find((section) => activeTopicLabScenarios[section.id]);
+    const fallbackEntry = Object.entries(activeTopicLabScenarios).find(([, scenarioId]) => {
+      return typeof scenarioId === "string" && scenarioId.trim().length > 0;
+    });
+    const sectionId = firstMappedSection?.id ?? fallbackEntry?.[0];
+    const scenarioId =
+      (sectionId ? activeTopicLabScenarios[sectionId] : undefined) ?? fallbackEntry?.[1];
+
+    if (!sectionId || !scenarioId) {
+      return null;
+    }
+
+    return {
+      scenarioId,
+      sectionId,
+      sectionLabel: firstMappedSection?.label ?? activeTopic.label,
+      topicId: activeTopic.id,
+    };
+  }, [activeTopic.id, activeTopic.label, activeTopicLabScenarios, pageContentsSections]);
+  const labPreviewSrc = useMemo(() => {
+    if (!defaultLabScenario) {
+      return "/labs/elements/index.html";
+    }
+
+    const params = new URLSearchParams({
+      scenario: defaultLabScenario.scenarioId,
+      topicId: defaultLabScenario.topicId,
+      sectionId: defaultLabScenario.sectionId,
+      sectionLabel: defaultLabScenario.sectionLabel,
+    });
+
+    return `/labs/elements/index.html?${params.toString()}`;
+  }, [defaultLabScenario]);
   const showPageContentsSidebar = !isLabViewerVisible && pageContentsSections.length > 0;
   const contentGridClassName = isLabViewerVisible
     ? "xl:grid-cols-[minmax(0,1fr)_minmax(360px,520px)] 2xl:grid-cols-[minmax(0,1fr)_minmax(400px,560px)]"
@@ -1022,16 +1068,18 @@ export function ElementsLabWorkspace({ initialTopicId = "elements-overview" }: E
       sendDevtoolsAction("open");
     }, 120);
 
-    if (pendingLabScenario) {
+    const scenarioToApply = pendingLabScenario ?? defaultLabScenario;
+
+    if (scenarioToApply) {
       window.setTimeout(() => {
         const sent = postToPreview("lab:apply-dom-scenario", {
-          scenarioId: pendingLabScenario.scenarioId,
-          sectionId: pendingLabScenario.sectionId,
-          sectionLabel: pendingLabScenario.sectionLabel,
-          topicId: pendingLabScenario.topicId,
+          scenarioId: scenarioToApply.scenarioId,
+          sectionId: scenarioToApply.sectionId,
+          sectionLabel: scenarioToApply.sectionLabel,
+          topicId: scenarioToApply.topicId,
         });
 
-        if (sent) {
+        if (sent && pendingLabScenario) {
           setPendingLabScenario(null);
         }
       }, 280);
@@ -1208,7 +1256,7 @@ export function ElementsLabWorkspace({ initialTopicId = "elements-overview" }: E
 
     if (pathname !== targetRoute) {
       offsetLockUntilRef.current = clickTimeStamp + 240;
-      router.replace(targetRoute, { scroll: false });
+      router.replace(targetRoute, { scroll: true });
     }
   };
 
@@ -1277,7 +1325,7 @@ export function ElementsLabWorkspace({ initialTopicId = "elements-overview" }: E
   return (
     <section className="bg-white">
       <aside
-        className="w-full rounded-xl border border-slate-200 bg-white p-4 lg:fixed lg:bottom-0 lg:left-0 lg:z-30 lg:w-[300px] lg:overflow-y-auto lg:rounded-none lg:border-y-0 lg:border-l-0 lg:border-r lg:shadow-none"
+        className="w-full max-h-[56svh] overflow-y-auto overscroll-contain rounded-xl border border-slate-200 bg-white p-4 lg:fixed lg:bottom-0 lg:left-0 lg:z-30 lg:max-h-none lg:w-[300px] lg:overflow-y-auto lg:rounded-none lg:border-y-0 lg:border-l-0 lg:border-r lg:shadow-none"
         style={{ top: "var(--elements-header-offset,56px)" }}
       >
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
@@ -1378,7 +1426,7 @@ export function ElementsLabWorkspace({ initialTopicId = "elements-overview" }: E
                   }`}
                   aria-pressed={isLabViewerVisible}
                 >
-                  Preview Lab {isLabViewerVisible ? "ON" : "OFF"}
+                  {isLabViewerVisible ? "ON" : "OFF"}
                 </button>
               </div>
 
@@ -1396,7 +1444,18 @@ export function ElementsLabWorkspace({ initialTopicId = "elements-overview" }: E
                 className="rounded-xl border border-slate-200 bg-white p-4"
                 style={{ scrollMarginTop: "var(--elements-scroll-margin,72px)" }}
               >
-                <h3 className="text-xl font-semibold tracking-tight text-slate-900">개요</h3>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-xl font-semibold tracking-tight text-slate-900">개요</h3>
+                  <LabTriggerButton
+                    onClick={() =>
+                      handleRunDomPractice(
+                        "overview",
+                        "개요",
+                        ELEMENTS_OVERVIEW_LAB_SCENARIOS.overview,
+                      )
+                    }
+                  />
+                </div>
                 <p className="mt-2">
                   요소 패널은 DOM을 검사하고 조작하는 강력한 인터페이스를 제공합니다. HTML
                   문서와 유사한 DOM 트리를 사용하여 특정 DOM 노드를 선택하고 다른 도구로
@@ -1701,7 +1760,7 @@ export function ElementsLabWorkspace({ initialTopicId = "elements-overview" }: E
                   ref={iframeRef}
                   title="Elements Preview"
                   showTitle={false}
-                  src="/labs/elements/index.html"
+                  src={labPreviewSrc}
                   instanceKey={labInstanceKey}
                   onReloadRequest={resetPreview}
                   onPreviewDevtoolsRequest={togglePreviewDevtools}
@@ -1738,17 +1797,11 @@ export function ElementsLabWorkspace({ initialTopicId = "elements-overview" }: E
                           >
                             {section.label}
                           </a>
-                          {practiceScenarioId ? (
-                            <button
-                              type="button"
-                              onClick={() => handleRunDomPractice(section.id, section.label)}
-                              className="cursor-pointer rounded-md border border-slate-300 px-1.5 py-0.5 text-[11px] font-semibold leading-none text-slate-600 transition hover:border-slate-400 hover:bg-slate-100 hover:text-slate-900"
-                              title="Preview Lab에 이 섹션 사용법 숙지 예시 반영"
-                              aria-label={`${section.label} 사용법 숙지 예시 반영`}
-                            >
-                              {">>"}
-                            </button>
-                          ) : null}
+                        {practiceScenarioId ? (
+                          <LabTriggerButton
+                            onClick={() => handleRunDomPractice(section.id, section.label)}
+                          />
+                        ) : null}
                         </li>
                       );
                     })}

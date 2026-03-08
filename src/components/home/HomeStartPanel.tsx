@@ -251,7 +251,7 @@ export function HomeStartPanel() {
   }, []);
 
   return (
-    <section className="flex h-[calc(100dvh-112px)] items-center justify-center overflow-hidden">
+    <section className="flex min-h-[calc(100dvh-112px)] items-start justify-center overflow-hidden px-3 py-5 sm:h-[calc(100dvh-112px)] sm:items-center sm:px-0 sm:py-0">
       <div className="w-full max-w-4xl rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
         <div className="flex items-center justify-end">
           <span

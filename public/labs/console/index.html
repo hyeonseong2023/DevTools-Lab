@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Console Preview</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="lab-shell">
+      <header class="lab-header">
+        <h1 id="lab-title">Console Preview</h1>
+        <p id="lab-description" class="lab-description">Console 문서의 예제를 Preview에서 직접 실행할 수 있습니다.</p>
+      </header>
+
+      <main class="lab-grid" id="console-playground">
+        <section class="lab-card lab-card--wide" id="document-body" data-console-node="document-body">
+          <div class="card-head">
+            <span class="card-badge">DOCUMENT</span>
+          </div>
+          <div class="demo-stage">
+            <h1 id="console-demo-title" class="demo-stage__title">Hello, World!</h1>
+            <p class="card-copy" id="log-status">console.log('Loading!') 예제를 바로 실행할 수 있습니다.</p>
+            <button id="hello" class="demo-action" type="button">Hello, World!</button>
+            <img id="hero-image" class="demo-image" alt="Console demo img" />
+            <div id="modal-target" class="demo-modal">hideModal() 대상</div>
+            <div class="paragraph-stack">
+              <p id="paragraph-1" class="xpath-paragraph">Hello, World! heading paragraph.</p>
+              <p id="paragraph-2" class="xpath-paragraph">
+                <a
+                  id="doc-link"
+                  href="https://developer.chrome.com/docs/devtools/console?hl=ko"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Console 문서 링크
+                </a>
+                가 포함된 paragraph 입니다.
+              </p>
+            </div>
+            <ul class="artist-list" id="artist-list">
+              <li>René Magritte</li>
+              <li>Chaim Soutine</li>
+              <li>Henri Matisse</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="lab-card" id="image-gallery" data-console-node="images">
+          <div class="card-head">
+            <span class="card-badge">IMAGES</span>
+            <h2 class="card-title">img Elements</h2>
+          </div>
+          <p class="card-copy">$('img'), $$('img'), $0 - $4 예제에서 사용하는 img 요소입니다.</p>
+          <div class="image-grid devsite-header-background" id="gallery-scope">
+            <figure class="doc-shot">
+              <img id="gallery-image-0" alt="gallery img 1" />
+              <figcaption>img 1</figcaption>
+            </figure>
+            <figure class="doc-shot">
+              <img id="gallery-image-1" alt="gallery img 2" />
+              <figcaption>img 2</figcaption>
+            </figure>
+            <figure class="doc-shot">
+              <img id="gallery-image-2" alt="gallery img 3" />
+              <figcaption>img 3</figcaption>
+            </figure>
+          </div>
+          <div class="selection-chips" id="selection-chips">
+            <span class="selection-chip" id="selection-chip-0">$0</span>
+            <span class="selection-chip" id="selection-chip-1">$1</span>
+            <span class="selection-chip" id="selection-chip-2">$2</span>
+            <span class="selection-chip" id="selection-chip-3">$3</span>
+            <span class="selection-chip" id="selection-chip-4">$4</span>
+          </div>
+        </section>
+
+        <section class="lab-card" id="event-panel" data-console-node="events">
+          <div class="card-head">
+            <span class="card-badge">EVENTS</span>
+            <h2 class="card-title">document, window, input</h2>
+          </div>
+          <p class="card-copy">getEventListeners(), monitorEvents() 예제에 맞는 이벤트 타깃입니다.</p>
+          <div class="event-stack">
+            <button class="event-button" id="event-source" type="button">document click target</button>
+            <button class="event-button event-button--accent" id="inspect-source" type="button">
+              inspect(document.body)
+            </button>
+          </div>
+          <label class="field-label" for="monitored-input">monitorEvents($0, "key") target</label>
+          <input id="monitored-input" class="event-input" type="text" value="console events" />
+        </section>
+
+        <section class="lab-card" id="runtime-objects" data-console-node="objects">
+          <div class="card-head">
+            <span class="card-badge">OBJECTS</span>
+            <h2 class="card-title">player, names, foo</h2>
+          </div>
+          <p class="card-copy" id="object-copy">
+            keys(player), values(player), table(names), queryObjects(foo)를 확인할 수 있습니다.
+          </p>
+          <pre class="payload-preview" id="payload-preview"></pre>
+          <pre class="runtime-code" id="runtime-code-preview"></pre>
+        </section>
+
+        <section class="lab-card" id="xpath-panel" data-console-node="xpath">
+          <div class="card-head">
+            <span class="card-badge">XPATH</span>
+            <h2 class="card-title">Paragraph Nodes</h2>
+          </div>
+          <p class="card-copy">$x("//p"), $x("//p[a]"), $x(path, startNode) 예제를 위한 영역입니다.</p>
+          <div id="start-node-scope" class="paragraph-stack">
+            <p id="paragraph-3" class="xpath-paragraph">Scoped paragraph inside startNode.</p>
+            <p id="paragraph-4" class="xpath-paragraph">
+              <a
+                href="https://developer.chrome.com/docs/devtools/console/utilities?hl=ko"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Console Utilities
+              </a>
+              링크가 포함된 scoped paragraph 입니다.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

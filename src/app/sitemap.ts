@@ -1,13 +1,8 @@
 import type { MetadataRoute } from "next";
 
-const DEFAULT_SITE_URL = "http://localhost:3000";
+import { getSiteUrl } from "@/lib/siteUrl";
 
-const siteUrl = (() => {
-  const envSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (!envSiteUrl) return DEFAULT_SITE_URL;
-  if (envSiteUrl.startsWith("http://") || envSiteUrl.startsWith("https://")) return envSiteUrl;
-  return `https://${envSiteUrl}`;
-})();
+const siteUrl = getSiteUrl();
 
 const APP_ROUTES = [
   "/",
@@ -24,6 +19,14 @@ const APP_ROUTES = [
   "/css/container-queries",
   "/css/reference",
   "/console",
+  "/console/understand-messages",
+  "/console/log",
+  "/console/javascript",
+  "/console/live-expressions",
+  "/console/format-style",
+  "/console/reference",
+  "/console/utilities",
+  "/console/api",
   "/sources",
   "/network",
   "/recorder",

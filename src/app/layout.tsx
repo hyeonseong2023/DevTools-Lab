@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { PageShell } from "@/components/layout/PageShell";
+import { getSiteUrl } from "@/lib/siteUrl";
 import { QueryProvider } from "@/providers/QueryProvider";
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_KR } from "next/font/google";
@@ -11,14 +12,7 @@ const notoSansKr = Noto_Sans_KR({
   variable: "--font-noto-sans-kr",
 });
 
-const DEFAULT_SITE_URL = "http://localhost:3000";
-
-const siteUrl = (() => {
-  const envSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (!envSiteUrl) return DEFAULT_SITE_URL;
-  if (envSiteUrl.startsWith("http://") || envSiteUrl.startsWith("https://")) return envSiteUrl;
-  return `https://${envSiteUrl}`;
-})();
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -103,7 +97,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.gstatic.com" crossOrigin="" />
         <link rel="dns-prefetch" href="//www.gstatic.com" />
       </head>
-      <body className={`${notoSansKr.variable} bg-slate-50 text-slate-900 antialiased`}>
+      <body className={`${notoSansKr.variable} bg-white text-slate-900 antialiased`}>
         <QueryProvider>
           <div className="min-h-screen">
             <Header />

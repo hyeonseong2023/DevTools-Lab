@@ -1,6 +1,5 @@
-import { ComingSoonPanel } from "@/components/guide/ComingSoonPanel";
-import { getPanelOrThrow } from "@/lib/panels";
+import { ConsoleLabWorkspace } from "@/components/labs/console/ConsoleLabWorkspace";
 
 export default function ConsolePage() {
-  return <ComingSoonPanel panel={getPanelOrThrow("console")} />;
+  return <ConsoleLabWorkspace />;
 }

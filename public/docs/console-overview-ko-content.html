@@ -1,0 +1,174 @@
+<p><style>
+.wd-authors {
+  --avatar-size: 65px;
+  display: flex;
+  gap: 2em;
+}
+
+.wd-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  line-height: calc(var(--avatar-size) / 2);
+}
+
+.wd-author img {
+  border-radius: 50%;
+  height: var(--avatar-size, 65px);
+  width: var(--avatar-size, 65px);
+}
+
+.dcc-authors {
+  --avatar-size: 65px;
+  display: flex;
+  gap: 2em;
+}
+
+.dcc-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  line-height: calc(var(--avatar-size) / 2);
+}
+
+.dcc-author img {
+  border-radius: 50%;
+  height: var(--avatar-size, 65px);
+  width: var(--avatar-size, 65px);
+}
+  
+.dcc-author__links {
+  display: flex;
+}
+
+.dcc-author__links a {
+  margin-inline-end: 6px;
+}
+
+.dcc-author__links a:last-of-type {
+  margin-inline-end: 0;
+}
+</style>
+
+</p><div class="dcc-authors" translate="no">
+  
+    
+    
+      <div class="dcc-author">
+        
+          <img alt="Kayce Basques" class="devsite-landing-row-item-icon" decoding="async" height="64" loading="lazy" src="https://web.dev/images/authors/kaycebasques.jpg?hl=ko" width="64" /> 
+        
+        <div>
+          <span> 
+            Kayce Basques
+          </span>
+          <div class="dcc-author__links">
+            
+              <a aria-label="Kayce Basques on X" href="https://twitter.com/kaycebasques" rel="me">
+                <svg height="22" viewBox="0 0 300 271" width="22" xmlns="http://www.w3.org/2000/svg">
+                  <title>X</title>
+                  <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z" fill="currentColor"></path>
+                </svg></a>
+            
+            
+              <a aria-label="Kayce Basques on GitHub" href="https://github.com/kaycebasques" rel="me">
+                <svg height="22" viewBox="0 0 32.6 31.8" width="22" xmlns="http://www.w3.org/2000/svg">
+                  <title>GitHub</title>
+                  <path clip-rule="evenodd" d="M16.3 0C7.3 0 0 7.3 0 16.3c0 7.2 4.7 13.3 11.1 15.5.8.1 1.1-.4 1.1-.8v-2.8c-4.5 1-5.5-2.2-5.5-2.2-.7-1.9-1.8-2.4-1.8-2.4-1.5-1 .1-1 .1-1 1.6.1 2.5 1.7 2.5 1.7 1.5 2.5 3.8 1.8 4.7 1.4.1-1.1.6-1.8 1-2.2-3.6-.4-7.4-1.8-7.4-8.1 0-1.8.6-3.2 1.7-4.4-.1-.3-.7-2 .2-4.2 0 0 1.4-.4 4.5 1.7 1.3-.4 2.7-.5 4.1-.5 1.4 0 2.8.2 4.1.5 3.1-2.1 4.5-1.7 4.5-1.7.9 2.2.3 3.9.2 4.3 1 1.1 1.7 2.6 1.7 4.4 0 6.3-3.8 7.6-7.4 8 .6.5 1.1 1.5 1.1 3V31c0 .4.3.9 1.1.8 6.5-2.2 11.1-8.3 11.1-15.5C32.6 7.3 25.3 0 16.3 0z" fill="currentColor" fill-rule="evenodd"></path>
+                </svg></a>
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    
+  
+</div><p></p>
+
+<p><strong>콘솔</strong>을 사용하여 JavaScript 웹 애플리케이션을 테스트하고 디버그합니다.</p>
+
+<p><devsite-video video-id="76U0gtuV9AY"></devsite-video></p>
+
+<h2 data-text="개요" id="overview" tabindex="-1">개요</h2>
+
+<p>이 페이지에서는 Chrome DevTools <strong>콘솔</strong>을 사용하여 웹페이지를 더 쉽게 개발하는 방법을 설명합니다. <strong>콘솔</strong>에는 <a href="#view">로깅된 메시지 보기</a>와 <a href="#javascript">JavaScript 실행</a>이라는 두 가지 기본 용도가 있습니다.</p>
+
+<h2 data-text="콘솔 열기" id="open_the_console" tabindex="-1">콘솔 열기</h2>
+
+<p><strong>Console</strong>을 패널로 열거나 Drawer에서 탭으로 열 수 있습니다. 방법을 알아보려면 기능 참조의 <a href="https://developer.chrome.com/docs/devtools/console/reference?hl=ko#open">Console 열기</a>를 참고하세요.</p>
+
+<h2 data-text="로깅된 메시지 보기" id="view" tabindex="-1">로깅된 메시지 보기</h2>
+
+<p>웹 개발자는 JavaScript가 예상대로 작동하는지 확인하기 위해 <strong>콘솔</strong>에 메시지를 로깅하는 경우가 많습니다. 메시지를 로깅하려면 <code dir="ltr" translate="no">console.log(&#39;Hello, Console!&#39;)</code>와 같은 표현식을 JavaScript에 삽입합니다. 브라우저가 JavaScript를 실행하고 이와 같은 표현식을 발견하면 메시지를 <strong>콘솔</strong>에 로깅해야 함을 알 수 있습니다. 예를 들어 페이지의 HTML과 JavaScript를 작성하는 중이라고 가정해 보겠습니다.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="HTML"><code translate="no" dir="ltr">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Console Demo&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;script&gt;
+      console.log('Loading!');
+      const h1 = document.querySelector('h1');
+      console.log(h1.textContent);
+      console.assert(document.querySelector('h2'), 'h2 not found!');
+      const artists = [
+        {
+          first: 'René',
+          last: 'Magritte'
+        },
+        {
+          first: 'Chaim',
+          last: 'Soutine'
+        },
+        {
+          first: 'Henri',
+          last: 'Matisse'
+        }
+      ];
+      console.table(artists);
+      setTimeout(() =&gt; {
+        h1.textContent = 'Hello, Console!';
+        console.log(h1.textContent);
+      }, 3000);
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></devsite-code>
+<p><strong>그림 1</strong>은 페이지를 로드하고 3초 동안 기다린 후 <strong>콘솔</strong>이 어떻게 표시되는지 보여줍니다. 브라우저에서 메시지를 로깅하게 된 코드 줄을 파악해 보세요.</p>
+
+<p><img alt="Console 패널" height="437" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-dc4828392d194.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-dc4828392d194_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-dc4828392d194_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-dc4828392d194_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-dc4828392d194_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-dc4828392d194_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-dc4828392d194_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-dc4828392d194_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-dc4828392d194_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-dc4828392d194_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-dc4828392d194_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-dc4828392d194_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 1</strong>. <strong>콘솔</strong> 패널</p>
+
+<p>웹 개발자는 일반적으로 다음 두 가지 이유로 메시지를 로깅합니다.</p>
+
+<ul>
+<li>코드가 올바른 순서로 실행되는지 확인합니다.</li>
+<li>특정 시점의 변수 값 검사</li>
+</ul>
+
+<p>로그를 직접 사용해 보려면 <a href="https://developer.chrome.com/docs/devtools/console/log?hl=ko">로그 메시지 시작하기</a>를 참고하세요. <code dir="ltr" translate="no">console</code> 메서드의 전체 목록을 보려면 <a href="https://developer.chrome.com/docs/devtools/console/api?hl=ko">Console API 참조</a>를 참고하세요. 이 두 메서드의 주요 차이점은 로깅하는 데이터를 표시하는 방식입니다.</p>
+
+<h2 data-text="JavaScript 실행" id="javascript" tabindex="-1">JavaScript 실행</h2>
+
+<p><strong>Console</strong>은 <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a>이기도 합니다. <strong>콘솔</strong>에서 JavaScript를 실행하여 검사 중인 페이지와 상호작용할 수 있습니다. 예를 들어 <strong>그림 2</strong>는 DevTools 홈페이지 옆에 있는 <strong>Console</strong>을 보여주고 <strong>그림 3</strong>은 <strong>Console</strong>을 사용하여 페이지 제목을 변경한 후의 동일한 페이지를 보여줍니다.</p>
+
+<p><img alt="DevTools 홈페이지 옆에 있는 Console 패널" height="507" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-next-t-9c932aff8f795.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-next-t-9c932aff8f795_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-next-t-9c932aff8f795_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-next-t-9c932aff8f795_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-next-t-9c932aff8f795_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-next-t-9c932aff8f795_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-next-t-9c932aff8f795_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-next-t-9c932aff8f795_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-next-t-9c932aff8f795_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-next-t-9c932aff8f795_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-next-t-9c932aff8f795_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/image/the-console-panel-next-t-9c932aff8f795_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 2</strong>. DevTools 홈페이지 옆에 있는 <strong>콘솔</strong> 패널</p>
+
+<p><img alt="Console을 사용하여 페이지 제목을 변경합니다." height="507" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/image/using-console-change-p-21db569361b85.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/image/using-console-change-p-21db569361b85_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/image/using-console-change-p-21db569361b85_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/image/using-console-change-p-21db569361b85_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/image/using-console-change-p-21db569361b85_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/image/using-console-change-p-21db569361b85_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/image/using-console-change-p-21db569361b85_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/image/using-console-change-p-21db569361b85_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/image/using-console-change-p-21db569361b85_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/image/using-console-change-p-21db569361b85_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/image/using-console-change-p-21db569361b85_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/image/using-console-change-p-21db569361b85_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 3</strong>. <strong>Console</strong>을 사용하여 페이지 제목을 변경합니다.</p>
+
+<p><strong>Console</strong>은 페이지의 <a href="https://developer.mozilla.org/docs/Web/API/Window"><code dir="ltr" translate="no">window</code></a>에 대한 전체 액세스 권한이 있으므로 <strong>Console</strong>에서 페이지를 수정할 수 있습니다. DevTools에는 페이지를 더 쉽게 검사할 수 있는 몇 가지 편의 함수가 있습니다. 예를 들어 JavaScript에 <code dir="ltr" translate="no">hideModal</code>라는 함수가 포함되어 있다고 가정해 보겠습니다. <code dir="ltr" translate="no">debug(hideModal)</code>를 실행하면 다음에 호출될 때 <code dir="ltr" translate="no">hideModal</code>의 첫 번째 줄에서 코드가 일시중지됩니다.
+유틸리티 함수의 전체 목록은 <a href="https://developer.chrome.com/docs/devtools/console/utilities?hl=ko#debug">Console Utilities API 참조</a>를 참고하세요.</p>
+
+<p>JavaScript를 실행할 때 페이지와 상호작용할 필요가 없습니다. <strong>Console</strong>을 사용하여 페이지와 관련 없는 새 코드를 사용해 볼 수 있습니다. 예를 들어 내장 JavaScript 배열 메서드 <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map"><code dir="ltr" translate="no">map()</code></a>에 관해 방금 알아봤는데 이 메서드를 실험해 보려고 한다고 가정해 보겠습니다. <strong>Console</strong>은 함수를 사용해 보는 데 적합한 곳입니다.</p>
+
+<p><strong>콘솔</strong>에서 JavaScript를 실행하는 방법을 직접 경험하려면 <a href="https://developer.chrome.com/docs/devtools/console/javascript?hl=ko">JavaScript 실행 시작하기</a>를 참고하세요.</p>

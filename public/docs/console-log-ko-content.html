@@ -1,0 +1,283 @@
+<p><style>
+.wd-authors {
+  --avatar-size: 65px;
+  display: flex;
+  gap: 2em;
+}
+
+.wd-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  line-height: calc(var(--avatar-size) / 2);
+}
+
+.wd-author img {
+  border-radius: 50%;
+  height: var(--avatar-size, 65px);
+  width: var(--avatar-size, 65px);
+}
+
+.dcc-authors {
+  --avatar-size: 65px;
+  display: flex;
+  gap: 2em;
+}
+
+.dcc-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  line-height: calc(var(--avatar-size) / 2);
+}
+
+.dcc-author img {
+  border-radius: 50%;
+  height: var(--avatar-size, 65px);
+  width: var(--avatar-size, 65px);
+}
+  
+.dcc-author__links {
+  display: flex;
+}
+
+.dcc-author__links a {
+  margin-inline-end: 6px;
+}
+
+.dcc-author__links a:last-of-type {
+  margin-inline-end: 0;
+}
+</style>
+
+</p><div class="dcc-authors" translate="no">
+  
+    
+    
+      <div class="dcc-author">
+        
+          <img alt="Kayce Basques" class="devsite-landing-row-item-icon" decoding="async" height="64" loading="lazy" src="https://web.dev/images/authors/kaycebasques.jpg?hl=ko" width="64" /> 
+        
+        <div>
+          <span> 
+            Kayce Basques
+          </span>
+          <div class="dcc-author__links">
+            
+              <a aria-label="Kayce Basques on X" href="https://twitter.com/kaycebasques" rel="me">
+                <svg height="22" viewBox="0 0 300 271" width="22" xmlns="http://www.w3.org/2000/svg">
+                  <title>X</title>
+                  <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z" fill="currentColor"></path>
+                </svg></a>
+            
+            
+              <a aria-label="Kayce Basques on GitHub" href="https://github.com/kaycebasques" rel="me">
+                <svg height="22" viewBox="0 0 32.6 31.8" width="22" xmlns="http://www.w3.org/2000/svg">
+                  <title>GitHub</title>
+                  <path clip-rule="evenodd" d="M16.3 0C7.3 0 0 7.3 0 16.3c0 7.2 4.7 13.3 11.1 15.5.8.1 1.1-.4 1.1-.8v-2.8c-4.5 1-5.5-2.2-5.5-2.2-.7-1.9-1.8-2.4-1.8-2.4-1.5-1 .1-1 .1-1 1.6.1 2.5 1.7 2.5 1.7 1.5 2.5 3.8 1.8 4.7 1.4.1-1.1.6-1.8 1-2.2-3.6-.4-7.4-1.8-7.4-8.1 0-1.8.6-3.2 1.7-4.4-.1-.3-.7-2 .2-4.2 0 0 1.4-.4 4.5 1.7 1.3-.4 2.7-.5 4.1-.5 1.4 0 2.8.2 4.1.5 3.1-2.1 4.5-1.7 4.5-1.7.9 2.2.3 3.9.2 4.3 1 1.1 1.7 2.6 1.7 4.4 0 6.3-3.8 7.6-7.4 8 .6.5 1.1 1.5 1.1 3V31c0 .4.3.9 1.1.8 6.5-2.2 11.1-8.3 11.1-15.5C32.6 7.3 25.3 0 16.3 0z" fill="currentColor" fill-rule="evenodd"></path>
+                </svg></a>
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    
+  
+</div><p></p>
+
+<p>이 대화형 튜토리얼에서는 <a href="https://developer.chrome.com/docs/devtools?hl=ko">Chrome DevTools</a> 콘솔에서 메시지를 로깅하고 필터링하는 방법을 보여줍니다.</p>
+
+<p><devsite-video video-id="76U0gtuV9AY"></devsite-video>
+<img alt="콘솔의 메시지" height="536" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/messages-the-console-2af86cf0398ed.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/messages-the-console-2af86cf0398ed_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/messages-the-console-2af86cf0398ed_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/messages-the-console-2af86cf0398ed_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/messages-the-console-2af86cf0398ed_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/messages-the-console-2af86cf0398ed_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/messages-the-console-2af86cf0398ed_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/messages-the-console-2af86cf0398ed_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/messages-the-console-2af86cf0398ed_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/messages-the-console-2af86cf0398ed_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/messages-the-console-2af86cf0398ed_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/messages-the-console-2af86cf0398ed_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p>이 튜토리얼은 순서대로 완료할 수 있도록 설계되었습니다. 이 가이드에서는 JavaScript를 사용하여 페이지에 상호작용을 추가하는 방법과 같은 웹 개발의 기본사항을 알고 있다고 가정합니다.</p>
+
+<h2 data-text="데모 및 DevTools 설정" id="setup" tabindex="-1">데모 및 DevTools 설정</h2>
+
+<p>이 튜토리얼에서는 데모를 열고 모든 워크플로를 직접 사용해 볼 수 있도록 설계되었습니다. 직접 따라 하면 나중에 워크플로를 기억할 가능성이 높아집니다.</p>
+
+<ol>
+<li><a href="https://chrome.dev/devtools-console-log/">데모</a>를 엽니다.</li>
+<li><p>선택사항: 데모를 별도의 창으로 이동합니다. 이 예시에서는 튜토리얼이 왼쪽에, 데모가 오른쪽에 있습니다.</p>
+
+<p><img alt="왼쪽에 튜토리얼이 있고 오른쪽에 데모가 있습니다." height="482" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/this-tutorial-the-left-4af02eb8f90ac.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/this-tutorial-the-left-4af02eb8f90ac_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/this-tutorial-the-left-4af02eb8f90ac_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/this-tutorial-the-left-4af02eb8f90ac_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/this-tutorial-the-left-4af02eb8f90ac_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/this-tutorial-the-left-4af02eb8f90ac_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/this-tutorial-the-left-4af02eb8f90ac_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/this-tutorial-the-left-4af02eb8f90ac_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/this-tutorial-the-left-4af02eb8f90ac_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/this-tutorial-the-left-4af02eb8f90ac_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/this-tutorial-the-left-4af02eb8f90ac_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/this-tutorial-the-left-4af02eb8f90ac_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p>데모에 포커스를 맞춘 다음 <kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd> 또는 <kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>J</kbd> (Mac)를 눌러 DevTools를 엽니다. 기본적으로 DevTools는 데모 오른쪽에 열립니다.</p>
+
+<p><img alt="DevTools가 데모 오른쪽에 열립니다." height="482" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-the-right-5800bd41ead2.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-the-right-5800bd41ead2_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-the-right-5800bd41ead2_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-the-right-5800bd41ead2_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-the-right-5800bd41ead2_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-the-right-5800bd41ead2_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-the-right-5800bd41ead2_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-the-right-5800bd41ead2_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-the-right-5800bd41ead2_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-the-right-5800bd41ead2_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-the-right-5800bd41ead2_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-the-right-5800bd41ead2_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p>선택사항: <a href="https://developer.chrome.com/docs/devtools/customize?hl=ko#placement">DevTools를 창 하단에 고정하거나 별도의 창으로 고정 해제</a>합니다.</p>
+
+<p>DevTools가 데모 하단에 고정됨:
+<img alt="DevTools가 데모 하단에 고정됨" height="482" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-docked-the-bott-b442b810e7ad.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-docked-the-bott-b442b810e7ad_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-docked-the-bott-b442b810e7ad_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-docked-the-bott-b442b810e7ad_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-docked-the-bott-b442b810e7ad_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-docked-the-bott-b442b810e7ad_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-docked-the-bott-b442b810e7ad_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-docked-the-bott-b442b810e7ad_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-docked-the-bott-b442b810e7ad_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-docked-the-bott-b442b810e7ad_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-docked-the-bott-b442b810e7ad_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-docked-the-bott-b442b810e7ad_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p>DevTools가 별도의 창에서 고정 해제됨:
+<img alt="DevTools가 별도의 창에서 고정 해제됩니다." height="482" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-undocked-a-sepa-7d140f97361f.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-undocked-a-sepa-7d140f97361f_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-undocked-a-sepa-7d140f97361f_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-undocked-a-sepa-7d140f97361f_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-undocked-a-sepa-7d140f97361f_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-undocked-a-sepa-7d140f97361f_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-undocked-a-sepa-7d140f97361f_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-undocked-a-sepa-7d140f97361f_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-undocked-a-sepa-7d140f97361f_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-undocked-a-sepa-7d140f97361f_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-undocked-a-sepa-7d140f97361f_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-undocked-a-sepa-7d140f97361f_2880.png?hl=ko 2880w" width="800" /></p></li>
+</ol>
+
+<h2 data-text="JavaScript에서 로깅된 메시지 보기" id="javascript" tabindex="-1">JavaScript에서 로깅된 메시지 보기</h2>
+
+<p><strong>콘솔</strong>에 표시되는 대부분의 메시지는 페이지의 JavaScript를 작성한 웹 개발자가 보낸 것입니다. 이 섹션에서는 Console에 표시될 수 있는 다양한 메시지 유형을 소개하고 자체 JavaScript에서 각 메시지 유형을 직접 로깅하는 방법을 설명합니다.</p>
+
+<ol>
+<li><p>데모에서 <strong>Log Info</strong>(정보 로깅) 버튼을 클릭합니다. <code dir="ltr" translate="no">Hello, Console!</code>가 콘솔에 기록됩니다.</p>
+
+<p><img alt="로그 정보를 클릭한 후의 콘솔" height="503" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-2dc33fc61f7f9.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-2dc33fc61f7f9_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-2dc33fc61f7f9_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-2dc33fc61f7f9_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-2dc33fc61f7f9_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-2dc33fc61f7f9_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-2dc33fc61f7f9_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-2dc33fc61f7f9_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-2dc33fc61f7f9_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-2dc33fc61f7f9_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-2dc33fc61f7f9_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-2dc33fc61f7f9_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>콘솔</strong>의 <code dir="ltr" translate="no">Hello, Console!</code> 메시지 옆에 있는 <strong>log.js:2</strong>를 클릭합니다. <strong>소스</strong> 패널이 열리고 메시지가 콘솔에 로깅된 원인이 된 코드 줄이 강조 표시됩니다. </p>
+
+<p><img alt="log.js:2를 클릭하면 DevTools에서 소스 패널이 열립니다." height="503" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-sources-p-81c49cb5c7158.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-sources-p-81c49cb5c7158_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-sources-p-81c49cb5c7158_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-sources-p-81c49cb5c7158_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-sources-p-81c49cb5c7158_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-sources-p-81c49cb5c7158_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-sources-p-81c49cb5c7158_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-sources-p-81c49cb5c7158_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-sources-p-81c49cb5c7158_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-sources-p-81c49cb5c7158_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-sources-p-81c49cb5c7158_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/devtools-opens-sources-p-81c49cb5c7158_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p>페이지의 JavaScript가 <code dir="ltr" translate="no">console.log(&#39;Hello, Console!&#39;)</code>를 호출할 때 메시지가 기록되었습니다.</p></li>
+<li><p>다음 워크플로 중 하나를 사용하여 <strong>Console</strong>로 다시 이동합니다.</p>
+
+<ul>
+<li><strong>콘솔</strong> 탭을 클릭합니다.</li>
+<li><strong>콘솔</strong>에 포커스가 맞을 때까지 <kbd>Control</kbd>+<kbd>[</kbd> 또는 <kbd>Command</kbd>+<kbd>[</kbd> (Mac) 키를 누릅니다.</li>
+<li><a href="https://developer.chrome.com/docs/devtools/command-menu?hl=ko">명령어 메뉴를 열고</a> <code dir="ltr" translate="no">Console</code>를 입력하기 시작합니다. <strong>콘솔 패널 표시</strong> 명령어를 선택한 다음 <kbd>Enter</kbd> 키를 누릅니다.</li>
+</ul></li>
+<li><p>데모에서 <strong>Log Warning</strong>(경고 로깅) 버튼을 클릭합니다. <code dir="ltr" translate="no">Abandon Hope All Ye Who Enter</code>이 콘솔에 로깅됩니다.</p>
+
+<p><img alt="&amp;#39;로그 경고&amp;#39;를 클릭한 후의 콘솔" height="503" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-3f2451f4996bf.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-3f2451f4996bf_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-3f2451f4996bf_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-3f2451f4996bf_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-3f2451f4996bf_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-3f2451f4996bf_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-3f2451f4996bf_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-3f2451f4996bf_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-3f2451f4996bf_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-3f2451f4996bf_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-3f2451f4996bf_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-clicking-log-3f2451f4996bf_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p>이 형식의 메시지는 경고입니다.</p></li>
+<li><p>선택사항: <strong>log.js:12</strong>를 클릭하여 메시지의 형식이 이렇게 지정된 원인이 된 코드를 확인한 다음 완료되면 <strong>Console</strong>로 돌아갑니다. 메시지가 특정 방식으로 로깅되도록 한 코드를 확인할 때마다 이 작업을 실행합니다.</p></li>
+<li><p><code dir="ltr" translate="no">Abandon Hope All Ye Who Enter</code> 앞에 있는 <strong>펼치기</strong> <img alt="펼치기" height="20" src="https://developer.chrome.com/static/docs/devtools/console/log/image/expand-36b6b1f9954e2.svg?hl=ko" width="20" /> 아이콘을 클릭합니다. DevTools에는 호출로 이어지는 <a href="https://en.wikipedia.org/wiki/Stack_trace">스택 트레이스</a>가 표시됩니다.</p>
+
+<p><img alt="스택 트레이스" height="503" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/a-stack-trace-f2018385e82b8.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/a-stack-trace-f2018385e82b8_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-stack-trace-f2018385e82b8_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-stack-trace-f2018385e82b8_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-stack-trace-f2018385e82b8_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-stack-trace-f2018385e82b8_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-stack-trace-f2018385e82b8_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-stack-trace-f2018385e82b8_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-stack-trace-f2018385e82b8_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-stack-trace-f2018385e82b8_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-stack-trace-f2018385e82b8_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-stack-trace-f2018385e82b8_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p>스택 트레이스는 <code dir="ltr" translate="no">logWarning</code>라는 함수가 호출되었고 이 함수가 <code dir="ltr" translate="no">quoteDante</code>라는 함수를 호출했다고 알려줍니다. 즉, 먼저 발생한 호출이 스택 트레이스의 맨 아래에 있습니다. 언제든지 <code dir="ltr" translate="no">console.trace()</code>를 호출하여 스택 트레이스를 로깅할 수 있습니다.</p></li>
+<li><p><strong>오류 기록</strong>을 클릭합니다. 다음과 같은 오류 메시지가 로깅됩니다.
+<code dir="ltr" translate="no">I&#39;m sorry, Dave. I&#39;m afraid I can&#39;t do that.</code></p>
+
+<p><img alt="오류 메시지" height="532" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/an-error-message-51ddf1f8474c2.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/an-error-message-51ddf1f8474c2_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/an-error-message-51ddf1f8474c2_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/an-error-message-51ddf1f8474c2_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/an-error-message-51ddf1f8474c2_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/an-error-message-51ddf1f8474c2_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/an-error-message-51ddf1f8474c2_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/an-error-message-51ddf1f8474c2_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/an-error-message-51ddf1f8474c2_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/an-error-message-51ddf1f8474c2_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/an-error-message-51ddf1f8474c2_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/an-error-message-51ddf1f8474c2_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>로그 테이블</strong>을 클릭합니다. 유명 아티스트에 관한 표가 콘솔에 로깅됩니다.</p>
+
+<p><img alt="콘솔의 테이블" height="490" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/a-table-the-console-6f0c7760ab665.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/a-table-the-console-6f0c7760ab665_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-table-the-console-6f0c7760ab665_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-table-the-console-6f0c7760ab665_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-table-the-console-6f0c7760ab665_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-table-the-console-6f0c7760ab665_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-table-the-console-6f0c7760ab665_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-table-the-console-6f0c7760ab665_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-table-the-console-6f0c7760ab665_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-table-the-console-6f0c7760ab665_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-table-the-console-6f0c7760ab665_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-table-the-console-6f0c7760ab665_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><code dir="ltr" translate="no">birthday</code> 열이 한 행에만 채워지는 것을 볼 수 있습니다. 코드를 확인하여 이유를 알아봅니다.</p></li>
+<li><p><strong>로그 그룹</strong>을 클릭합니다. 범죄와 싸우는 유명한 거북이 4마리의 이름이 <code dir="ltr" translate="no">Adolescent Irradiated Espionage Tortoises</code> 라벨 아래에 그룹화되어 있습니다.</p>
+
+<p><img alt="Console의 메시지 그룹입니다." height="490" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/a-group-messages-the-co-ae97a71228068.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/a-group-messages-the-co-ae97a71228068_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-group-messages-the-co-ae97a71228068_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-group-messages-the-co-ae97a71228068_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-group-messages-the-co-ae97a71228068_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-group-messages-the-co-ae97a71228068_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-group-messages-the-co-ae97a71228068_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-group-messages-the-co-ae97a71228068_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-group-messages-the-co-ae97a71228068_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-group-messages-the-co-ae97a71228068_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-group-messages-the-co-ae97a71228068_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-group-messages-the-co-ae97a71228068_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>Log Custom</strong>(맞춤 로그)을 클릭합니다. 빨간색 테두리와 파란색 배경이 있는 메시지가 Console에 로깅됩니다.</p>
+
+<p><img alt="Console에 맞춤 형식이 적용된 메시지" height="490" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/a-message-custom-formatt-bd75e216f3be4.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/a-message-custom-formatt-bd75e216f3be4_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-message-custom-formatt-bd75e216f3be4_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-message-custom-formatt-bd75e216f3be4_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-message-custom-formatt-bd75e216f3be4_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-message-custom-formatt-bd75e216f3be4_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-message-custom-formatt-bd75e216f3be4_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-message-custom-formatt-bd75e216f3be4_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-message-custom-formatt-bd75e216f3be4_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-message-custom-formatt-bd75e216f3be4_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-message-custom-formatt-bd75e216f3be4_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-message-custom-formatt-bd75e216f3be4_2880.png?hl=ko 2880w" width="800" /></p></li>
+</ol>
+
+<p>여기서 중요한 점은 JavaScript에서 <strong>콘솔</strong>에 메시지를 로깅하려면 <code dir="ltr" translate="no">console</code> 메서드 중 하나를 사용해야 한다는 것입니다. 각 메서드는 메시지 형식을 다르게 지정합니다.</p>
+
+<p>이 섹션에서 설명한 것보다 더 많은 메서드가 있습니다. 튜토리얼의 끝부분에서는 나머지 메서드를 살펴보는 방법을 알아봅니다.</p>
+
+<h2 data-text="브라우저에서 로깅한 메시지 보기" id="browser" tabindex="-1">브라우저에서 로깅한 메시지 보기</h2>
+
+<p>브라우저도 콘솔에 메시지를 로깅합니다. 이는 일반적으로 페이지에 문제가 있을 때 발생합니다.</p>
+
+<ol>
+<li><p><strong>404 원인</strong>을 클릭합니다. 페이지의 JavaScript가 존재하지 않는 파일을 가져오려고 시도했기 때문에 브라우저에 <code dir="ltr" translate="no">404</code> 네트워크 오류가 로깅됩니다.</p>
+
+<p><img alt="콘솔에 404 오류가 표시됩니다." height="518" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/a-404-error-the-console-8571bb1530643.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/a-404-error-the-console-8571bb1530643_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-404-error-the-console-8571bb1530643_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-404-error-the-console-8571bb1530643_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-404-error-the-console-8571bb1530643_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-404-error-the-console-8571bb1530643_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-404-error-the-console-8571bb1530643_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-404-error-the-console-8571bb1530643_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-404-error-the-console-8571bb1530643_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-404-error-the-console-8571bb1530643_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-404-error-the-console-8571bb1530643_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-404-error-the-console-8571bb1530643_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>Cause Error</strong>를 클릭합니다. JavaScript가 존재하지 않는 DOM 노드를 업데이트하려고 시도하므로 브라우저는 포착되지 않은 <code dir="ltr" translate="no">TypeError</code>를 로깅합니다.</p>
+
+<p><img alt="콘솔의 TypeError" height="518" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/a-typeerror-the-console-d35a906c890f.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/a-typeerror-the-console-d35a906c890f_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-typeerror-the-console-d35a906c890f_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-typeerror-the-console-d35a906c890f_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-typeerror-the-console-d35a906c890f_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-typeerror-the-console-d35a906c890f_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-typeerror-the-console-d35a906c890f_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-typeerror-the-console-d35a906c890f_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-typeerror-the-console-d35a906c890f_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-typeerror-the-console-d35a906c890f_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-typeerror-the-console-d35a906c890f_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-typeerror-the-console-d35a906c890f_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>로그 수준</strong> 드롭다운을 클릭하고 <strong>상세</strong> 옵션이 사용 중지되어 있으면 사용 설정합니다. 필터링에 관한 자세한 내용은 다음 섹션에서 알아봅니다. 이렇게 하면 로깅하는 다음 메시지가 표시됩니다. <strong>참고:</strong> 기본 수준 드롭다운이 사용 중지된 경우 Console 사이드바를 닫아야 할 수 있습니다. 아래에서 메시지 소스로 필터링하여 Console 사이드바에 대한 자세한 내용을 확인하세요.</p>
+
+<p><img alt="상세 로그 수준을 사용 설정합니다." height="518" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/enabling-verbose-log-lev-8a855bd063a9d.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/enabling-verbose-log-lev-8a855bd063a9d_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/enabling-verbose-log-lev-8a855bd063a9d_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/enabling-verbose-log-lev-8a855bd063a9d_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/enabling-verbose-log-lev-8a855bd063a9d_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/enabling-verbose-log-lev-8a855bd063a9d_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/enabling-verbose-log-lev-8a855bd063a9d_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/enabling-verbose-log-lev-8a855bd063a9d_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/enabling-verbose-log-lev-8a855bd063a9d_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/enabling-verbose-log-lev-8a855bd063a9d_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/enabling-verbose-log-lev-8a855bd063a9d_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/enabling-verbose-log-lev-8a855bd063a9d_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>Cause Violation</strong>을 클릭합니다. 페이지가 몇 초 동안 응답하지 않다가 브라우저가 <code dir="ltr" translate="no">[Violation] &#39;click&#39; handler took 3000ms</code> 메시지를 콘솔에 로깅합니다. 정확한 기간은 다를 수 있습니다.</p>
+
+<p><img alt="Console의 위반사항" height="518" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/a-violation-the-console-fb6d367454b6.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/a-violation-the-console-fb6d367454b6_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-violation-the-console-fb6d367454b6_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-violation-the-console-fb6d367454b6_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-violation-the-console-fb6d367454b6_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-violation-the-console-fb6d367454b6_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-violation-the-console-fb6d367454b6_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-violation-the-console-fb6d367454b6_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-violation-the-console-fb6d367454b6_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-violation-the-console-fb6d367454b6_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-violation-the-console-fb6d367454b6_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/a-violation-the-console-fb6d367454b6_2880.png?hl=ko 2880w" width="800" /></p></li>
+</ol>
+
+<h2 data-text="메시지 필터링하기" id="filter" tabindex="-1">메시지 필터링하기</h2>
+
+<p>일부 페이지에서는 <strong>Console</strong>에 메시지가 너무 많이 표시됩니다. DevTools는 현재 작업과 관련 없는 메시지를 필터링하는 다양한 방법을 제공합니다.</p>
+
+<aside class="key-point"><b>핵심사항:</b> <strong>콘솔</strong>은 출력 메시지만 필터링하며 <strong>콘솔</strong>에 입력한 모든 입력값은 그대로 유지됩니다.</aside>
+
+<h3 data-text="로그 수준으로 필터링" id="level" tabindex="-1">로그 수준으로 필터링</h3>
+
+<p>각 <code dir="ltr" translate="no">console.*</code> 메서드에는 심각도 수준(<code dir="ltr" translate="no">Verbose</code>, <code dir="ltr" translate="no">Info</code>, <code dir="ltr" translate="no">Warning</code>, <code dir="ltr" translate="no">Error</code>)이 할당됩니다. 예를 들어 <code dir="ltr" translate="no">console.log()</code>는 <code dir="ltr" translate="no">Info</code> 수준 메시지이고 <code dir="ltr" translate="no">console.error()</code>는 <code dir="ltr" translate="no">Error</code> 수준 메시지입니다.</p>
+
+<aside class="note"><b>참고:</b> <code dir="ltr" translate="no">console.*</code> 메서드 및 심각도 수준의 전체 목록은 <a href="https://developer.chrome.com/docs/devtools/console/api?hl=ko">Console API 참조</a>를 참고하세요.</aside>
+
+<p>로그 수준으로 필터링하려면 다음 단계를 따르세요.</p>
+
+<ol>
+<li><p><strong>로그 수준</strong> 드롭다운을 클릭하고 <strong>오류</strong>를 사용 중지합니다. 옆에 체크표시가 더 이상 없으면 등급이 사용 중지된 것입니다. <code dir="ltr" translate="no">Error</code> 수준 메시지가 사라집니다.</p>
+
+<p><img alt="Console에서 오류 수준 메시지를 사용 중지합니다." height="518" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/disabling-error-level-mes-26d4f9c0232eb.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/disabling-error-level-mes-26d4f9c0232eb_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/disabling-error-level-mes-26d4f9c0232eb_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/disabling-error-level-mes-26d4f9c0232eb_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/disabling-error-level-mes-26d4f9c0232eb_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/disabling-error-level-mes-26d4f9c0232eb_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/disabling-error-level-mes-26d4f9c0232eb_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/disabling-error-level-mes-26d4f9c0232eb_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/disabling-error-level-mes-26d4f9c0232eb_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/disabling-error-level-mes-26d4f9c0232eb_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/disabling-error-level-mes-26d4f9c0232eb_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/disabling-error-level-mes-26d4f9c0232eb_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>로그 수준</strong> 드롭다운을 다시 클릭하고 <strong>오류</strong>를 다시 사용 설정합니다. <code dir="ltr" translate="no">Error</code> 수준 메시지가 다시 표시됩니다.</p></li>
+</ol>
+
+<aside class="key-point"><b>핵심사항:</b> <strong>콘솔</strong>은 항상 적용한 드롭다운 필터를 기억합니다. 페이지, DevTools, Chrome 새로고침 시에도 모든 페이지에 유지됩니다. 임시 필터를 빠르게 적용하려면 <a href="#source">측면 메뉴</a>를 사용하세요.</aside>
+
+<h3 data-text="텍스트로 필터링" id="text" tabindex="-1">텍스트로 필터링</h3>
+
+<p>특정 문자열이 포함된 메시지만 보려면 <strong>필터</strong> 텍스트 상자에 해당 문자열을 입력합니다.</p>
+
+<ol>
+<li><p><strong>필터</strong> 텍스트 상자에 <code dir="ltr" translate="no">Dave</code>를 입력합니다. <code dir="ltr" translate="no">Dave</code> 문자열이 포함되지 않은 모든 메시지는 숨겨집니다. <code dir="ltr" translate="no">Adolescent Irradiated Espionage Tortoises</code> 라벨이 표시될 수도 있습니다. 버그입니다.</p>
+
+<p><img alt="`Dave`가 포함되지 않은 메시지를 필터링합니다." height="518" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-d2a18f38d3088.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-d2a18f38d3088_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-d2a18f38d3088_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-d2a18f38d3088_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-d2a18f38d3088_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-d2a18f38d3088_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-d2a18f38d3088_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-d2a18f38d3088_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-d2a18f38d3088_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-d2a18f38d3088_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-d2a18f38d3088_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-d2a18f38d3088_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>필터</strong> 텍스트 상자에서 <code dir="ltr" translate="no">Dave</code>를 삭제합니다. 모든 메시지가 다시 표시됩니다.</p></li>
+</ol>
+
+<h3 data-text="정규 표현식으로 필터링" id="regex" tabindex="-1">정규 표현식으로 필터링</h3>
+
+<p>특정 문자열이 아닌 텍스트 패턴이 포함된 모든 메시지를 표시하려면 <a href="https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions">정규 표현식</a>을 사용하세요.</p>
+
+<ol>
+<li><p><strong>필터</strong> 텍스트 상자에 <code dir="ltr" translate="no">/^[AH]/</code>를 입력합니다. 이 패턴을 <a href="https://regexr.com">RegExr</a>에 입력하면 패턴이 하는 작업에 대한 설명이 표시됩니다.</p>
+
+<p><img alt="`/^[AH]/` 패턴과 일치하지 않는 메시지를 필터링합니다." height="518" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-a0b17462a87b8.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-a0b17462a87b8_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-a0b17462a87b8_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-a0b17462a87b8_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-a0b17462a87b8_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-a0b17462a87b8_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-a0b17462a87b8_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-a0b17462a87b8_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-a0b17462a87b8_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-a0b17462a87b8_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-a0b17462a87b8_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-any-message-d-a0b17462a87b8_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>필터</strong> 텍스트 상자에서 <code dir="ltr" translate="no">/^[AH]/</code>를 삭제합니다. 모든 메시지가 다시 표시됩니다.</p></li>
+</ol>
+
+<h3 data-text="메시지 소스별로 필터링" id="source" tabindex="-1">메시지 소스별로 필터링</h3>
+
+<p>특정 URL에서 전송된 메시지만 보려면 <strong>사이드바</strong>를 사용하세요.</p>
+
+<aside class="key-point"><b>핵심사항:</b> 사이드바 필터는 일시적입니다. <strong>콘솔</strong>은 페이지, DevTools, Chrome 새로고침 시 모든 페이지에 이러한 필터를 유지하지 않습니다.</aside>
+
+<ol>
+<li><p><strong>콘솔 사이드바 표시</strong>
+<img alt="콘솔 사이드바를 표시합니다." height="20" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/show-console-sidebar-bc1d4bdaf569.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/show-console-sidebar-bc1d4bdaf569_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/show-console-sidebar-bc1d4bdaf569_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/show-console-sidebar-bc1d4bdaf569_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/show-console-sidebar-bc1d4bdaf569_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/show-console-sidebar-bc1d4bdaf569_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/show-console-sidebar-bc1d4bdaf569_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/show-console-sidebar-bc1d4bdaf569_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/show-console-sidebar-bc1d4bdaf569_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/show-console-sidebar-bc1d4bdaf569_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/show-console-sidebar-bc1d4bdaf569_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/show-console-sidebar-bc1d4bdaf569_2880.png?hl=ko 2880w" width="25" />를 클릭합니다.</p>
+
+<p><img alt="사이드바" height="471" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/the-sidebar-4c65b3845f20d.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/the-sidebar-4c65b3845f20d_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-sidebar-4c65b3845f20d_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-sidebar-4c65b3845f20d_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-sidebar-4c65b3845f20d_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-sidebar-4c65b3845f20d_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-sidebar-4c65b3845f20d_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-sidebar-4c65b3845f20d_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-sidebar-4c65b3845f20d_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-sidebar-4c65b3845f20d_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-sidebar-4c65b3845f20d_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-sidebar-4c65b3845f20d_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>12개 메시지</strong> 옆에 있는 <strong>펼치기</strong> <img alt="펼치기" height="20" src="https://developer.chrome.com/static/docs/devtools/console/log/image/expand-850aaca14aaea.svg?hl=ko" width="20" /> 아이콘을 클릭합니다. <strong>측면 메뉴</strong>에는 메시지가 로깅된 URL 목록이 표시됩니다. 예를 들어 <code dir="ltr" translate="no">log.js</code>은 11개의 메시지를 일으켰습니다.</p>
+
+<p><img alt="사이드바에서 메일의 소스를 확인합니다." height="471" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/viewing-source-messages-944d7ccf4124a.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/viewing-source-messages-944d7ccf4124a_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/viewing-source-messages-944d7ccf4124a_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/viewing-source-messages-944d7ccf4124a_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/viewing-source-messages-944d7ccf4124a_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/viewing-source-messages-944d7ccf4124a_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/viewing-source-messages-944d7ccf4124a_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/viewing-source-messages-944d7ccf4124a_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/viewing-source-messages-944d7ccf4124a_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/viewing-source-messages-944d7ccf4124a_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/viewing-source-messages-944d7ccf4124a_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/viewing-source-messages-944d7ccf4124a_2880.png?hl=ko 2880w" width="800" /></p></li>
+</ol>
+
+<h3 data-text="사용자 메시지로 필터링" id="user" tabindex="-1">사용자 메시지로 필터링</h3>
+
+<p>앞서 <strong>Log Info</strong>를 클릭하면 <code dir="ltr" translate="no">console.log(&#39;Hello, Console!&#39;)</code>라는 스크립트가 메시지를 콘솔에 로깅했습니다. 이와 같이 JavaScript에서 로깅되는 메시지를 <em>사용자 메시지</em>라고 합니다. 반면 <strong>Cause 404</strong>를 클릭하면 브라우저에 요청된 리소스를 찾을 수 없다는 <code dir="ltr" translate="no">Error</code> 수준 메시지가 로깅되었습니다. 이러한 메시지는 <em>브라우저 메시지</em>로 간주됩니다. <strong>측면 메뉴</strong>를 사용하여 브라우저 메시지를 필터링하고 사용자 메시지만 표시할 수 있습니다.</p>
+
+<ol>
+<li><p><strong>9 사용자 메시지</strong>를 클릭합니다. 브라우저 메시지가 숨겨집니다.</p>
+
+<p><img alt="브라우저 메시지 필터링" height="471" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-browser-messag-a2f458422a56a.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-browser-messag-a2f458422a56a_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-browser-messag-a2f458422a56a_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-browser-messag-a2f458422a56a_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-browser-messag-a2f458422a56a_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-browser-messag-a2f458422a56a_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-browser-messag-a2f458422a56a_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-browser-messag-a2f458422a56a_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-browser-messag-a2f458422a56a_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-browser-messag-a2f458422a56a_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-browser-messag-a2f458422a56a_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/filtering-browser-messag-a2f458422a56a_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>12개 메시지</strong>를 클릭하여 모든 메시지를 다시 표시합니다.</p></li>
+</ol>
+
+<h2 data-text="다른 패널과 함께 Console 사용" id="drawer" tabindex="-1">다른 패널과 함께 <strong>Console</strong> 사용</h2>
+
+<p>스타일을 수정하는 중에 <strong>Console</strong> 로그에서 무언가를 빠르게 확인해야 하는 경우 어떻게 해야 하나요? Drawer를 사용합니다.</p>
+
+<ol>
+<li><strong>요소</strong> 탭을 클릭합니다.</li>
+<li><p><kbd>Escape</kbd> 키를 누릅니다. <strong>서랍</strong>의 <strong>콘솔</strong> 탭이 열립니다. 이 Console에는 이 튜토리얼에서 사용한 <strong>Console</strong>의 모든 기능이 있습니다.</p>
+
+<p><img alt="Drawer의 **Console** 탭" height="602" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-tab-the-1b9053d894023.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-tab-the-1b9053d894023_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-tab-the-1b9053d894023_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-tab-the-1b9053d894023_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-tab-the-1b9053d894023_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-tab-the-1b9053d894023_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-tab-the-1b9053d894023_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-tab-the-1b9053d894023_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-tab-the-1b9053d894023_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-tab-the-1b9053d894023_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-tab-the-1b9053d894023_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/console/log/image/the-console-tab-the-1b9053d894023_2880.png?hl=ko 2880w" width="800" /></p></li>
+</ol>
+
+<h2 data-text="다음 단계" id="next" tabindex="-1">다음 단계</h2>
+
+<p>축하합니다. 튜토리얼을 완료했습니다. <strong>트로피 지급</strong>을 클릭하여 트로피를 받습니다.</p>
+
+<ul>
+<li><strong>Console</strong> UI와 관련된 더 많은 기능과 워크플로를 살펴보려면 <a href="https://developer.chrome.com/docs/devtools/console/reference?hl=ko">Console 참조</a>를 참고하세요.</li>
+<li><a href="https://developer.chrome.com/docs/devtools/console/api?hl=ko">Console API 참조</a>에서 <a href="#javascript">JavaScript에서 로깅된 메시지 보기</a>에 설명된 모든 <code dir="ltr" translate="no">console</code> 메서드에 관해 자세히 알아보고 이 튜토리얼에서 다루지 않은 다른 <code dir="ltr" translate="no">console</code> 메서드를 살펴보세요.</li>
+<li>DevTools로 할 수 있는 다른 작업을 알아보려면 <a href="https://developer.chrome.com/docs/devtools/overview?hl=ko#start">시작하기</a>를 참고하세요.</li>
+<li>모든 <code dir="ltr" translate="no">console</code> 형식 및 스타일 지정 메서드에 관한 자세한 내용은 <a href="https://developer.chrome.com/docs/devtools/console/format-style?hl=ko">Console에서 메시지 형식 지정 및 스타일 지정</a>을 참고하세요.</li>
+</ul>

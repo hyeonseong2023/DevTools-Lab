@@ -44,20 +44,35 @@
         border-radius: 10px;
         background: #fff;
       }
+      .logo--mark {
+        max-width: 220px;
+        padding: 16px;
+      }
       .path {
         margin-top: 8px;
         font-size: 12px;
         color: #64748b;
+      }
+      .stack {
+        display: grid;
+        gap: 16px;
       }
     </style>
   </head>
   <body>
     <h1>Option A</h1>
     <p>6차 only</p>
-    <section class="card">
-      <div class="row"><img src="./favicon-option-a-v6.svg" alt="Option A v6 favicon" /><strong>A안 6차</strong></div>
-      <img class="logo" src="./logo-option-a-v6.svg" alt="Option A v6 logo" />
-      <div class="path">logo-option-a-v6.svg / favicon-option-a-v6.svg</div>
-    </section>
+    <div class="stack">
+      <section class="card">
+        <div class="row"><img src="./favicon-option-a-v6.svg" alt="Option A v6 favicon" /><strong>A안 6차</strong></div>
+        <img class="logo" src="./logo-option-a-v6.svg" alt="Option A v6 logo" />
+        <div class="path">logo-option-a-v6.svg / favicon-option-a-v6.svg</div>
+      </section>
+      <section class="card">
+        <div class="row"><img src="./lab-button-mark-braces-slash.svg" alt="Lab button mark braces slash" /><strong>LAB button mark</strong></div>
+        <img class="logo logo--mark" src="./lab-button-mark-braces-slash.svg" alt="Lab button mark braces slash preview" />
+        <div class="path">lab-button-mark-braces-slash.svg</div>
+      </section>
+    </div>
   </body>
 </html>

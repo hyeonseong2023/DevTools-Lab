@@ -90,24 +90,55 @@ export const DEVTOOLS_DOCS_MENU: DevtoolsDocsGroup[] = [
     id: "console",
     label: "Console",
     href: "/console",
-    matchPaths: ["/console"],
+    matchPaths: [
+      "/console",
+      "/console/understand-messages",
+      "/console/log",
+      "/console/javascript",
+      "/console/live-expressions",
+      "/console/format-style",
+      "/console/reference",
+      "/console/utilities",
+      "/console/api",
+    ],
     sections: [
       {
         items: [
           {
-            label: "Console 시작하기",
-            href: "https://developer.chrome.com/docs/devtools/console?hl=ko",
-            external: true,
+            label: "개요",
+            href: "/console",
           },
           {
-            label: "Console 유틸리티 API 참조",
-            href: "https://developer.chrome.com/docs/devtools/console/utilities?hl=ko",
-            external: true,
+            label: "콘솔 통계로 오류 및 경고 이해하기",
+            href: "/console/understand-messages",
           },
           {
-            label: "Console API 참조",
-            href: "https://developer.chrome.com/docs/devtools/console/api?hl=ko",
-            external: true,
+            label: "로그 메시지",
+            href: "/console/log",
+          },
+          {
+            label: "자바스크립트 실행",
+            href: "/console/javascript",
+          },
+          {
+            label: "실시간으로 자바스크립트 보기",
+            href: "/console/live-expressions",
+          },
+          {
+            label: "메시지 서식 및 스타일 지정",
+            href: "/console/format-style",
+          },
+          {
+            label: "기능 참조",
+            href: "/console/reference",
+          },
+          {
+            label: "API 참조 문서",
+            href: "/console/api",
+          },
+          {
+            label: "Utilities API 참조",
+            href: "/console/utilities",
           },
         ],
       },
