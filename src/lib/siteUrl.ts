@@ -1,5 +1,5 @@
 const LOCAL_SITE_URL = "http://localhost:3000";
-const FALLBACK_PRODUCTION_SITE_URL = "https://devtools-lab.vercel.app";
+const FALLBACK_PRODUCTION_SITE_URL = "https://developer-chrome-guide.vercel.app";
 
 function normalizeSiteUrl(value: string) {
   const trimmed = value.trim();

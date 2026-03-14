@@ -30,7 +30,7 @@ export function Header() {
   }
 
   return (
-    <header className="relative z-50 border-b border-slate-200 bg-white">
+    <header className="relative z-50 overflow-x-hidden border-b border-slate-200 bg-white">
       <div className="w-full px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-6">
           <div className="flex items-center justify-between gap-3 lg:min-w-[248px] lg:flex-none">

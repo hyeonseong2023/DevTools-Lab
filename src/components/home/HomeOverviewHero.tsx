@@ -11,11 +11,11 @@ interface HeroBanner {
     | "console"
     | "sources"
     | "network"
-    | "recorder"
     | "performance"
     | "memory"
     | "application"
-    | "security";
+    | "security"
+    | "lighthouse";
   image: string;
   href: string;
   label: string;
@@ -52,13 +52,6 @@ const HERO_BANNERS: HeroBanner[] = [
     comment: "네트워크 활동을 보고 디버그합니다.",
   },
   {
-    id: "recorder",
-    image: "/home-banners-tight/recorder.png",
-    href: "/recorder",
-    label: "Recorder",
-    comment: "사용자 플로우를 녹화, 재생, 측정합니다.",
-  },
-  {
     id: "performance",
     image: "/home-banners-tight/performance.png",
     href: "/performance",
@@ -85,6 +78,13 @@ const HERO_BANNERS: HeroBanner[] = [
     href: "/security",
     label: "Security",
     comment: "혼합 콘텐츠 문제, 인증서 문제 등을 디버그합니다",
+  },
+  {
+    id: "lighthouse",
+    image: "/home-banners-tight/performance.png",
+    href: "/lighthouse",
+    label: "Lighthouse",
+    comment: "Lighthouse 리포트로 성능, 접근성, SEO를 점검합니다.",
   },
 ];
 

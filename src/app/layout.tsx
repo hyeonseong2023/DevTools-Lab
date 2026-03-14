@@ -17,12 +17,12 @@ const siteUrl = getSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "DevTools Lab",
-    template: "%s | DevTools Lab",
+    default: "Chrome DevTools Guide",
+    template: "%s | Chrome DevTools Guide",
   },
   description:
     "Chrome DevTools 사용법을 단계별로 익히는 인터랙티브 가이드와 Preview Lab 실습 플랫폼",
-  applicationName: "DevTools Lab",
+  applicationName: "Chrome DevTools Guide",
   keywords: [
     "Chrome DevTools",
     "DevTools 학습",
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko_KR",
     url: "/",
-    siteName: "DevTools Lab",
-    title: "DevTools Lab",
+    siteName: "Chrome DevTools Guide",
+    title: "Chrome DevTools Guide",
     description:
       "Chrome DevTools 사용법을 단계별로 익히는 인터랙티브 가이드와 Preview Lab 실습 플랫폼",
     images: [
@@ -47,13 +47,13 @@ export const metadata: Metadata = {
         url: "/branding/options/logo-option-a-v6.svg",
         width: 512,
         height: 512,
-        alt: "DevTools Lab Logo",
+        alt: "Chrome DevTools Guide Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DevTools Lab",
+    title: "Chrome DevTools Guide",
     description:
       "Chrome DevTools 사용법을 단계별로 익히는 인터랙티브 가이드와 Preview Lab 실습 플랫폼",
     images: ["/branding/options/logo-option-a-v6.svg"],

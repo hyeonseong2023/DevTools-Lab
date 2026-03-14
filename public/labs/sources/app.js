@@ -527,14 +527,14 @@
       renderWorkbench({
         title: "Workspace 설정",
         subtitle: "로컬 폴더를 연결해 브라우저 수정사항을 실제 파일에 다시 저장합니다.",
-        fileLabel: "devtools-lab/.well-known/appspecific/com.chrome.devtools.json",
+        fileLabel: "chrome-devtools-guide/.well-known/appspecific/com.chrome.devtools.json",
         statusLabel: payload.sectionLabel || "Workspace 설정",
         lines: [
-          { no: 1, code: '{"workspace": "devtools-lab"}', active: true },
+          { no: 1, code: '{"workspace": "chrome-devtools-guide"}', active: true },
         ],
         metaPills: [{ label: "Connected", accent: true }, { label: "Local folder" }],
         debuggerBlocks: [
-          renderPanelBlock("연결 상태", renderMetaList([{ label: "Folder: /Users/hoya/Projects/DevTools-Lab", active: true }, { label: "자동 저장 준비됨" }])),
+          renderPanelBlock("연결 상태", renderMetaList([{ label: "Folder: /Users/hoya/Projects/Chrome DevTools Guide", active: true }, { label: "자동 저장 준비됨" }])),
           renderPanelBlock("다음 작업", renderList(["메타데이터 생성", "폴더 연결", "저장 확인"], "폴더 연결")),
         ],
       }),
@@ -1101,10 +1101,10 @@
         subtitle: "로컬 폴더 연결, 메타데이터, 저장, 연결 해제를 한 흐름으로 다룹니다.",
         fileLabel: "devtools.json",
         statusLabel: payload.sectionLabel || "개요",
-        lines: [{ no: 1, code: '{"workspace": "devtools-lab", "root": "/Users/hoya/Projects/DevTools-Lab"}', active: true }],
+        lines: [{ no: 1, code: '{"workspace": "chrome-devtools-guide", "root": "/Users/hoya/Projects/Chrome DevTools Guide"}', active: true }],
         metaPills: [{ label: "Connected", accent: true }],
         debuggerBlocks: [
-          renderPanelBlock("현재 폴더", renderMetaList([{ label: "/Users/hoya/Projects/DevTools-Lab", active: true }])),
+          renderPanelBlock("현재 폴더", renderMetaList([{ label: "/Users/hoya/Projects/Chrome DevTools Guide", active: true }])),
           renderPanelBlock("저장 흐름", renderList(["Connect folder", "Edit in DevTools", "Save to file system"], "Save to file system")),
         ],
       }),
@@ -1129,7 +1129,7 @@
         ${renderWorkbench({
           title: "워크스페이스 폴더 연결",
           subtitle: "로컬 폴더를 선택하면 Pages와 파일 시스템이 매핑됩니다.",
-          fileLabel: "devtools-lab",
+          fileLabel: "chrome-devtools-guide",
           statusLabel: payload.sectionLabel || "워크스페이스 폴더 연결",
           debuggerBlocks: [renderPanelBlock("매핑 상태", renderMetaList([{ label: "Not connected", active: true }]))],
         })}
@@ -1139,7 +1139,7 @@
     const status = document.getElementById("connect-status");
     if (button instanceof HTMLButtonElement && status instanceof HTMLElement) {
       const handler = () => {
-        status.textContent = "연결됨 → /Users/hoya/Projects/DevTools-Lab";
+        status.textContent = "연결됨 → /Users/hoya/Projects/Chrome DevTools Guide";
         status.classList.add("is-paused");
       };
       button.addEventListener("click", handler);
@@ -1190,7 +1190,7 @@
       <section class="source-stack">
         <section class="lab-card">
           <div class="demo-controls"><button type="button" id="disconnect-folder" class="scene-button">연결 삭제</button></div>
-          <div id="disconnect-status" class="pause-banner">/Users/hoya/Projects/DevTools-Lab 이 연결되어 있습니다.</div>
+          <div id="disconnect-status" class="pause-banner">/Users/hoya/Projects/Chrome DevTools Guide 이 연결되어 있습니다.</div>
         </section>
       </section>
     `);
@@ -1212,7 +1212,7 @@
         <section class="lab-card">
           <table class="meta-table">
             <tr><th>네트워크 파일</th><td>/assets/app.js</td></tr>
-            <tr><th>로컬 파일</th><td>/Users/hoya/Projects/DevTools-Lab/public/assets/app.js</td></tr>
+            <tr><th>로컬 파일</th><td>/Users/hoya/Projects/Chrome DevTools Guide/public/assets/app.js</td></tr>
             <tr><th>매핑 상태</th><td>수동 연결</td></tr>
           </table>
         </section>
@@ -1532,7 +1532,7 @@
     const status = document.getElementById("overrides-setup-status");
     if (button instanceof HTMLButtonElement && status instanceof HTMLElement) {
       const handler = () => {
-        status.textContent = "설정 완료 → /Users/hoya/Projects/DevTools-Lab/.overrides";
+        status.textContent = "설정 완료 → /Users/hoya/Projects/Chrome DevTools Guide/.overrides";
         status.classList.add("is-paused");
       };
       button.addEventListener("click", handler);

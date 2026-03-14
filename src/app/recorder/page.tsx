@@ -1,6 +1,5 @@
-import { ComingSoonPanel } from "@/components/guide/ComingSoonPanel";
-import { getPanelOrThrow } from "@/lib/panels";
+import { redirect } from "next/navigation";
 
 export default function RecorderPage() {
-  return <ComingSoonPanel panel={getPanelOrThrow("recorder")} />;
+  redirect("/lighthouse");
 }

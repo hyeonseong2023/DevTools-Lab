@@ -1,13 +1,13 @@
 export const PANEL_SLUGS = [
   "elements",
   "console",
-  "network",
   "sources",
-  "recorder",
+  "network",
   "performance",
   "memory",
   "application",
   "security",
+  "lighthouse",
 ] as const;
 
 export type PanelSlug = (typeof PANEL_SLUGS)[number];
@@ -30,19 +30,14 @@ export const PANEL_DEFINITIONS: PanelDefinition[] = [
     description: "에러 로그 분석, 코드 실행, 디버깅 출력을 연습합니다.",
   },
   {
-    slug: "network",
-    name: "Network",
-    description: "요청/응답 흐름, 상태 코드, 캐시 동작을 분석합니다.",
-  },
-  {
     slug: "sources",
     name: "Sources",
     description: "브레이크포인트, Call Stack, 변수 상태 추적을 실습합니다.",
   },
   {
-    slug: "recorder",
-    name: "Recorder",
-    description: "사용자 플로우를 기록, 재생, 측정합니다.",
+    slug: "network",
+    name: "Network",
+    description: "요청/응답 흐름, 상태 코드, 캐시 동작을 분석합니다.",
   },
   {
     slug: "performance",
@@ -63,6 +58,11 @@ export const PANEL_DEFINITIONS: PanelDefinition[] = [
     slug: "security",
     name: "Security",
     description: "혼합 콘텐츠, 인증서, 보안 헤더 점검 포인트를 학습합니다.",
+  },
+  {
+    slug: "lighthouse",
+    name: "Lighthouse",
+    description: "Lighthouse 리포트로 성능, 접근성, SEO 개선 포인트를 확인합니다.",
   },
 ];
 
