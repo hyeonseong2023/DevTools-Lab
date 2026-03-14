@@ -219,7 +219,7 @@ export function HomeOverviewHero() {
         <div className="flex items-center justify-end">
           <Link
             href="/about/environment"
-            className="text-sm font-semibold tracking-[0.08em] text-slate-800 transition hover:text-slate-950"
+            className="inline-flex items-center whitespace-nowrap px-0.5 py-1 text-base font-semibold text-slate-500 transition hover:text-slate-800"
             data-no-drag="true"
             onClick={(event) => {
               event.stopPropagation();
@@ -339,7 +339,7 @@ export function HomeOverviewHero() {
         <div className="absolute right-5 top-5 sm:right-6 sm:top-6">
           <Link
             href="/about/environment"
-            className="text-base font-medium text-slate-800 transition hover:text-slate-950"
+            className="inline-flex items-center whitespace-nowrap px-0.5 py-1 text-base font-semibold text-slate-500 transition hover:text-slate-800"
             data-no-drag="true"
             onClick={(event) => {
               event.stopPropagation();

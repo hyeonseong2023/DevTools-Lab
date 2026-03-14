@@ -872,7 +872,7 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
 
       lastOffset = visibleHeaderHeight;
       root.style.setProperty("--sources-header-offset", `${visibleHeaderHeight}px`);
-      root.style.setProperty("--sources-scroll-margin", `${visibleHeaderHeight + 16}px`);
+      root.style.setProperty("--sources-scroll-margin", "16px");
     };
 
     const requestOffsetUpdate = () => {

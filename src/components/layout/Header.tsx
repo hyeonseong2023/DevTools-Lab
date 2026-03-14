@@ -36,7 +36,7 @@ export function Header() {
           <div className="flex items-center justify-between gap-3 lg:min-w-[248px] lg:flex-none">
             <Link
               href="/"
-              className="min-w-0 truncate text-[13px] font-semibold tracking-wide text-slate-900 transition hover:text-slate-700 sm:text-sm"
+              className="min-w-0 truncate text-base font-semibold tracking-wide text-slate-900 transition hover:text-slate-700"
               aria-label="Chrome DevTools Guide 홈으로 이동"
             >
               Chrome DevTools Guide
@@ -44,11 +44,16 @@ export function Header() {
 
             <Link
               href="/about/environment"
-              className={`shrink-0 text-sm font-medium transition lg:hidden ${
-                isAboutActive ? "text-slate-950" : "text-slate-700 hover:text-slate-950"
+              className={`group relative inline-flex shrink-0 items-center whitespace-nowrap px-0.5 py-1 text-base font-semibold transition lg:hidden ${
+                isAboutActive ? "text-slate-900" : "text-slate-500 hover:text-slate-800"
               }`}
             >
               ABOUT
+              <span
+                className={`absolute bottom-0 left-0 h-0.5 w-full transition ${
+                  isAboutActive ? "bg-slate-900" : "bg-transparent group-hover:bg-slate-300"
+                }`}
+              />
             </Link>
           </div>
 
@@ -61,7 +66,7 @@ export function Header() {
                   {group.href ? (
                     <Link
                       href={group.href}
-                      className={`relative inline-flex items-center whitespace-nowrap px-0.5 py-1 text-sm font-semibold transition ${
+                      className={`relative inline-flex items-center whitespace-nowrap px-0.5 py-1 text-base font-semibold transition ${
                         active ? "text-slate-900" : "text-slate-500 hover:text-slate-800"
                       }`}
                     >
@@ -75,7 +80,7 @@ export function Header() {
                   ) : (
                     <button
                       type="button"
-                      className="relative inline-flex items-center whitespace-nowrap px-0.5 py-1 text-sm font-semibold text-slate-500 transition hover:text-slate-800"
+                      className="relative inline-flex items-center whitespace-nowrap px-0.5 py-1 text-base font-semibold text-slate-500 transition hover:text-slate-800"
                     >
                       {group.label}
                       <span className="absolute bottom-0 left-0 h-0.5 w-full bg-transparent transition group-hover:bg-slate-300" />
@@ -134,11 +139,16 @@ export function Header() {
 
           <Link
             href="/about/environment"
-            className={`hidden shrink-0 text-sm font-medium transition lg:inline-flex ${
-              isAboutActive ? "text-slate-950" : "text-slate-700 hover:text-slate-950"
+            className={`group relative hidden shrink-0 items-center whitespace-nowrap px-0.5 py-1 text-base font-semibold transition lg:inline-flex ${
+              isAboutActive ? "text-slate-900" : "text-slate-500 hover:text-slate-800"
             }`}
           >
             ABOUT
+            <span
+              className={`absolute bottom-0 left-0 h-0.5 w-full transition ${
+                isAboutActive ? "bg-slate-900" : "bg-transparent group-hover:bg-slate-300"
+              }`}
+            />
           </Link>
         </div>
       </div>

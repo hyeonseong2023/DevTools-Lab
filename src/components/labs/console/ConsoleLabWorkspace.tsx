@@ -1039,7 +1039,7 @@ export function ConsoleLabWorkspace({ initialTopicId = "console-overview" }: Con
 
       lastOffset = visibleHeaderHeight;
       root.style.setProperty("--console-header-offset", `${visibleHeaderHeight}px`);
-      root.style.setProperty("--console-scroll-margin", `${visibleHeaderHeight + 16}px`);
+      root.style.setProperty("--console-scroll-margin", "16px");
     };
 
     const requestOffsetUpdate = () => {

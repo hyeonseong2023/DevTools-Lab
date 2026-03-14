@@ -1144,7 +1144,7 @@ export function ElementsLabWorkspace({ initialTopicId = "elements-overview" }: E
 
       lastOffset = visibleHeaderHeight;
       root.style.setProperty("--elements-header-offset", `${visibleHeaderHeight}px`);
-      root.style.setProperty("--elements-scroll-margin", `${visibleHeaderHeight + 16}px`);
+      root.style.setProperty("--elements-scroll-margin", "16px");
     };
 
     const requestOffsetUpdate = () => {
@@ -1439,13 +1439,15 @@ export function ElementsLabWorkspace({ initialTopicId = "elements-overview" }: E
                 <p>요소 패널을 사용하여 DOM 요소를 검사하고 수정합니다.</p>
               </section>
 
-              <section
-                id="overview"
-                className="rounded-xl border border-slate-200 bg-white p-4"
-                style={{ scrollMarginTop: "var(--elements-scroll-margin,72px)" }}
-              >
+              <section className="rounded-xl border border-slate-200 bg-white p-4">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-xl font-semibold tracking-tight text-slate-900">개요</h3>
+                  <h3
+                    id="overview"
+                    className="text-xl font-semibold tracking-tight text-slate-900"
+                    style={{ scrollMarginTop: "var(--elements-scroll-margin,72px)" }}
+                  >
+                    개요
+                  </h3>
                   <LabTriggerButton
                     onClick={() =>
                       handleRunDomPractice(
@@ -1623,12 +1625,12 @@ export function ElementsLabWorkspace({ initialTopicId = "elements-overview" }: E
                 </ul>
               </section>
 
-              <section
-                id="open_the_elements_panel"
-                className="rounded-xl border border-slate-200 bg-white p-4"
-                style={{ scrollMarginTop: "var(--elements-scroll-margin,72px)" }}
-              >
-                <h3 className="text-xl font-semibold tracking-tight text-slate-900">
+              <section className="rounded-xl border border-slate-200 bg-white p-4">
+                <h3
+                  id="open_the_elements_panel"
+                  className="text-xl font-semibold tracking-tight text-slate-900"
+                  style={{ scrollMarginTop: "var(--elements-scroll-margin,72px)" }}
+                >
                   요소 패널 열기
                 </h3>
                 <p className="mt-2">
