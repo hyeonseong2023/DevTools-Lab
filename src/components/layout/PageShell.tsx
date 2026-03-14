@@ -13,7 +13,9 @@ export function PageShell({ children }: { children: React.ReactNode }) {
     pathname === "/css" ||
     pathname.startsWith("/css/") ||
     pathname === "/console" ||
-    pathname.startsWith("/console/");
+    pathname.startsWith("/console/") ||
+    pathname === "/sources" ||
+    pathname.startsWith("/sources/");
 
   if (isHome) {
     return <main className="min-w-0">{children}</main>;

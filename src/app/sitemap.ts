@@ -28,12 +28,18 @@ const APP_ROUTES = [
   "/console/utilities",
   "/console/api",
   "/sources",
+  "/sources/javascript",
+  "/sources/breakpoints",
+  "/sources/workspaces",
+  "/sources/snippets",
+  "/sources/reference",
+  "/sources/overrides",
   "/network",
-  "/recorder",
   "/performance",
   "/memory",
   "/application",
   "/security",
+  "/lighthouse",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -45,13 +51,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency:
       route === "/"
         ? "weekly"
-        : route.startsWith("/elements") || route.startsWith("/dom") || route.startsWith("/css")
+        : route.startsWith("/elements") ||
+            route.startsWith("/dom") ||
+            route.startsWith("/css") ||
+            route.startsWith("/console") ||
+            route.startsWith("/sources")
           ? "weekly"
           : "monthly",
     priority:
       route === "/"
         ? 1
-        : route.startsWith("/elements") || route.startsWith("/dom") || route.startsWith("/css")
+        : route.startsWith("/elements") ||
+            route.startsWith("/dom") ||
+            route.startsWith("/css") ||
+            route.startsWith("/console") ||
+            route.startsWith("/sources")
           ? 0.9
           : 0.8,
   }));

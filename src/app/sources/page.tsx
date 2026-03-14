@@ -1,6 +1,5 @@
-import { ComingSoonPanel } from "@/components/guide/ComingSoonPanel";
-import { getPanelOrThrow } from "@/lib/panels";
+import { SourcesLabWorkspace } from "@/components/labs/sources/SourcesLabWorkspace";
 
 export default function SourcesPage() {
-  return <ComingSoonPanel panel={getPanelOrThrow("sources")} />;
+  return <SourcesLabWorkspace />;
 }

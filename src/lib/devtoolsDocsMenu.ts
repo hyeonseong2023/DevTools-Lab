@@ -148,39 +148,45 @@ export const DEVTOOLS_DOCS_MENU: DevtoolsDocsGroup[] = [
     id: "sources",
     label: "Sources",
     href: "/sources",
-    matchPaths: ["/sources"],
+    matchPaths: [
+      "/sources",
+      "/sources/javascript",
+      "/sources/breakpoints",
+      "/sources/workspaces",
+      "/sources/snippets",
+      "/sources/reference",
+      "/sources/overrides",
+    ],
     sections: [
       {
         items: [
           {
+            label: "개요",
+            href: "/sources",
+          },
+          {
             label: "자바스크립트 디버깅 시작하기",
-            href: "https://developer.chrome.com/docs/devtools/javascript?hl=ko",
-            external: true,
+            href: "/sources/javascript",
           },
           {
             label: "중단점을 사용하여 코드 일시중지",
-            href: "https://developer.chrome.com/docs/devtools/javascript/breakpoints?hl=ko",
-            external: true,
+            href: "/sources/breakpoints",
           },
           {
             label: "작업공간에서 파일 수정 및 저장하기",
-            href: "https://developer.chrome.com/docs/devtools/workspaces?hl=ko",
-            external: true,
+            href: "/sources/workspaces",
           },
           {
             label: "자바스크립트 스니펫 실행",
-            href: "https://developer.chrome.com/docs/devtools/javascript/snippets?hl=ko",
-            external: true,
+            href: "/sources/snippets",
           },
           {
             label: "자바스크립트 디버깅 참조",
-            href: "https://developer.chrome.com/docs/devtools/javascript/reference?hl=ko",
-            external: true,
+            href: "/sources/reference",
           },
           {
             label: "로컬에서 웹 콘텐츠 및 HTTP 응답 헤더 재정의",
-            href: "https://developer.chrome.com/docs/devtools/overrides?hl=ko",
-            external: true,
+            href: "/sources/overrides",
           },
         ],
       },
@@ -207,33 +213,6 @@ export const DEVTOOLS_DOCS_MENU: DevtoolsDocsGroup[] = [
           {
             label: "페이지 리소스 보기",
             href: "https://developer.chrome.com/docs/devtools/resources?hl=ko",
-            external: true,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "recorder",
-    label: "Recorder",
-    href: "/recorder",
-    matchPaths: ["/recorder"],
-    sections: [
-      {
-        items: [
-          {
-            label: "사용자 플로우 기록, 재생, 측정",
-            href: "https://developer.chrome.com/docs/devtools/recorder?hl=ko",
-            external: true,
-          },
-          {
-            label: "확장 프로그램으로 녹음기 맞춤설정하기",
-            href: "https://developer.chrome.com/docs/devtools/recorder/extensions?hl=ko",
-            external: true,
-          },
-          {
-            label: "녹음기 기능 참조",
-            href: "https://developer.chrome.com/docs/devtools/recorder/reference?hl=ko",
             external: true,
           },
         ],
@@ -327,6 +306,23 @@ export const DEVTOOLS_DOCS_MENU: DevtoolsDocsGroup[] = [
           {
             label: "보안 문제 이해하기",
             href: "https://developer.chrome.com/docs/devtools/security?hl=ko",
+            external: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "lighthouse",
+    label: "Lighthouse",
+    href: "/lighthouse",
+    matchPaths: ["/lighthouse"],
+    sections: [
+      {
+        items: [
+          {
+            label: "웹사이트 속도 최적화",
+            href: "https://developer.chrome.com/docs/devtools/lighthouse?hl=ko",
             external: true,
           },
         ],

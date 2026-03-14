@@ -1,0 +1,257 @@
+<p><style>
+.wd-authors {
+  --avatar-size: 65px;
+  display: flex;
+  gap: 2em;
+}
+
+.wd-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  line-height: calc(var(--avatar-size) / 2);
+}
+
+.wd-author img {
+  border-radius: 50%;
+  height: var(--avatar-size, 65px);
+  width: var(--avatar-size, 65px);
+}
+
+.dcc-authors {
+  --avatar-size: 65px;
+  display: flex;
+  gap: 2em;
+}
+
+.dcc-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  line-height: calc(var(--avatar-size) / 2);
+}
+
+.dcc-author img {
+  border-radius: 50%;
+  height: var(--avatar-size, 65px);
+  width: var(--avatar-size, 65px);
+}
+  
+.dcc-author__links {
+  display: flex;
+}
+
+.dcc-author__links a {
+  margin-inline-end: 6px;
+}
+
+.dcc-author__links a:last-of-type {
+  margin-inline-end: 0;
+}
+</style>
+
+</p><div class="dcc-authors" translate="no">
+  
+    
+    
+      <div class="dcc-author">
+        
+          <img alt="Sofia Emelianova" class="devsite-landing-row-item-icon" decoding="async" height="64" loading="lazy" src="https://web.dev/images/authors/sofiayem.jpg?hl=ko" width="64" /> 
+        
+        <div>
+          <span> 
+            Sofia Emelianova
+          </span>
+          <div class="dcc-author__links">
+            
+            
+              <a aria-label="Sofia Emelianova on GitHub" href="https://github.com/sofiayem" rel="me">
+                <svg height="22" viewBox="0 0 32.6 31.8" width="22" xmlns="http://www.w3.org/2000/svg">
+                  <title>GitHub</title>
+                  <path clip-rule="evenodd" d="M16.3 0C7.3 0 0 7.3 0 16.3c0 7.2 4.7 13.3 11.1 15.5.8.1 1.1-.4 1.1-.8v-2.8c-4.5 1-5.5-2.2-5.5-2.2-.7-1.9-1.8-2.4-1.8-2.4-1.5-1 .1-1 .1-1 1.6.1 2.5 1.7 2.5 1.7 1.5 2.5 3.8 1.8 4.7 1.4.1-1.1.6-1.8 1-2.2-3.6-.4-7.4-1.8-7.4-8.1 0-1.8.6-3.2 1.7-4.4-.1-.3-.7-2 .2-4.2 0 0 1.4-.4 4.5 1.7 1.3-.4 2.7-.5 4.1-.5 1.4 0 2.8.2 4.1.5 3.1-2.1 4.5-1.7 4.5-1.7.9 2.2.3 3.9.2 4.3 1 1.1 1.7 2.6 1.7 4.4 0 6.3-3.8 7.6-7.4 8 .6.5 1.1 1.5 1.1 3V31c0 .4.3.9 1.1.8 6.5-2.2 11.1-8.3 11.1-15.5C32.6 7.3 25.3 0 16.3 0z" fill="currentColor" fill-rule="evenodd"></path>
+                </svg></a>
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    
+  
+</div><p></p>
+
+<p><devsite-video video-id="KxjGYcHZ_uI"></devsite-video></p>
+
+<p>로컬 재정의를 사용하면 백엔드, 서드 파티 또는 API가 변경사항과 수정사항을 지원할 때까지 기다리지 않고도 프로토타입을 만들고 테스트하여 워크플로를 차단 해제할 수 있습니다.</p>
+
+<p>원격 리소스에 액세스할 수 없는 경우에도 로컬 재정의를 사용하여 원격 리소스를 모의할 수 있습니다. <a href="#override-xhr-fetch">XHR 및 가져오기 요청</a>을 비롯한 요청 및 다양한 파일(예: <a href="#override-headers">HTTP 응답 헤더</a> 및 <a href="#make-changes">웹 콘텐츠</a>)에 대한 응답을 모의할 수 있습니다.</p>
+
+<p>예를 들어 로컬 재정의는 다음과 같은 사용 사례에 도움이 될 수 있습니다.</p>
+
+<ul>
+<li>실제로 프로덕션에 적용되기 전에 모의 API 및 테스트 API를 수정합니다.</li>
+<li>백엔드에서 사용할 데이터 구조를 이미 알고 있다면 새로운 UI 디자인을 프로토타입으로 만들어 보세요.</li>
+<li><a href="https://web.dev/articles/cls?hl=ko">CLS 제거</a>와 같은 성능 수정사항을 테스트하여 미리 중요한지 확인합니다.</li>
+</ul>
+<aside class="note"><strong>참고:</strong><span> 위의 동영상을 시청하여 사용 사례에 대해 자세히 알아보세요.</span></aside>
+<p>로컬 재정의를 사용하면 페이지 로드 시 DevTools에서 변경한 내용을 유지할 수도 있습니다.</p>
+
+<h2 data-text="작동 방식" id="how" tabindex="-1">작동 방식</h2>
+
+<ul>
+<li>DevTools에서 변경하면 DevTools는 수정된 파일의 사본을 지정한 폴더에 저장합니다.</li>
+<li>페이지를 새로고침하면 DevTools에서 네트워크 리소스가 아닌 수정된 로컬 파일을 제공합니다.</li>
+</ul>
+<aside class="note"><strong>참고:</strong><span> 로컬 재정의는 캐시를 자동으로 사용 중지합니다.</span></aside>
+<p>소스 파일에 변경사항을 직접 저장할 수도 있습니다. <a href="https://developer.chrome.com/docs/devtools/workspaces?hl=ko">Workspace로 파일 수정 및 저장하기</a>를 참고하세요.</p>
+
+<h2 data-text="제한사항" id="limitations" tabindex="-1">제한사항</h2>
+
+<p>로컬 재정의는 네트워크 응답 헤더와 대부분의 파일 유형(XHR 및 가져오기 요청 포함)에 적용됩니다. 단, 다음과 같은 예외가 있습니다.</p>
+
+<ul>
+<li><strong>로컬 재정의</strong>가 사용 설정된 경우 캐시가 사용 중지됩니다.</li>
+<li>DevTools는 <a href="https://developer.chrome.com/docs/devtools/dom?hl=ko"><strong>요소</strong></a> 패널의 DOM 트리에서 변경된 사항을 저장하지 않습니다.</li>
+<li><strong>스타일</strong> 창에서 CSS를 수정하고 해당 CSS의 소스가 HTML 파일인 경우 DevTools에서 변경사항을 저장하지 않습니다.</li>
+</ul>
+
+<p>대신 <a href="https://developer.chrome.com/docs/devtools/sources?hl=ko"><strong>소스</strong></a> 패널에서 HTML 파일을 수정할 수 있습니다.</p>
+
+<h2 data-text="로컬 재정의 설정" id="set-up" tabindex="-1">로컬 재정의 설정</h2>
+
+<p><strong>네트워크</strong> 패널에서 웹 콘텐츠 또는 응답 헤더를 바로 재정의할 수 있습니다.</p>
+
+<ol>
+<li><a href="https://developer.chrome.com/docs/devtools/open?hl=ko">DevTools를 열고</a> <strong>네트워크</strong> 패널로 이동하여 재정의할 요청을 마우스 오른쪽 버튼으로 클릭하고 드롭다운 메뉴에서 <strong>헤더 재정의</strong> 또는 <strong>콘텐츠 재정의</strong>를 선택합니다.
+<img alt="요청의 오른쪽 클릭 메뉴에서 재정의 콘텐츠를 선택합니다." height="425" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/overrides/image/choosing-override-content-4044ba6cb6b2d.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/overrides/image/choosing-override-content-4044ba6cb6b2d_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/overrides/image/choosing-override-content-4044ba6cb6b2d_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/overrides/image/choosing-override-content-4044ba6cb6b2d_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/overrides/image/choosing-override-content-4044ba6cb6b2d_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/overrides/image/choosing-override-content-4044ba6cb6b2d_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/overrides/image/choosing-override-content-4044ba6cb6b2d_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/overrides/image/choosing-override-content-4044ba6cb6b2d_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/overrides/image/choosing-override-content-4044ba6cb6b2d_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/overrides/image/choosing-override-content-4044ba6cb6b2d_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/overrides/image/choosing-override-content-4044ba6cb6b2d_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/overrides/image/choosing-override-content-4044ba6cb6b2d_2880.png?hl=ko 2880w" width="800" /></li>
+<li>아직 로컬 재정의를 설정하지 않은 경우 상단의 작업 표시줄에 다음 메시지가 표시됩니다.
+<ol>
+<li>재정의 파일을 저장할 <strong>폴더를 선택</strong>합니다.
+<img alt="DevTools에서 폴더를 선택하라는 메시지가 표시됩니다." height="515" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-prompts-to-sele-32ccd7905701f.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-prompts-to-sele-32ccd7905701f_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-prompts-to-sele-32ccd7905701f_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-prompts-to-sele-32ccd7905701f_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-prompts-to-sele-32ccd7905701f_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-prompts-to-sele-32ccd7905701f_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-prompts-to-sele-32ccd7905701f_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-prompts-to-sele-32ccd7905701f_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-prompts-to-sele-32ccd7905701f_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-prompts-to-sele-32ccd7905701f_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-prompts-to-sele-32ccd7905701f_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-prompts-to-sele-32ccd7905701f_2880.png?hl=ko 2880w" width="800" /></li>
+<li><strong>허용</strong>을 클릭하여 DevTools 액세스 권한을 부여합니다.
+<img alt="DevTools에서 액세스를 요청합니다." height="515" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-requests-access-cde58bce33675.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-requests-access-cde58bce33675_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-requests-access-cde58bce33675_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-requests-access-cde58bce33675_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-requests-access-cde58bce33675_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-requests-access-cde58bce33675_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-requests-access-cde58bce33675_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-requests-access-cde58bce33675_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-requests-access-cde58bce33675_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-requests-access-cde58bce33675_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-requests-access-cde58bce33675_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/overrides/image/devtools-requests-access-cde58bce33675_2880.png?hl=ko 2880w" width="800" /></li>
+</ol></li>
+<li>로컬 재정의가 설정되어 있지만 사용 중지된 경우 DevTools에서 자동으로 사용 설정합니다.</li>
+<li><p>로컬 재정의를 설정하고 사용 설정하면 재정의하려는 항목에 따라 DevTools에서 다음 위치로 이동합니다.</p>
+
+<ul>
+<li><a href="#make-changes">웹 콘텐츠</a>를 변경할 수 있는 <strong>소스</strong> 패널</li>
+<li><strong>네트워크</strong> > <strong>헤더</strong> > <strong>응답 헤더</strong>의 편집기를 사용하면 <a href="#override-headers">응답 헤더</a>를 변경할 수 있습니다.</li>
+</ul></li>
+</ol>
+
+<p>로컬 재정의를 일시적으로 사용 중지하거나 모든 재정의 파일을 삭제하려면 <strong>소스</strong> > <strong>재정의</strong>로 이동하여 <span aria-hidden="true" class="material-icons" translate="no">check_box_outline_blank</span> <strong>로컬 재정의 사용 설정</strong> 체크박스를 선택 해제하거나 <span aria-hidden="true" class="material-icons" translate="no">block</span> <strong>지우기</strong>를 클릭합니다.</p>
+
+<p>단일 재정의 파일 또는 폴더의 모든 재정의를 삭제하려면 <strong>소스</strong> > <strong>재정의</strong>에서 파일 또는 폴더를 마우스 오른쪽 버튼으로 클릭하고 <strong>삭제</strong>를 선택한 다음 대화상자에서 <strong>확인</strong>을 클릭합니다. 이 작업은 되돌릴 수 없으며 삭제된 재정의를 수동으로 다시 만들어야 합니다.</p>
+
+<p>모든 재정의를 빠르게 확인하려면 <strong>네트워크</strong> 패널에서 요청을 마우스 오른쪽 버튼으로 클릭하고 <strong>모든 재정의 표시</strong>를 선택합니다. DevTools에서 <strong>Sources</strong>(소스) > <strong>Overrides</strong>(재정의)로 이동합니다.</p>
+
+<h2 data-text="웹 콘텐츠 재정의" id="make-changes" tabindex="-1">웹 콘텐츠 재정의</h2>
+
+<p>웹 콘텐츠를 재정의하려면 다음 단계를 따르세요.</p>
+
+<ol>
+<li><a href="#set-up">로컬 재정의 설정</a></li>
+<li>파일을 변경하고 DevTools에 저장합니다.</li>
+</ol>
+
+<aside class="note"><b>참고:</b> <a href="https://developer.chrome.com/docs/devtools/javascript/source-maps?hl=ko">소스 매핑</a> 파일은 재정의할 수 없습니다. <strong>네트워크</strong> 패널에서 요청을 마우스 오른쪽 버튼으로 클릭하고 <strong>콘텐츠 재정의를 선택하면 DevTools에서 대신 원래 소스 파일로 이동하는 대화상자가 표시됩니다.</aside></strong>
+
+<p>예를 들어 CSS가 <a href="#limitations">HTML 파일</a>에 있는 경우를 제외하고 <a href="https://developer.chrome.com/docs/devtools/javascript/reference?hl=ko#edit"><strong>소스</strong>의 파일</a> 또는 <a href="https://developer.chrome.com/docs/devtools/css/reference?hl=ko#change-declaration"><strong>요소</strong> > <strong>스타일</strong>의 CSS</a>를 수정할 수 있습니다.</p>
+
+<p>DevTools는 수정된 파일을 저장하고 <strong>Sources</strong> > <strong>Overrides</strong>에 나열하며, 관련 패널과 창(<strong>Elements</strong> > <strong>Styles</strong>, <strong>Network</strong>, <strong>Sources</strong> > <strong>Overrides</strong>)의 재정의된 파일 옆에 <img alt="저장했습니다." height="20" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/overrides/image/saved.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/overrides/image/saved_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_2880.png?hl=ko 2880w" width="17" /> 아이콘을 표시합니다.</p>
+
+<p><img alt="Sources, Network, Elements, Styles에서 재정의된 파일 옆에 있는 해당 아이콘" height="649" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/overrides/image/the-corresponding-icons-n-763a990adb8a.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/overrides/image/the-corresponding-icons-n-763a990adb8a_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-corresponding-icons-n-763a990adb8a_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-corresponding-icons-n-763a990adb8a_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-corresponding-icons-n-763a990adb8a_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-corresponding-icons-n-763a990adb8a_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-corresponding-icons-n-763a990adb8a_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-corresponding-icons-n-763a990adb8a_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-corresponding-icons-n-763a990adb8a_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-corresponding-icons-n-763a990adb8a_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-corresponding-icons-n-763a990adb8a_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-corresponding-icons-n-763a990adb8a_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p>또한 <strong>네트워크</strong> 패널에는 재정의된 웹 콘텐츠가 있는 요청의 <strong>응답</strong> 탭 옆에 보라색 점 아이콘과 도움말이 표시됩니다.</p>
+
+<p><img alt="&amp;#39;응답&amp;#39; 탭 옆에 있는 보라색 점 아이콘(도움말 포함)" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/overrides/image/tooltip-response.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/overrides/image/tooltip-response_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/overrides/image/tooltip-response_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/overrides/image/tooltip-response_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/overrides/image/tooltip-response_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/overrides/image/tooltip-response_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/overrides/image/tooltip-response_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/overrides/image/tooltip-response_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/overrides/image/tooltip-response_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/overrides/image/tooltip-response_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/overrides/image/tooltip-response_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/overrides/image/tooltip-response_2880.png?hl=ko 2880w" width="800" /></p>
+
+<h3 data-text="XHR 또는 가져오기 요청을 재정의하여 원격 리소스 모의 처리" id="override-xhr-fetch" tabindex="-1">XHR 또는 가져오기 요청을 재정의하여 원격 리소스 모의 처리</h3>
+
+<p>로컬 재정의를 사용하면 백엔드에 액세스할 필요가 없으며 백엔드에서 변경사항을 지원할 때까지 기다릴 필요도 없습니다. 즉석에서 모의실험 및 실험:</p>
+
+<ol>
+<li><a href="#set-up">로컬 재정의 설정</a></li>
+<li><strong>네트워크</strong>에서 <a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#filter-by-type"><strong>XHR/fetch</strong> 요청을 필터링</a>하고 필요한 요청을 찾아 마우스 오른쪽 버튼으로 클릭한 다음 <strong>콘텐츠 재정의</strong>를 선택합니다.</li>
+<li>가져온 데이터를 변경하고 파일을 저장합니다.</li>
+<li><span aria-hidden="true" class="material-icons" translate="no">refresh</span> 페이지를 <strong>새로고침</strong>하고 변경사항이 적용되었는지 확인합니다.</li>
+</ol>
+
+<p>이 워크플로를 알아보려면 다음 동영상을 시청하세요.</p>
+
+<video autoplay class="screenshot" controls height="704" loop="" muted="" playsinline="" style="--vid-width: 800; --vid-height: 704" width="800"> <source src="https://developer.chrome.com/static/docs/devtools/overrides/video/NJdAV9UgKuN8AhoaPBquL7giZQo1/TNcd8DCxoK6OmHQqJjKT.mp4?hl=ko" type="video/mp4" /> </video>
+
+<h3 data-text="로컬 변경사항 추적" id="track-changes" tabindex="-1">로컬 변경사항 추적</h3>
+
+<p><a href="https://developer.chrome.com/docs/devtools/changes?hl=ko"><strong>변경사항</strong></a> 드로어 탭에서 웹 콘텐츠에 적용한 모든 변경사항을 한곳에서 추적할 수 있습니다.</p>
+
+<p>또한 <strong>소스</strong> > <strong>재정의</strong>에서 저장된 파일을 마우스 오른쪽 버튼으로 클릭하고 컨텍스트 메뉴에서 <strong>포함된 폴더에서 열기</strong>를 선택할 수 있습니다. 그러면 <a href="#set-up">재정의 설정</a> 중에 선택한 폴더가 열립니다. 여기에서 원하는 코드 편집기로 파일을 수정할 수 있습니다.</p>
+
+<p><img alt="&amp;#39;포함된 폴더에서 열기&amp;#39; 옵션" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/overrides/image/open-in-folder.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/overrides/image/open-in-folder_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/overrides/image/open-in-folder_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/overrides/image/open-in-folder_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/overrides/image/open-in-folder_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/overrides/image/open-in-folder_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/overrides/image/open-in-folder_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/overrides/image/open-in-folder_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/overrides/image/open-in-folder_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/overrides/image/open-in-folder_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/overrides/image/open-in-folder_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/overrides/image/open-in-folder_2880.png?hl=ko 2880w" width="700" /></p>
+
+<h2 data-text="HTTP 응답 헤더 재정의" id="override-headers" tabindex="-1">HTTP 응답 헤더 재정의</h2>
+
+<p><strong>네트워크</strong> 패널에서 웹 서버에 액세스하지 않고도 HTTP 응답 헤더를 재정의할 수 있습니다.</p>
+
+<p>응답 헤더 재정의를 사용하면 다음을 포함하되 이에 국한되지 않는 다양한 헤더의 수정사항을 로컬로 프로토타입으로 만들 수 있습니다.</p>
+
+<ul>
+<li><a href="https://developer.mozilla.org/docs/Web/HTTP/CORS">교차 출처 리소스 공유 (CORS) 헤더</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy">Permissions-Policy 헤더</a></li>
+<li><a href="https://web.dev/articles/coop-coep?hl=ko">교차 출처 격리 헤더</a></li>
+</ul>
+
+<p>응답 헤더를 재정의하려면 다음 단계를 따르세요.</p>
+
+<ol>
+<li><a href="#set-up">로컬 재정의를 설정</a>하고 디버깅할 페이지를 엽니다.</li>
+<li><strong>네트워크</strong>로 이동하여 요청을 찾고, 요청을 마우스 오른쪽 버튼으로 클릭한 다음 <strong>헤더 재정의</strong>를 선택합니다. DevTools에서 <strong>헤더</strong> > <strong>응답 헤더</strong> 편집기로 이동합니다.</li>
+<li><p>응답 헤더 값 위로 마우스를 가져가 커서를 놓습니다.</p>
+
+<p><img alt="응답 헤더 편집기" height="608" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/overrides/image/the-response-headers-edit-abb0c39baf076.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/overrides/image/the-response-headers-edit-abb0c39baf076_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-response-headers-edit-abb0c39baf076_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-response-headers-edit-abb0c39baf076_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-response-headers-edit-abb0c39baf076_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-response-headers-edit-abb0c39baf076_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-response-headers-edit-abb0c39baf076_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-response-headers-edit-abb0c39baf076_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-response-headers-edit-abb0c39baf076_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-response-headers-edit-abb0c39baf076_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-response-headers-edit-abb0c39baf076_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/overrides/image/the-response-headers-edit-abb0c39baf076_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p>또는 <strong>응답 헤더</strong> 편집기를 사용 설정하려면 응답 헤더 값 위로 마우스를 가져가 <span aria-hidden="true" class="material-symbols-outlined">수정</span> <strong>수정</strong>을 클릭합니다.</p></li>
+<li><p>새 헤더를 수정하거나 추가합니다.</p>
+
+<aside class="note"><b>참고:</b> 이 예에서는 <a href="https://web.dev/articles/cross-origin-resource-sharing?hl=ko">CORS 오류</a>를 없애기 위해 <code dir="ltr" translate="no">Access-Control-Allow-Origin: *</code> 헤더를 추가합니다.</aside>
+
+<p><img alt="기존 헤더 값 수정, 새 헤더 추가, 재정의 삭제" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/overrides/image/modifying-existing-headers.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/overrides/image/modifying-existing-headers_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/overrides/image/modifying-existing-headers_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/overrides/image/modifying-existing-headers_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/overrides/image/modifying-existing-headers_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/overrides/image/modifying-existing-headers_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/overrides/image/modifying-existing-headers_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/overrides/image/modifying-existing-headers_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/overrides/image/modifying-existing-headers_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/overrides/image/modifying-existing-headers_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/overrides/image/modifying-existing-headers_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/overrides/image/modifying-existing-headers_2880.png?hl=ko 2880w" width="800" /></p>
+
+<ul>
+<li>헤더 값을 수정하려면 헤더 값을 클릭합니다.</li>
+<li>새 헤더를 추가하려면 <span aria-hidden="true" class="material-icons" translate="no">add</span> <strong>헤더 추가</strong>를 클릭합니다.</li>
+<li>헤더 재정의를 삭제하려면 옆에 있는 <span aria-hidden="true" class="material-icons" translate="no">delete</span>를 클릭합니다. 이렇게 하면 추가한 헤더가 삭제되거나 수정된 값이 원래 값으로 되돌아갑니다.</li>
+</ul>
+
+<p><strong>네트워크</strong> 패널에서는 수정된 헤더가 <span style="background-color:#e9f2ec;">녹색</span>으로 강조 표시되고 삭제된 재정의가 <span style="background-color:#ffeff0;text-decoration-line: line-through;">빨간색으로 취소선이 그어져</span> 표시됩니다. 또한 <strong>헤더</strong> 탭에는 헤더가 재정의되었음을 알리는 도움말이 있는 보라색 점 아이콘이 표시됩니다.</p></li>
+<li><p><span aria-hidden="true" class="material-icons" translate="no">refresh</span> 변경사항을 적용하려면 페이지를 새로고침하세요.</p></li>
+</ol>
+
+<h3 data-text="모든 응답 헤더 재정의 수정" id="edit-response-header-overrides" tabindex="-1">모든 응답 헤더 재정의 수정</h3>
+
+<p>모든 헤더 재정의를 한곳에서 수정하려면 다음 단계를 따르세요.</p>
+
+<ol>
+<li><p><strong>응답 헤더</strong> 섹션 옆에 있는 <img alt="저장했습니다." height="20" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/overrides/image/saved.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/overrides/image/saved_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/overrides/image/saved_2880.png?hl=ko 2880w" width="17" /> <strong>.headers</strong>를 클릭합니다.</p>
+
+<p><img alt="&amp;#39;헤더 재정의&amp;#39; 링크는 &amp;#39;응답 헤더&amp;#39; 섹션 옆에 있습니다." sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/overrides/image/header-overrides-link.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/overrides/image/header-overrides-link_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/overrides/image/header-overrides-link_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/overrides/image/header-overrides-link_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/overrides/image/header-overrides-link_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/overrides/image/header-overrides-link_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/overrides/image/header-overrides-link_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/overrides/image/header-overrides-link_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/overrides/image/header-overrides-link_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/overrides/image/header-overrides-link_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/overrides/image/header-overrides-link_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/overrides/image/header-overrides-link_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p>DevTools에서 <strong>Sources</strong> > <strong>Overrides</strong>의 해당 <code dir="ltr" translate="no">.headers</code> 파일로 이동합니다.</p></li>
+<li><p><code dir="ltr" translate="no">.headers</code> 파일을 수정합니다.</p>
+
+<p><img alt=".headers 파일 수정" height="503" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/overrides/image/editing-headers-file-02b8527219b9a.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/overrides/image/editing-headers-file-02b8527219b9a_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/overrides/image/editing-headers-file-02b8527219b9a_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/overrides/image/editing-headers-file-02b8527219b9a_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/overrides/image/editing-headers-file-02b8527219b9a_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/overrides/image/editing-headers-file-02b8527219b9a_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/overrides/image/editing-headers-file-02b8527219b9a_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/overrides/image/editing-headers-file-02b8527219b9a_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/overrides/image/editing-headers-file-02b8527219b9a_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/overrides/image/editing-headers-file-02b8527219b9a_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/overrides/image/editing-headers-file-02b8527219b9a_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/overrides/image/editing-headers-file-02b8527219b9a_2880.png?hl=ko 2880w" width="800" /></p>
+
+<ul>
+<li><p>새 재정의 규칙을 추가하려면 <strong>재정의 규칙 추가</strong>를 클릭합니다. 여기서 규칙은 헤더와 값의 집합이며 이를 적용할 단일 또는 여러 요청입니다.</p>
+
+<aside class="note"><b>참고:</b> <a href="https://chromedevtools.github.io/devtools-protocol/tot/Fetch/#type-RequestPattern">와일드 카드</a>를 사용하여 한 번에 여러 요청을 지정할 수 있습니다. <code dir="ltr" translate="no">*</code>로 여러 문자를 지정하고 <code dir="ltr" translate="no">?</code>로 단일 문자를 지정합니다.</aside></li>
+<li><p>규칙에 헤더-값 쌍을 추가하려면 다른 쌍 위로 마우스를 가져가 <span aria-hidden="true" class="material-icons" translate="no">add</span>를 클릭합니다.</p></li>
+<li><p>헤더 값을 되돌리려면 추가된 헤더나 규칙을 삭제하고 마우스를 가져간 후 <span aria-hidden="true" class="material-icons" translate="no">delete</span>를 클릭합니다.</p></li>
+</ul></li>
+<li><p><kbd>Command</kbd> / <kbd>Control</kbd> + <kbd>S</kbd>를 사용하여 <code dir="ltr" translate="no">.headers</code> 파일을 저장합니다.</p></li>
+<li><p><span aria-hidden="true" class="material-icons" translate="no">refresh</span> 변경사항을 적용하려면 페이지를 새로고침하세요.</p></li>
+</ol>

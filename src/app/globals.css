@@ -622,6 +622,9 @@ button:disabled {
   background: #f8fafc;
   padding: 0.12rem 0.38rem;
   font-size: 0.9em;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
   color: #0f172a;
 }
 
