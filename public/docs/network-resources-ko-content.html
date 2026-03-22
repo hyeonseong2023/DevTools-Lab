@@ -1,0 +1,217 @@
+<p><style>
+.wd-authors {
+  --avatar-size: 65px;
+  display: flex;
+  gap: 2em;
+}
+
+.wd-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  line-height: calc(var(--avatar-size) / 2);
+}
+
+.wd-author img {
+  border-radius: 50%;
+  height: var(--avatar-size, 65px);
+  width: var(--avatar-size, 65px);
+}
+
+.dcc-authors {
+  --avatar-size: 65px;
+  display: flex;
+  gap: 2em;
+}
+
+.dcc-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  line-height: calc(var(--avatar-size) / 2);
+}
+
+.dcc-author img {
+  border-radius: 50%;
+  height: var(--avatar-size, 65px);
+  width: var(--avatar-size, 65px);
+}
+  
+.dcc-author__links {
+  display: flex;
+}
+
+.dcc-author__links a {
+  margin-inline-end: 6px;
+}
+
+.dcc-author__links a:last-of-type {
+  margin-inline-end: 0;
+}
+</style>
+
+</p><div class="dcc-authors" translate="no">
+  
+    
+    
+      <div class="dcc-author">
+        
+          <img alt="Kayce Basques" class="devsite-landing-row-item-icon" decoding="async" height="64" loading="lazy" src="https://web.dev/images/authors/kaycebasques.jpg?hl=ko" width="64" /> 
+        
+        <div>
+          <span> 
+            Kayce Basques
+          </span>
+          <div class="dcc-author__links">
+            
+              <a aria-label="Kayce Basques on X" href="https://twitter.com/kaycebasques" rel="me">
+                <svg height="22" viewBox="0 0 300 271" width="22" xmlns="http://www.w3.org/2000/svg">
+                  <title>X</title>
+                  <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z" fill="currentColor"></path>
+                </svg></a>
+            
+            
+              <a aria-label="Kayce Basques on GitHub" href="https://github.com/kaycebasques" rel="me">
+                <svg height="22" viewBox="0 0 32.6 31.8" width="22" xmlns="http://www.w3.org/2000/svg">
+                  <title>GitHub</title>
+                  <path clip-rule="evenodd" d="M16.3 0C7.3 0 0 7.3 0 16.3c0 7.2 4.7 13.3 11.1 15.5.8.1 1.1-.4 1.1-.8v-2.8c-4.5 1-5.5-2.2-5.5-2.2-.7-1.9-1.8-2.4-1.8-2.4-1.5-1 .1-1 .1-1 1.6.1 2.5 1.7 2.5 1.7 1.5 2.5 3.8 1.8 4.7 1.4.1-1.1.6-1.8 1-2.2-3.6-.4-7.4-1.8-7.4-8.1 0-1.8.6-3.2 1.7-4.4-.1-.3-.7-2 .2-4.2 0 0 1.4-.4 4.5 1.7 1.3-.4 2.7-.5 4.1-.5 1.4 0 2.8.2 4.1.5 3.1-2.1 4.5-1.7 4.5-1.7.9 2.2.3 3.9.2 4.3 1 1.1 1.7 2.6 1.7 4.4 0 6.3-3.8 7.6-7.4 8 .6.5 1.1 1.5 1.1 3V31c0 .4.3.9 1.1.8 6.5-2.2 11.1-8.3 11.1-15.5C32.6 7.3 25.3 0 16.3 0z" fill="currentColor" fill-rule="evenodd"></path>
+                </svg></a>
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    
+  
+</div><p></p>
+
+<p>이 가이드에서는 Chrome DevTools를 사용하여 웹페이지의 리소스를 보는 방법을 설명합니다. 리소스는 페이지가 올바르게 표시되기 위해 필요한 파일입니다. 리소스의 예로는 CSS, JavaScript, HTML 파일, 이미지가 있습니다.</p>
+
+<p>이 가이드는 <a href="https://developer.mozilla.org/docs/Learn">웹 개발</a> 및 <a href="https://developer.chrome.com/docs/devtools/overview?hl=ko#start">Chrome DevTools</a>의 기본사항에 익숙하다고 가정합니다.</p>
+
+<h2 data-text="공개 리소스" id="open" tabindex="-1">공개 리소스</h2>
+
+<p>검사하려는 리소스의 이름을 알고 있으면 <strong>명령어 메뉴</strong>를 사용하여 리소스를 빠르게 열 수 있습니다.</p>
+
+<ol>
+<li><p><kbd>Control</kbd>+<kbd>P</kbd> 또는 <kbd>Command</kbd>+<kbd>P</kbd> (Mac)를 누릅니다. <strong>파일 열기</strong> 대화상자가 열립니다.</p>
+
+<p><img alt="파일 열기 대화상자" height="525" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/the-open-file-dialog-900264467667a.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/the-open-file-dialog-900264467667a_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/the-open-file-dialog-900264467667a_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/the-open-file-dialog-900264467667a_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/the-open-file-dialog-900264467667a_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/the-open-file-dialog-900264467667a_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/the-open-file-dialog-900264467667a_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/the-open-file-dialog-900264467667a_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/the-open-file-dialog-900264467667a_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/the-open-file-dialog-900264467667a_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/the-open-file-dialog-900264467667a_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/the-open-file-dialog-900264467667a_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 1</strong>. <strong>파일 열기</strong> 대화상자</p></li>
+<li><p>드롭다운에서 파일을 선택하거나 파일 이름을 입력하기 시작하고 자동 완성 상자에 올바른 파일이 강조 표시되면 <kbd>Enter</kbd> 키를 누릅니다.</p>
+
+<p><img alt="파일 열기 대화상자에 파일 이름 입력" height="525" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/typing-filename-the-ope-70f00e3b3eabc.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/typing-filename-the-ope-70f00e3b3eabc_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/typing-filename-the-ope-70f00e3b3eabc_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/typing-filename-the-ope-70f00e3b3eabc_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/typing-filename-the-ope-70f00e3b3eabc_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/typing-filename-the-ope-70f00e3b3eabc_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/typing-filename-the-ope-70f00e3b3eabc_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/typing-filename-the-ope-70f00e3b3eabc_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/typing-filename-the-ope-70f00e3b3eabc_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/typing-filename-the-ope-70f00e3b3eabc_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/typing-filename-the-ope-70f00e3b3eabc_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/typing-filename-the-ope-70f00e3b3eabc_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 2</strong>. <strong>파일 열기</strong> 대화상자에 파일 이름 입력</p></li>
+</ol>
+
+<h3 data-text="네트워크 패널에서 리소스 열기" id="networkopen" tabindex="-1">네트워크 패널에서 리소스 열기</h3>
+
+<p><a href="https://developer.chrome.com/docs/devtools/network?hl=ko#details">리소스 세부정보 검사</a>를 참고하세요.</p>
+
+<p><img alt="네트워크 패널에서 리소스 검사" height="712" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/inspecting-resource-the-9c28cda2491e.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/inspecting-resource-the-9c28cda2491e_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/inspecting-resource-the-9c28cda2491e_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/inspecting-resource-the-9c28cda2491e_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/inspecting-resource-the-9c28cda2491e_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/inspecting-resource-the-9c28cda2491e_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/inspecting-resource-the-9c28cda2491e_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/inspecting-resource-the-9c28cda2491e_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/inspecting-resource-the-9c28cda2491e_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/inspecting-resource-the-9c28cda2491e_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/inspecting-resource-the-9c28cda2491e_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/inspecting-resource-the-9c28cda2491e_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 3</strong>. <strong>네트워크</strong> 패널에서 리소스 검사</p>
+
+<h3 data-text="다른 패널에서 네트워크 패널의 리소스 표시" id="reveal" tabindex="-1">다른 패널에서 네트워크 패널의 리소스 표시</h3>
+
+<p>아래의 <a href="#browse">리소스 둘러보기</a> 섹션에서는 DevTools UI의 다양한 부분에서 리소스를 보는 방법을 보여줍니다. <strong>네트워크</strong> 패널에서 리소스를 검사하려면 리소스를 마우스 오른쪽 버튼으로 클릭하고 <strong>네트워크 패널에 표시</strong>를 선택합니다.</p>
+
+<p><img alt="네트워크 패널에서 보기" height="552" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/reveal-network-panel-d33d37808bf67.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/reveal-network-panel-d33d37808bf67_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/reveal-network-panel-d33d37808bf67_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/reveal-network-panel-d33d37808bf67_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/reveal-network-panel-d33d37808bf67_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/reveal-network-panel-d33d37808bf67_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/reveal-network-panel-d33d37808bf67_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/reveal-network-panel-d33d37808bf67_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/reveal-network-panel-d33d37808bf67_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/reveal-network-panel-d33d37808bf67_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/reveal-network-panel-d33d37808bf67_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/reveal-network-panel-d33d37808bf67_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 4</strong>. <strong>네트워크 패널에서 보기</strong> 옵션</p>
+
+<h2 data-text="리소스 찾아보기" id="browse" tabindex="-1">리소스 찾아보기</h2>
+
+<h3 data-text="네트워크 패널에서 리소스 둘러보기" id="network" tabindex="-1">네트워크 패널에서 리소스 둘러보기</h3>
+
+<p><a href="https://developer.chrome.com/docs/devtools/network?hl=ko#load">네트워크 활동 로깅</a>을 참고하세요.</p>
+
+<p><img alt="네트워크 로그의 페이지 리소스" height="670" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/page-resources-the-netwo-5aae0ad2913ba.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/page-resources-the-netwo-5aae0ad2913ba_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/page-resources-the-netwo-5aae0ad2913ba_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/page-resources-the-netwo-5aae0ad2913ba_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/page-resources-the-netwo-5aae0ad2913ba_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/page-resources-the-netwo-5aae0ad2913ba_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/page-resources-the-netwo-5aae0ad2913ba_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/page-resources-the-netwo-5aae0ad2913ba_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/page-resources-the-netwo-5aae0ad2913ba_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/page-resources-the-netwo-5aae0ad2913ba_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/page-resources-the-netwo-5aae0ad2913ba_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/page-resources-the-netwo-5aae0ad2913ba_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 5</strong>. 네트워크 로그의 페이지 리소스</p>
+
+<h3 data-text="디렉터리별로 둘러보기" id="directory" tabindex="-1">디렉터리별로 둘러보기</h3>
+
+<p>디렉터리별로 구성된 페이지의 리소스를 보려면 다음 단계를 따르세요.</p>
+
+<ol>
+<li><strong>소스</strong> 탭을 클릭하여 <strong>소스</strong> 패널을 엽니다.</li>
+<li><p><strong>페이지</strong> 탭을 클릭하여 페이지의 리소스를 표시합니다. <strong>페이지</strong> 창이 열립니다.</p>
+
+<p><img alt="페이지 창" height="569" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-ac301f62d982.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-ac301f62d982_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-ac301f62d982_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-ac301f62d982_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-ac301f62d982_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-ac301f62d982_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-ac301f62d982_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-ac301f62d982_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-ac301f62d982_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-ac301f62d982_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-ac301f62d982_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-ac301f62d982_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 6</strong>. <strong>페이지</strong> 창</p>
+
+<p>다음은 <strong>그림 6</strong>에서 눈에 잘 띄지 않는 항목에 대한 세부정보입니다.</p>
+
+<ul>
+<li><strong>top</strong>은 기본 문서 <a href="https://developer.mozilla.org/docs/Web/HTML/Element/iframe">탐색 컨텍스트</a>입니다.</li>
+<li><strong>airhorner.com</strong>은 도메인을 나타냅니다. 그 아래에 중첩된 모든 리소스는 해당 도메인에서 가져옵니다.
+예를 들어 <strong>comlink.global.js</strong> 파일의 전체 URL은 <code dir="ltr" translate="no">https://airhorner.com/scripts/comlink.global.js</code>일 수 있습니다.</li>
+<li><strong>scripts</strong>는 디렉터리입니다.</li>
+<li><strong>(index)</strong>는 기본 HTML 문서입니다.</li>
+<li><strong>iu3</strong>는 다른 탐색 컨텍스트입니다. 이 컨텍스트는 기본 문서 HTML에 삽입된 <code dir="ltr" translate="no">&lt;iframe&gt;</code> 요소에 의해 생성되었을 수 있습니다.</li>
+<li><strong>sw.js</strong>는 서비스 워커 실행 컨텍스트입니다.</li>
+</ul></li>
+<li><p>리소스를 클릭하여 <strong>편집기</strong>에서 확인합니다.</p>
+
+<p><img alt="편집기에서 파일 보기" height="525" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/viewing-file-the-editor-0aacf93c27f6c.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/viewing-file-the-editor-0aacf93c27f6c_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-file-the-editor-0aacf93c27f6c_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-file-the-editor-0aacf93c27f6c_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-file-the-editor-0aacf93c27f6c_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-file-the-editor-0aacf93c27f6c_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-file-the-editor-0aacf93c27f6c_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-file-the-editor-0aacf93c27f6c_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-file-the-editor-0aacf93c27f6c_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-file-the-editor-0aacf93c27f6c_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-file-the-editor-0aacf93c27f6c_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-file-the-editor-0aacf93c27f6c_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 7</strong>. <strong>편집기</strong>에서 파일 보기</p></li>
+</ol>
+
+<h3 data-text="파일 이름으로 둘러보기" id="filename" tabindex="-1">파일 이름으로 둘러보기</h3>
+
+<p>기본적으로 <strong>페이지</strong> 창은 디렉터리별로 리소스를 그룹화합니다. 이 그룹화를 사용 중지하고 각 도메인의 리소스를 평면 목록으로 보려면 다음 단계를 따르세요.</p>
+
+<ol>
+<li><strong>페이지</strong> 창을 엽니다. <a href="#directory">디렉터리별로 둘러보기</a>를 참고하세요.</li>
+<li><p><strong>옵션 더보기</strong> <img alt="옵션 더보기" height="26" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/more-options-e89dff8c23679.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/more-options-e89dff8c23679_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/more-options-e89dff8c23679_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/more-options-e89dff8c23679_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/more-options-e89dff8c23679_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/more-options-e89dff8c23679_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/more-options-e89dff8c23679_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/more-options-e89dff8c23679_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/more-options-e89dff8c23679_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/more-options-e89dff8c23679_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/more-options-e89dff8c23679_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/more-options-e89dff8c23679_2880.png?hl=ko 2880w" width="6" />를 클릭하고 <strong>폴더별 그룹화</strong>를 사용 중지합니다.</p>
+
+<p><img alt="폴더별로 그룹화" height="569" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/group-folder-0cf9f5cbf413d.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/group-folder-0cf9f5cbf413d_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/group-folder-0cf9f5cbf413d_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/group-folder-0cf9f5cbf413d_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/group-folder-0cf9f5cbf413d_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/group-folder-0cf9f5cbf413d_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/group-folder-0cf9f5cbf413d_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/group-folder-0cf9f5cbf413d_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/group-folder-0cf9f5cbf413d_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/group-folder-0cf9f5cbf413d_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/group-folder-0cf9f5cbf413d_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/group-folder-0cf9f5cbf413d_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 8</strong>. <strong>폴더별로 그룹화</strong> 옵션</p>
+
+<p>리소스는 파일 유형별로 구성됩니다. 각 파일 유형 내에서 리소스는 알파벳순으로 정렬됩니다.</p>
+
+<p><img alt="폴더별로 그룹화 기능을 사용 중지한 후의 페이지 창" height="560" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-disabling-7a05f9890cbc4.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-disabling-7a05f9890cbc4_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-disabling-7a05f9890cbc4_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-disabling-7a05f9890cbc4_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-disabling-7a05f9890cbc4_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-disabling-7a05f9890cbc4_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-disabling-7a05f9890cbc4_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-disabling-7a05f9890cbc4_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-disabling-7a05f9890cbc4_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-disabling-7a05f9890cbc4_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-disabling-7a05f9890cbc4_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/the-page-pane-disabling-7a05f9890cbc4_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 9</strong>. <strong>폴더별로 그룹화</strong>를 사용 중지한 후의 <strong>페이지</strong> 창</p></li>
+</ol>
+
+<h3 data-text="파일 형식별로 둘러보기" id="type" tabindex="-1">파일 형식별로 둘러보기</h3>
+
+<p>파일 유형을 기준으로 리소스를 그룹화하려면 다음 단계를 따르세요.</p>
+
+<ol>
+<li><p><strong>애플리케이션</strong> 탭을 클릭합니다. <strong>애플리케이션</strong> 패널이 열립니다. 기본적으로 <strong>매니페스트</strong> 창이 먼저 열립니다.</p>
+
+<p><img alt="애플리케이션 패널" height="569" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/the-application-panel-67c1779ce4986.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/the-application-panel-67c1779ce4986_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/the-application-panel-67c1779ce4986_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/the-application-panel-67c1779ce4986_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/the-application-panel-67c1779ce4986_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/the-application-panel-67c1779ce4986_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/the-application-panel-67c1779ce4986_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/the-application-panel-67c1779ce4986_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/the-application-panel-67c1779ce4986_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/the-application-panel-67c1779ce4986_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/the-application-panel-67c1779ce4986_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/the-application-panel-67c1779ce4986_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 10</strong>. <strong>애플리케이션</strong> 패널</p></li>
+<li><p><strong>프레임</strong> 창까지 아래로 스크롤합니다.</p>
+
+<p><img alt="프레임 창" height="525" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/the-frames-pane-9d2432adb0aea.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/the-frames-pane-9d2432adb0aea_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/the-frames-pane-9d2432adb0aea_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/the-frames-pane-9d2432adb0aea_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/the-frames-pane-9d2432adb0aea_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/the-frames-pane-9d2432adb0aea_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/the-frames-pane-9d2432adb0aea_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/the-frames-pane-9d2432adb0aea_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/the-frames-pane-9d2432adb0aea_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/the-frames-pane-9d2432adb0aea_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/the-frames-pane-9d2432adb0aea_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/the-frames-pane-9d2432adb0aea_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 11</strong>. <strong>프레임</strong> 창</p></li>
+<li><p>관심 있는 섹션을 펼칩니다.</p></li>
+<li><p>리소스를 클릭하여 확인합니다.</p>
+
+<p><img alt="애플리케이션 패널에서 리소스 보기" height="525" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/viewing-resource-the-ap-873c25a92d586.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/viewing-resource-the-ap-873c25a92d586_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-resource-the-ap-873c25a92d586_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-resource-the-ap-873c25a92d586_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-resource-the-ap-873c25a92d586_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-resource-the-ap-873c25a92d586_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-resource-the-ap-873c25a92d586_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-resource-the-ap-873c25a92d586_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-resource-the-ap-873c25a92d586_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-resource-the-ap-873c25a92d586_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-resource-the-ap-873c25a92d586_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/viewing-resource-the-ap-873c25a92d586_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 11</strong>. <strong>애플리케이션</strong> 패널에서 리소스 보기</p></li>
+</ol>
+
+<h4 data-text="네트워크 패널에서 유형별로 파일 탐색" id="browse_files_by_type_in_the_network_panel" tabindex="-1">네트워크 패널에서 유형별로 파일 탐색</h4>
+
+<p><a href="https://developer.chrome.com/docs/devtools/network?hl=ko#type">리소스 유형별로 필터링</a>을 참고하세요.</p>
+
+<p><img alt="네트워크 로그에서 CSS 필터링" height="575" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/resources/image/filtering-css-the-netwo-f90c7f5fd51e4.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/resources/image/filtering-css-the-netwo-f90c7f5fd51e4_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/resources/image/filtering-css-the-netwo-f90c7f5fd51e4_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/resources/image/filtering-css-the-netwo-f90c7f5fd51e4_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/resources/image/filtering-css-the-netwo-f90c7f5fd51e4_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/resources/image/filtering-css-the-netwo-f90c7f5fd51e4_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/resources/image/filtering-css-the-netwo-f90c7f5fd51e4_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/resources/image/filtering-css-the-netwo-f90c7f5fd51e4_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/resources/image/filtering-css-the-netwo-f90c7f5fd51e4_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/resources/image/filtering-css-the-netwo-f90c7f5fd51e4_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/resources/image/filtering-css-the-netwo-f90c7f5fd51e4_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/resources/image/filtering-css-the-netwo-f90c7f5fd51e4_2880.png?hl=ko 2880w" width="800" /></p>
+
+<p><strong>그림 12</strong>. 네트워크 로그에서 CSS 필터링</p>

@@ -1,6 +1,5 @@
-import { ComingSoonPanel } from "@/components/guide/ComingSoonPanel";
-import { getPanelOrThrow } from "@/lib/panels";
+import { NetworkLabWorkspace } from "@/components/labs/network/NetworkLabWorkspace";
 
 export default function NetworkPage() {
-  return <ComingSoonPanel panel={getPanelOrThrow("network")} />;
+  return <NetworkLabWorkspace />;
 }

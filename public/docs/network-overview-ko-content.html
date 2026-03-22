@@ -1,0 +1,203 @@
+<p><style>
+.wd-authors {
+  --avatar-size: 65px;
+  display: flex;
+  gap: 2em;
+}
+
+.wd-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  line-height: calc(var(--avatar-size) / 2);
+}
+
+.wd-author img {
+  border-radius: 50%;
+  height: var(--avatar-size, 65px);
+  width: var(--avatar-size, 65px);
+}
+
+.dcc-authors {
+  --avatar-size: 65px;
+  display: flex;
+  gap: 2em;
+}
+
+.dcc-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  line-height: calc(var(--avatar-size) / 2);
+}
+
+.dcc-author img {
+  border-radius: 50%;
+  height: var(--avatar-size, 65px);
+  width: var(--avatar-size, 65px);
+}
+  
+.dcc-author__links {
+  display: flex;
+}
+
+.dcc-author__links a {
+  margin-inline-end: 6px;
+}
+
+.dcc-author__links a:last-of-type {
+  margin-inline-end: 0;
+}
+</style>
+
+</p><div class="dcc-authors" translate="no">
+  
+    
+    
+      <div class="dcc-author">
+        
+          <img alt="Dale St. Marthe" class="devsite-landing-row-item-icon" decoding="async" height="64" loading="lazy" src="https://web.dev/images/authors/dalestmarthe.jpg?hl=ko" width="64" /> 
+        
+        <div>
+          <span> 
+            Dale St. Marthe
+          </span>
+          <div class="dcc-author__links">
+            
+            
+            
+            
+              <a aria-label="Dale St. Marthe on LinkedIn" href="https://www.linkedin.com/in/dale-st-marthe" rel="me">
+                <svg height="22" viewBox="0 0 200 200" width="22" xmlns="http://www.w3.org/2000/svg">
+                  <title>LinkedIn</title>
+                  <path d="M185.2 0H14.8C6.6 0 0 6.4 0 14.3v171.3c0 7.9 6.6 14.3 14.8 14.3h170.4c8.1 0 14.8-6.4 14.8-14.3V14.3C199.9 6.4 193.3 0 185.2 0zM60.6 167.3H30.4V77.1h30.2v90.2zM45.5 64.8h-.2c-10.1 0-16.7-6.9-16.7-15.6 0-8.8 6.7-15.6 17.1-15.6 10.3 0 16.7 6.7 16.9 15.6 0 8.6-6.5 15.6-17.1 15.6zm124 102.5h-30.2V119c0-12.1-4.4-20.4-15.3-20.4-8.4 0-13.3 5.6-15.5 11-.8 1.9-1 4.6-1 7.3v50.4H77.3s.4-81.8 0-90.3h30.2v12.8c4-6.1 11.2-14.9 27.2-14.9 19.9 0 34.8 12.9 34.8 40.6v51.8zm-62.2-77.1c0-.1.1-.2.2-.3v.3h-.2z" fill="currentColor"></path>
+                </svg></a>
+            
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    
+  
+</div><p></p>
+
+<p><strong>Network</strong> 패널을 사용하여 페이지 로드를 분석하고 네트워크 리소스를 검사합니다.</p>
+
+<h2 data-text="개요" id="overview" tabindex="-1">개요</h2>
+
+<p><strong>네트워크</strong> 패널을 사용하면 다음 작업을 할 수 있습니다.</p>
+
+<ul>
+<li><a href="#activity">네트워크 활동 기록</a></li>
+<li><a href="#inspect">네트워크 요청 검사</a></li>
+<li><a href="#filter">네트워크 요청 필터링 및 정렬</a></li>
+<li><a href="#search">검색 네트워크 헤더 및 응답</a></li>
+<li><a href="#loading">로드 동작 변경</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network-request-blocking?hl=ko">네트워크 요청 차단하기</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/device-mode/override-user-agent?hl=ko#open_the_network_conditions_panel">네트워크 조건 변경하기</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/application/debugging-speculation-rules?hl=ko#debug-prefetch-network"><code dir="ltr" translate="no">prefetch</code> 추측 규칙 디버깅</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/overrides?hl=ko#override-headers">HTTP 응답 헤더 재정의</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/overrides?hl=ko#edit-response-header-overrides">와일드 카드 문자를 사용하여 여러 URL의 헤더를 재정의합니다.</a></li>
+<li><a href="#export">네트워크 요청 데이터 저장 및 내보내기</a></li>
+</ul>
+
+<p>가장 자주 사용되는 <strong>네트워크</strong> 패널 기능을 살펴보는 안내 튜토리얼은 <a href="https://developer.chrome.com/docs/devtools/network?hl=ko">네트워크 활동 검사</a>를 참고하세요.</p>
+
+<h2 data-text="Network 패널 열기" id="open_the_network_panel" tabindex="-1">Network 패널 열기</h2>
+
+<p><strong>네트워크</strong> 패널을 열려면 <a href="https://developer.chrome.com/docs/devtools/open?hl=ko">DevTools를 열고</a> 상단의 작업 모음에 있는 <strong>네트워크</strong>를 클릭합니다.</p>
+
+<p>또는 <strong>명령어 메뉴</strong>를 통해 <strong>네트워크</strong> 패널을 열려면 다음 단계를 따르세요.</p>
+
+<ol>
+<li><a href="https://developer.chrome.com/docs/devtools/open?hl=ko">DevTools를 엽니다</a>.</li>
+<li>다음을 눌러 <strong>명령어 메뉴</strong>를 엽니다.</li>
+<li>macOS: <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></li>
+<li>Windows, Linux, ChromeOS: <kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> <img alt="명령어 메뉴: " entered."="" network"="" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/network/overview/image/cmdm-network-panel.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/network/overview/image/cmdm-network-panel_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/network/overview/image/cmdm-network-panel_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/network/overview/image/cmdm-network-panel_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/network/overview/image/cmdm-network-panel_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/network/overview/image/cmdm-network-panel_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/network/overview/image/cmdm-network-panel_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/network/overview/image/cmdm-network-panel_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/network/overview/image/cmdm-network-panel_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/network/overview/image/cmdm-network-panel_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/network/overview/image/cmdm-network-panel_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/network/overview/image/cmdm-network-panel_2880.png?hl=ko 2880w" /></li>
+<li><code dir="ltr" translate="no">Network</code>를 입력하고 <strong>네트워크 패널 표시</strong>를 선택한 다음 <kbd>Enter</kbd> 키를 누릅니다.</li>
+</ol>
+
+<h2 data-text="네트워크 활동 기록" id="activity" tabindex="-1">네트워크 활동 기록</h2>
+
+<p><a href="https://developer.chrome.com/docs/devtools/open?hl=ko">DevTools를 열면</a> DevTools가 열려 있는 동안 <strong>Network</strong> 패널에 네트워크 요청이 자동으로 기록됩니다.</p>
+
+<p>녹음 외에도 다음 작업을 할 수 있습니다.</p>
+
+<ul>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#stop-recording">네트워크 요청 기록을 중지합니다</a>.</li>
+<li><strong>요청</strong> 테이블에서 <a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#clear">모든 요청을 삭제</a>합니다.</li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#preserve-log">페이지 로드 전반에서 요청 저장</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#offline">오프라인 환경 에뮬레이션</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network?hl=ko#throttle">네트워크 연결 속도를 느리게 시뮬레이션합니다</a>.</li>
+</ul>
+
+<h2 data-text="네트워크 요청 검사" id="inspect" tabindex="-1">네트워크 요청 검사</h2>
+
+<p>모든 네트워크 요청은 패널 중앙의 <strong>요청</strong> 표에 로깅됩니다.</p>
+
+<p>기본적으로 표시되는 열과 추가할 수 있는 열에 대해 자세히 알아보려면 <a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#requests">요청 로그 보기</a>를 참고하세요.</p>
+
+<p>요청 이름을 클릭하면 다음을 비롯하여 요청에 관한 추가 정보가 포함된 탭이 표시됩니다.</p>
+
+<ul>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#headers"><strong>헤더</strong></a>: 선택한 리소스의 HTTP 헤더입니다.</li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#payload"><strong>페이로드</strong></a>: 요청의 쿼리 문자열 매개변수 및 양식 데이터입니다.</li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#preview"><strong>미리보기</strong></a>: HTML의 기본 렌더링입니다.</li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#response"><strong>응답</strong></a>: 선택한 리소스의 HTML 소스 코드입니다.</li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#initiators-dependencies"><strong>이니시에이터</strong></a>: 리소스가 요청된 원인입니다.</li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#timing"><strong>타임라인</strong></a>: 선택한 리소스의 네트워크 활동 분석입니다.</li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#cookies"><strong>쿠키</strong></a>: 요청 및 응답의 쿠키입니다.</li>
+</ul>
+
+<h2 data-text="네트워크 요청 필터링 및 정렬" id="filter" tabindex="-1">네트워크 요청 필터링 및 정렬</h2>
+
+<p><strong>네트워크</strong> 패널을 사용하면 <strong>요청</strong> 표에서 요청을 정렬하는 두 가지 방법이 있습니다.</p>
+
+<ul>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#sort-by-column">열별 정렬</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#sort-by-activity">활동 단계별로 정렬</a></li>
+</ul>
+
+<p>다음은 <strong>요청</strong> 표에서 요청을 필터링하는 몇 가지 방법입니다.</p>
+
+<ul>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#filter-by-property">속성별로 요청 필터링하기</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#filter-by-type">유형별로 요청 필터링</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#filter-by-time">시간별로 요청 필터링하기</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#hide_data_urls">데이터 URL 숨기기</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#hide-extension-urls">확장 프로그램 URL 숨기기</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#show-blocked-cookies">차단된 응답 쿠키가 있는 요청만 표시</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#show-blocked">차단된 요청만 표시</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#third-party">서드 파티 요청만 표시</a></li>
+</ul>
+
+<h2 data-text="네트워크 헤더 및 응답 검색" id="search" tabindex="-1">네트워크 헤더 및 응답 검색</h2>
+
+<p>모든 리소스의 HTTP 헤더와 응답에서 특정 문자열이나 정규 표현식을 검색하는 방법을 알아보려면 <a href="https://developer.chrome.com/docs/devtools/network?hl=ko#search">네트워크 헤더 및 응답 검색</a>을 참고하세요.</p>
+
+<h2 data-text="로드 동작 변경" id="loading" tabindex="-1">로드 동작 변경</h2>
+
+<p><strong>네트워크</strong> 패널에서 로드 동작을 변경하여 페이지의 사용자 환경을 테스트합니다.</p>
+
+<p><strong>네트워크</strong> 패널을 사용하여 다음 작업을 할 수 있습니다.</p>
+
+<ul>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#disable-cache">브라우저 캐시를 사용 중지하여 신규 방문자 에뮬레이션</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#clear-cache">브라우저 캐시 수동으로 삭제하기</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#clear-cookies">브라우저 쿠키 수동 삭제</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#offline">오프라인 에뮬레이션</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#throttling">느린 네트워크 연결 시뮬레이션</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#override-headers">HTTP 응답 헤더 재정의</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#user-agent">사용자 에이전트 재정의</a></li>
+</ul>
+
+<h2 data-text="네트워크 요청 데이터 저장 및 내보내기" id="export" tabindex="-1">네트워크 요청 데이터 저장 및 내보내기</h2>
+
+<p>네트워크 요청 데이터를 저장하고 내보내려면 다음을 참고하세요.</p>
+
+<ul>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#save-as-har">모든 네트워크 요청을 HAR 파일에 저장</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/network/reference?hl=ko#copy">하나 이상의 요청을 클립보드에 복사</a></li>
+</ul>

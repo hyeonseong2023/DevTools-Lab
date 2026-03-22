@@ -27,6 +27,12 @@ Chrome DevTools 공식 문서 구조를 기준으로, 문서를 읽으면서 바
 - LAB 레이어: `public/labs/*`
 - 문서 데이터 레이어: `public/docs/*` 정적 HTML
 
+## 공식 문서 기준 URL (Network)
+
+- 개요: `https://developer.chrome.com/docs/devtools/network/overview?hl=ko`
+- 기능 참조: `https://developer.chrome.com/docs/devtools/network/reference?hl=ko`
+- 페이지 리소스: `https://developer.chrome.com/docs/devtools/resources?hl=ko`
+
 ## 실행
 
 ```bash

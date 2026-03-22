@@ -10,13 +10,9 @@ import { usePathname, useRouter } from "next/navigation";
 import { type CSSProperties, type MouseEvent, useEffect, useMemo, useRef, useState } from "react";
 
 type TopicId =
-  | "sources-overview"
-  | "sources-javascript"
-  | "sources-breakpoints"
-  | "sources-workspaces"
-  | "sources-snippets"
-  | "sources-reference"
-  | "sources-overrides";
+  | "network-overview"
+  | "network-reference"
+  | "network-resources";
 
 interface TopicDoc {
   id: TopicId;
@@ -48,212 +44,140 @@ interface PendingLabScenario {
 
 const TOPIC_DOCS: TopicDoc[] = [
   {
-    id: "sources-overview",
+    id: "network-overview",
     label: "개요",
   },
   {
-    id: "sources-javascript",
-    label: "자바스크립트 디버깅 시작하기",
+    id: "network-reference",
+    label: "네트워크 기능 참조",
   },
   {
-    id: "sources-breakpoints",
-    label: "중단점을 사용하여 코드 일시중지",
-  },
-  {
-    id: "sources-workspaces",
-    label: "작업공간에서 파일 수정 및 저장하기",
-  },
-  {
-    id: "sources-snippets",
-    label: "자바스크립트 스니펫 실행",
-  },
-  {
-    id: "sources-reference",
-    label: "자바스크립트 디버깅 참조",
-  },
-  {
-    id: "sources-overrides",
-    label: "로컬에서 웹 콘텐츠 및 HTTP 응답 헤더 재정의",
+    id: "network-resources",
+    label: "페이지 리소스 보기",
   },
 ];
 
 const OFFICIAL_DOCS_BASE_URL = "https://developer.chrome.com";
-const SOURCES_OVERVIEW_OFFICIAL_DOC_PATH = "/docs/devtools/sources?hl=ko";
-const SOURCES_JAVASCRIPT_OFFICIAL_DOC_PATH = "/docs/devtools/javascript?hl=ko";
-const SOURCES_BREAKPOINTS_OFFICIAL_DOC_PATH = "/docs/devtools/javascript/breakpoints?hl=ko";
-const SOURCES_WORKSPACES_OFFICIAL_DOC_PATH = "/docs/devtools/workspaces?hl=ko";
-const SOURCES_SNIPPETS_OFFICIAL_DOC_PATH = "/docs/devtools/javascript/snippets?hl=ko";
-const SOURCES_REFERENCE_OFFICIAL_DOC_PATH = "/docs/devtools/javascript/reference?hl=ko";
-const SOURCES_OVERRIDES_OFFICIAL_DOC_PATH = "/docs/devtools/overrides?hl=ko";
+const NETWORK_OVERVIEW_OFFICIAL_DOC_PATH = "/docs/devtools/network/overview?hl=ko";
+const NETWORK_REFERENCE_OFFICIAL_DOC_PATH = "/docs/devtools/network/reference?hl=ko";
+const NETWORK_RESOURCES_OFFICIAL_DOC_PATH = "/docs/devtools/resources?hl=ko";
 
 const TOPIC_ROUTE_MAP: Record<TopicId, string> = {
-  "sources-overview": "/sources",
-  "sources-javascript": "/sources/javascript",
-  "sources-breakpoints": "/sources/breakpoints",
-  "sources-workspaces": "/sources/workspaces",
-  "sources-snippets": "/sources/snippets",
-  "sources-reference": "/sources/reference",
-  "sources-overrides": "/sources/overrides",
+  "network-overview": "/network",
+  "network-reference": "/network/reference",
+  "network-resources": "/network/resources",
 };
 
 const OFFICIAL_TOPIC_SOURCES: Record<TopicId, OfficialTopicSource> = {
-  "sources-overview": {
-    officialPath: SOURCES_OVERVIEW_OFFICIAL_DOC_PATH,
-    localDocPath: "/docs/sources-overview-ko-content.html",
+  "network-overview": {
+    officialPath: NETWORK_OVERVIEW_OFFICIAL_DOC_PATH,
+    localDocPath: "/docs/network-overview-ko-content.html",
   },
-  "sources-javascript": {
-    officialPath: SOURCES_JAVASCRIPT_OFFICIAL_DOC_PATH,
-    localDocPath: "/docs/sources-javascript-ko-content.html",
+  "network-reference": {
+    officialPath: NETWORK_REFERENCE_OFFICIAL_DOC_PATH,
+    localDocPath: "/docs/network-reference-ko-content.html",
   },
-  "sources-breakpoints": {
-    officialPath: SOURCES_BREAKPOINTS_OFFICIAL_DOC_PATH,
-    localDocPath: "/docs/sources-breakpoints-ko-content.html",
-  },
-  "sources-workspaces": {
-    officialPath: SOURCES_WORKSPACES_OFFICIAL_DOC_PATH,
-    localDocPath: "/docs/sources-workspaces-ko-content.html",
-  },
-  "sources-snippets": {
-    officialPath: SOURCES_SNIPPETS_OFFICIAL_DOC_PATH,
-    localDocPath: "/docs/sources-snippets-ko-content.html",
-  },
-  "sources-reference": {
-    officialPath: SOURCES_REFERENCE_OFFICIAL_DOC_PATH,
-    localDocPath: "/docs/sources-reference-ko-content.html",
-  },
-  "sources-overrides": {
-    officialPath: SOURCES_OVERRIDES_OFFICIAL_DOC_PATH,
-    localDocPath: "/docs/sources-overrides-ko-content.html",
+  "network-resources": {
+    officialPath: NETWORK_RESOURCES_OFFICIAL_DOC_PATH,
+    localDocPath: "/docs/network-resources-ko-content.html",
   },
 };
 
-const SOURCES_OVERVIEW_LAB_SCENARIOS: Partial<Record<string, string>> = {
-  overview: "overview:overview",
-  open_the_sources_panel: "overview:open-panel",
-  files: "overview:files",
-  edit: "overview:edit",
-  snippets: "overview:snippets",
-  debug: "overview:debug",
-  workspace: "overview:workspace",
+const NETWORK_OVERVIEW_LAB_SCENARIOS: Partial<Record<string, string>> = {
+  overview: "overview:requests",
+  open_the_network_panel: "overview:open-panel",
+  activity: "overview:requests",
+  inspect: "overview:inspect",
+  filter: "overview:filter",
+  search: "overview:search",
+  loading: "overview:loading",
+  export: "overview:export",
+
+  // Legacy ids for backward compatibility with previously extracted docs.
+  open: "overview:open-panel",
+  load: "overview:requests",
+  information: "overview:inspect",
+  throttle: "overview:loading",
+  screenshots: "overview:inspect",
+  details: "overview:inspect",
+  filterbox: "overview:filter",
+  type: "overview:inspect",
+  block: "overview:loading",
 };
 
-const SOURCES_JAVASCRIPT_LAB_SCENARIOS: Partial<Record<string, string>> = {
-  reproduce: "javascript:reproduce",
-  "sources-ui": "javascript:ui",
-  "event-breakpoint": "javascript:event-breakpoint",
-  "code-stepping": "javascript:stepping",
-  "line-breakpoint": "javascript:line-breakpoint",
-  "check-values": "javascript:check-values",
-  scope: "javascript:scope",
-  "watch-expressions": "javascript:watch",
-  console: "javascript:console",
-  "apply-fix": "javascript:apply-fix",
+const NETWORK_REFERENCE_LAB_SCENARIOS: Partial<Record<string, string>> = {
+  record: "reference:timing",
+  "stop-recording": "reference:timing",
+  clear: "reference:timing",
+  "preserve-log": "reference:timing",
+  screenshots: "reference:timing",
+  "replay-xhr": "reference:timing",
+  change_loading_behavior: "reference:timing",
+  "disable-cache": "reference:timing",
+  "clear-cache": "reference:timing",
+  offline: "reference:timing",
+  throttling: "reference:timing",
+  "clear-cookies": "reference:headers",
+  "override-headers": "reference:headers",
+  "user-agent": "reference:headers",
+  search: "reference:filter",
+  filter: "reference:filter",
+  "filter-by-property": "reference:filter",
+  "filter-by-type": "reference:filter",
+  "filter-by-time": "reference:filter",
+  hide_data_urls: "reference:filter",
+  "hide-extension-urls": "reference:filter",
+  "show-blocked-cookies": "reference:filter",
+  "show-blocked": "reference:filter",
+  "third-party": "reference:filter",
+  sort_requests: "reference:timing",
+  "sort-by-column": "reference:timing",
+  "sort-by-activity": "reference:timing",
+  analyze: "reference:timing",
+  requests: "reference:timing",
+  "group-by-frames": "reference:timing",
+  waterfall: "reference:timing",
+  frames: "reference:timing",
+  "event-stream": "reference:timing",
+  preview: "reference:headers",
+  response: "reference:headers",
+  headers: "reference:headers",
+  payload: "reference:payload",
+  cookies: "reference:headers",
+  timing: "reference:timing",
+  "initiators-dependencies": "reference:initiator",
+  load: "reference:timing",
+  "total-number": "reference:timing",
+  "total-size": "reference:timing",
+  "initiator-stack-trace": "reference:initiator",
+  uncompressed: "reference:timing",
+  export: "reference:payload",
+  "save-as-har": "reference:payload",
+  copy: "reference:payload",
+  change_the_layout_of_the_network_panel: "reference:filter",
+  "hide-filters": "reference:filter",
+  "request-rows": "reference:filter",
+  "hide-overview": "reference:filter",
 };
 
-const SOURCES_BREAKPOINTS_LAB_SCENARIOS: Partial<Record<string, string>> = {
-  overview: "breakpoints:overview",
-  loc: "breakpoints:line",
-  debugger: "breakpoints:debugger-statement",
-  "conditional-loc": "breakpoints:conditional",
-  "log-loc": "breakpoints:logpoint",
-  dom: "breakpoints:dom",
-  xhr: "breakpoints:xhr",
-  "event-listeners": "breakpoints:event-listeners",
-  exceptions: "breakpoints:exceptions",
-  function: "breakpoints:function",
-  "trusted-type": "breakpoints:trusted-type",
-};
-
-const SOURCES_WORKSPACES_LAB_SCENARIOS: Partial<Record<string, string>> = {
-  overview: "workspaces:overview",
-  "generate-json": "workspaces:metadata",
-  connect: "workspaces:connect",
-  "save-to-folder": "workspaces:save",
-  css: "workspaces:save",
-  html: "workspaces:save",
-  js: "workspaces:save",
-  "remove-connection": "workspaces:disconnect",
-  "manual-connection": "workspaces:manual",
-};
-
-const SOURCES_SNIPPETS_LAB_SCENARIOS: Partial<Record<string, string>> = {
-  open: "snippets:open",
-  create: "snippets:create",
-  "create-sources": "snippets:create",
-  "create-command-menu": "snippets:create",
-  edit: "snippets:edit",
-  run: "snippets:run",
-  "run-sources": "snippets:run",
-  "run-command-menu": "snippets:run",
-  rename: "snippets:rename",
-  delete: "snippets:delete",
-};
-
-const SOURCES_REFERENCE_LAB_SCENARIOS: Partial<Record<string, string>> = {
-  breakpoints: "reference:breakpoints",
-  "inline-eval": "reference:inline-eval",
-  properties: "reference:hover-preview",
-  stepping: "reference:stepping",
-  "step-over": "reference:stepping",
-  "step-into": "reference:stepping",
-  "step-out": "reference:stepping",
-  "continue-to-here": "reference:stepping",
-  resume: "reference:stepping",
-  threads: "reference:stepping",
-  "step_through_comma-separated_expressions": "reference:stepping",
-  scope: "reference:scope",
-  "call-stack": "reference:call-stack",
-  "restart-frame": "reference:call-stack",
-  "show-ignore-listed-frames": "reference:call-stack",
-  "async-frames": "reference:call-stack",
-  "copy-stack-trace": "reference:call-stack",
-  "file-tree": "reference:file-tree",
-  "group-authored-and-deployed": "reference:file-tree",
-  "hide-ignore-listed": "reference:file-tree",
-  "ignore-list": "reference:ignore-list",
-  "file-tree-ignore-list": "reference:ignore-list",
-  "editor-ignore-list": "reference:ignore-list",
-  "call-stack-ignore-list": "reference:ignore-list",
-  "settings-ignore-list": "reference:ignore-list",
-  snippets: "reference:snippets",
-  watch: "reference:watch",
-  editor: "reference:editor",
-  format: "reference:editor",
-  "fold-code-blocks": "reference:editor",
-  edit: "reference:editor",
-  "live-edit": "reference:editor",
-  search: "reference:editor",
-  disable: "reference:disable",
-};
-
-const SOURCES_OVERRIDES_LAB_SCENARIOS: Partial<Record<string, string>> = {
-  how: "overrides:overview",
-  "set-up": "overrides:setup",
-  "make-changes": "overrides:content",
-  "override-xhr-fetch": "overrides:xhr",
-  "track-changes": "overrides:track",
-  "override-headers": "overrides:headers",
-  "edit-response-header-overrides": "overrides:headers",
+const NETWORK_RESOURCES_LAB_SCENARIOS: Partial<Record<string, string>> = {
+  open: "resources:open",
+  networkopen: "resources:open",
+  reveal: "resources:open",
+  browse: "resources:browse",
+  network: "resources:browse",
+  directory: "resources:browse",
+  filename: "resources:browse",
+  type: "resources:type",
 };
 
 const TOPIC_LAB_SCENARIOS: Partial<Record<TopicId, Partial<Record<string, string>>>> = {
-  "sources-overview": SOURCES_OVERVIEW_LAB_SCENARIOS,
-  "sources-javascript": SOURCES_JAVASCRIPT_LAB_SCENARIOS,
-  "sources-breakpoints": SOURCES_BREAKPOINTS_LAB_SCENARIOS,
-  "sources-workspaces": SOURCES_WORKSPACES_LAB_SCENARIOS,
-  "sources-snippets": SOURCES_SNIPPETS_LAB_SCENARIOS,
-  "sources-reference": SOURCES_REFERENCE_LAB_SCENARIOS,
-  "sources-overrides": SOURCES_OVERRIDES_LAB_SCENARIOS,
+  "network-overview": NETWORK_OVERVIEW_LAB_SCENARIOS,
+  "network-reference": NETWORK_REFERENCE_LAB_SCENARIOS,
+  "network-resources": NETWORK_RESOURCES_LAB_SCENARIOS,
 };
 
-const TOPIC_SUMMARIES: Partial<Record<TopicId, string>> = {
-  "sources-overview": "소스 패널을 사용하여 스타일 시트, 자바스크립트 파일, 이미지와 같은 웹사이트의 리소스를 보고 수정합니다.",
-  "sources-javascript": "이 튜토리얼에서는 DevTools에서 JavaScript 문제를 디버그하는 기본 워크플로를 설명합니다.",
-  "sources-breakpoints": "중단점을 사용하여 JavaScript 코드를 일시중지합니다.",
-  "sources-overrides": "로컬 재정의를 사용하면 백엔드, 서드 파티 또는 API가 변경사항과 수정사항을 지원할 때까지 기다리지 않고도 프로토타입을 만들고 테스트할 수 있습니다.",
-};
-
-const EXCLUDED_PAGE_CONTENT_SECTION_IDS = new Set<string>(["focus-on-your-code"]);
+const TOPIC_SUMMARIES: Partial<Record<TopicId, string>> = {};
 
 const OFFICIAL_TOPIC_HTML_CACHE: Partial<Record<TopicId, string>> = {};
 const OFFICIAL_TOPIC_SECTIONS_CACHE: Partial<Record<TopicId, ReadonlyArray<PageContentsSection>>> = {};
@@ -465,11 +389,6 @@ function normalizeOfficialDocHtml(rawHtml: string, topicId: TopicId) {
 
   root.querySelectorAll<HTMLElement>("h2[id], h3[id]").forEach((headingElement) => {
     const sectionId = headingElement.id;
-
-    if (EXCLUDED_PAGE_CONTENT_SECTION_IDS.has(sectionId)) {
-      return;
-    }
-
     const scenarioId = topicLabScenarios?.[sectionId];
 
     if (!scenarioId) {
@@ -479,7 +398,7 @@ function normalizeOfficialDocHtml(rawHtml: string, topicId: TopicId) {
     const triggerButton = createLabTriggerButton({
       parsed,
       dataset: {
-        runSourcesPractice: "true",
+        runNetworkPractice: "true",
         labSection: sectionId,
         labScenario: scenarioId,
         labTitle: headingElement.textContent?.trim() ?? sectionId,
@@ -533,12 +452,7 @@ function extractSectionsFromNormalizedHtml(normalizedHtml: string): ReadonlyArra
         label: (labelElement.textContent ?? "").trim(),
       };
     })
-    .filter(
-      (section) =>
-        section.id.length > 0 &&
-        section.label.length > 0 &&
-        !EXCLUDED_PAGE_CONTENT_SECTION_IDS.has(section.id),
-    );
+    .filter((section) => section.id.length > 0 && section.label.length > 0);
 }
 
 function extractImageUrlsFromNormalizedHtml(normalizedHtml: string, maxCount = 8): ReadonlyArray<string> {
@@ -661,11 +575,11 @@ function getVisibleHeaderOffset(headerHeight: number) {
   return Math.max(0, Math.round(headerHeight - scrollTop));
 }
 
-interface SourcesLabWorkspaceProps {
+interface NetworkLabWorkspaceProps {
   initialTopicId?: TopicId;
 }
 
-export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: SourcesLabWorkspaceProps) {
+export function NetworkLabWorkspace({ initialTopicId = "network-overview" }: NetworkLabWorkspaceProps) {
   const router = useRouter();
   const pathname = usePathname();
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -726,7 +640,7 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
   }, [activeTopic.id, activeTopic.label, activeTopicLabScenarios, pageContentsSections]);
   const labPreviewSrc = useMemo(() => {
     if (!defaultLabScenario) {
-      return "/labs/sources/index.html";
+      return "/labs/network/index.html";
     }
 
     const params = new URLSearchParams({
@@ -736,7 +650,7 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
       sectionLabel: defaultLabScenario.sectionLabel,
     });
 
-    return `/labs/sources/index.html?${params.toString()}`;
+    return `/labs/network/index.html?${params.toString()}`;
   }, [defaultLabScenario]);
   const showPageContentsSidebar = !isLabViewerVisible && pageContentsSections.length > 0;
   const contentGridClassName = isLabViewerVisible
@@ -817,7 +731,7 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
 
     if (scenarioToApply) {
       window.setTimeout(() => {
-        const sent = postToPreview("lab:apply-sources-scenario", { ...scenarioToApply });
+        const sent = postToPreview("lab:apply-network-scenario", { ...scenarioToApply });
 
         if (sent && pendingLabScenario) {
           setPendingLabScenario(null);
@@ -883,8 +797,8 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
       }
 
       lastOffset = visibleHeaderHeight;
-      root.style.setProperty("--sources-header-offset", `${visibleHeaderHeight}px`);
-      root.style.setProperty("--sources-scroll-margin", "16px");
+      root.style.setProperty("--network-header-offset", `${visibleHeaderHeight}px`);
+      root.style.setProperty("--network-scroll-margin", "16px");
     };
 
     const requestOffsetUpdate = () => {
@@ -992,7 +906,7 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
     }
   };
 
-  const handleRunSourcesPractice = (
+  const handleRunNetworkPractice = (
     sectionId: string,
     sectionLabel?: string,
     explicitScenarioId?: string,
@@ -1018,7 +932,7 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
       topicId: activeTopic.id,
     };
 
-    const sent = postToPreview("lab:apply-sources-scenario", scenarioPayload);
+    const sent = postToPreview("lab:apply-network-scenario", scenarioPayload);
 
     if (sent) {
       setPendingLabScenario(null);
@@ -1036,7 +950,7 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
       return;
     }
 
-    const triggerButton = target.closest<HTMLButtonElement>("button[data-run-sources-practice='true']");
+    const triggerButton = target.closest<HTMLButtonElement>("button[data-run-network-practice='true']");
 
     if (!triggerButton) {
       return;
@@ -1051,17 +965,17 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
       return;
     }
 
-    handleRunSourcesPractice(sectionId, sectionLabel, scenarioId);
+    handleRunNetworkPractice(sectionId, sectionLabel, scenarioId);
   };
 
   return (
     <section className="bg-white">
       <aside
         className="w-full max-h-[56svh] overflow-y-auto overscroll-contain rounded-xl border border-slate-200 bg-white p-4 lg:fixed lg:bottom-0 lg:left-0 lg:z-30 lg:max-h-none lg:w-[300px] lg:overflow-y-auto lg:rounded-none lg:border-y-0 lg:border-l-0 lg:border-r lg:shadow-none"
-        style={{ top: "var(--sources-header-offset,56px)" }}
+        style={{ top: "var(--network-header-offset,56px)" }}
       >
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-          Sources Docs ({docsCount})
+          Network Docs ({docsCount})
         </p>
 
         <div className="mt-3 space-y-2">
@@ -1117,7 +1031,7 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
               onClick={handleInlinePracticeClick}
               style={
                 {
-                  "--docs-scroll-margin": "var(--sources-scroll-margin,72px)",
+                  "--docs-scroll-margin": "var(--network-scroll-margin,72px)",
                 } as CSSProperties
               }
             >
@@ -1136,14 +1050,14 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
               className="space-y-3 xl:sticky xl:self-start"
               style={
                 {
-                  top: "var(--sources-header-offset,56px)",
-                  "--desktop-top-offset": "var(--sources-header-offset,56px)",
+                  top: "var(--network-header-offset,56px)",
+                  "--desktop-top-offset": "var(--network-header-offset,56px)",
                 } as CSSProperties
               }
             >
               <LabViewer
                 ref={iframeRef}
-                title="Sources Preview"
+                title="Network Preview"
                 showTitle={false}
                 src={labPreviewSrc}
                 instanceKey={labInstanceKey}
@@ -1159,7 +1073,7 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
           ) : showPageContentsSidebar ? (
             <aside
               className="hidden xl:block xl:sticky xl:self-start"
-              style={{ top: "calc(var(--sources-header-offset,56px) + 12px)" }}
+              style={{ top: "calc(var(--network-header-offset,56px) + 12px)" }}
             >
               <nav aria-label="이 페이지의 내용" className="rounded-xl bg-white p-4">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
@@ -1180,7 +1094,7 @@ export function SourcesLabWorkspace({ initialTopicId = "sources-overview" }: Sou
                           {section.label}
                         </a>
                         {practiceScenarioId ? (
-                          <LabTriggerButton onClick={() => handleRunSourcesPractice(section.id, section.label)} />
+                          <LabTriggerButton onClick={() => handleRunNetworkPractice(section.id, section.label)} />
                         ) : null}
                       </li>
                     );

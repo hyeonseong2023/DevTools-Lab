@@ -196,24 +196,21 @@ export const DEVTOOLS_DOCS_MENU: DevtoolsDocsGroup[] = [
     id: "network",
     label: "Network",
     href: "/network",
-    matchPaths: ["/network"],
+    matchPaths: ["/network", "/network/reference", "/network/resources"],
     sections: [
       {
         items: [
           {
             label: "네트워크 활동 검사",
-            href: "https://developer.chrome.com/docs/devtools/network?hl=ko",
-            external: true,
+            href: "/network",
           },
           {
             label: "네트워크 기능 참조",
-            href: "https://developer.chrome.com/docs/devtools/network/reference?hl=ko",
-            external: true,
+            href: "/network/reference",
           },
           {
             label: "페이지 리소스 보기",
-            href: "https://developer.chrome.com/docs/devtools/resources?hl=ko",
-            external: true,
+            href: "/network/resources",
           },
         ],
       },
