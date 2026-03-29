@@ -6,14 +6,17 @@ Chrome DevTools 공식 문서 구조를 기준으로, 문서를 읽으면서 바
 - Stack: Next.js App Router, React 19, TypeScript, Tailwind CSS 4, Zustand, TanStack Query
 - Structure: Guide(Next.js) + `public/labs/*` static LAB
 
-## 현재 구현 상태 (2026-03-08)
+## 현재 구현 상태 (2026-03-29)
 
 ### 구현 완료 범위
 
 - 홈(`/`) 반응형 히어로 및 `/about/environment` 환경 점검 페이지
 - Elements 계열 11개 페이지
 - Console 계열 9개 페이지
-- 가이드형 placeholder 패널: `Sources`, `Network`, `Performance`, `Memory`, `Application`, `Security`, `Lighthouse`
+- Sources 계열 7개 문서+LAB 워크스페이스
+- Network 계열 3개 문서+LAB 워크스페이스
+- Performance 계열 10개 문서+LAB 워크스페이스
+- 가이드형 placeholder 패널: `Memory`, `Application`, `Security`, `Lighthouse`
 
 ### 검증 상태
 
@@ -32,6 +35,13 @@ Chrome DevTools 공식 문서 구조를 기준으로, 문서를 읽으면서 바
 - 개요: `https://developer.chrome.com/docs/devtools/network/overview?hl=ko`
 - 기능 참조: `https://developer.chrome.com/docs/devtools/network/reference?hl=ko`
 - 페이지 리소스: `https://developer.chrome.com/docs/devtools/resources?hl=ko`
+
+## 공식 문서 기준 URL (Performance)
+
+- 성능 패널 개요: `https://developer.chrome.com/docs/devtools/performance/overview?hl=ko`
+- 런타임 성능 분석: `https://developer.chrome.com/docs/devtools/performance?hl=ko`
+- 성능 기능 참조: `https://developer.chrome.com/docs/devtools/performance/reference?hl=ko`
+- 웹사이트 속도 최적화: `https://developer.chrome.com/docs/devtools/lighthouse?hl=ko`
 
 ## 실행
 

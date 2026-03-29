@@ -1,0 +1,252 @@
+<p><style>
+.wd-authors {
+  --avatar-size: 65px;
+  display: flex;
+  gap: 2em;
+}
+
+.wd-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  line-height: calc(var(--avatar-size) / 2);
+}
+
+.wd-author img {
+  border-radius: 50%;
+  height: var(--avatar-size, 65px);
+  width: var(--avatar-size, 65px);
+}
+
+.dcc-authors {
+  --avatar-size: 65px;
+  display: flex;
+  gap: 2em;
+}
+
+.dcc-author {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  line-height: calc(var(--avatar-size) / 2);
+}
+
+.dcc-author img {
+  border-radius: 50%;
+  height: var(--avatar-size, 65px);
+  width: var(--avatar-size, 65px);
+}
+  
+.dcc-author__links {
+  display: flex;
+}
+
+.dcc-author__links a {
+  margin-inline-end: 6px;
+}
+
+.dcc-author__links a:last-of-type {
+  margin-inline-end: 0;
+}
+</style>
+
+</p><div class="dcc-authors" translate="no">
+  
+    
+    
+      <div class="dcc-author">
+        
+          <img alt="Kayce Basques" class="devsite-landing-row-item-icon" decoding="async" height="64" loading="lazy" src="https://web.dev/images/authors/kaycebasques.jpg?hl=ko" width="64" /> 
+        
+        <div>
+          <span> 
+            Kayce Basques
+          </span>
+          <div class="dcc-author__links">
+            
+              <a aria-label="Kayce Basques on X" href="https://twitter.com/kaycebasques" rel="me">
+                <svg height="22" viewBox="0 0 300 271" width="22" xmlns="http://www.w3.org/2000/svg">
+                  <title>X</title>
+                  <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z" fill="currentColor"></path>
+                </svg></a>
+            
+            
+              <a aria-label="Kayce Basques on GitHub" href="https://github.com/kaycebasques" rel="me">
+                <svg height="22" viewBox="0 0 32.6 31.8" width="22" xmlns="http://www.w3.org/2000/svg">
+                  <title>GitHub</title>
+                  <path clip-rule="evenodd" d="M16.3 0C7.3 0 0 7.3 0 16.3c0 7.2 4.7 13.3 11.1 15.5.8.1 1.1-.4 1.1-.8v-2.8c-4.5 1-5.5-2.2-5.5-2.2-.7-1.9-1.8-2.4-1.8-2.4-1.5-1 .1-1 .1-1 1.6.1 2.5 1.7 2.5 1.7 1.5 2.5 3.8 1.8 4.7 1.4.1-1.1.6-1.8 1-2.2-3.6-.4-7.4-1.8-7.4-8.1 0-1.8.6-3.2 1.7-4.4-.1-.3-.7-2 .2-4.2 0 0 1.4-.4 4.5 1.7 1.3-.4 2.7-.5 4.1-.5 1.4 0 2.8.2 4.1.5 3.1-2.1 4.5-1.7 4.5-1.7.9 2.2.3 3.9.2 4.3 1 1.1 1.7 2.6 1.7 4.4 0 6.3-3.8 7.6-7.4 8 .6.5 1.1 1.5 1.1 3V31c0 .4.3.9 1.1.8 6.5-2.2 11.1-8.3 11.1-15.5C32.6 7.3 25.3 0 16.3 0z" fill="currentColor" fill-rule="evenodd"></path>
+                </svg></a>
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    
+  
+</div><p></p>
+
+<aside class="note"><b>참고:</b> 페이지 로드 속도를 높이는 방법은 <a href="https://developer.chrome.com/docs/devtools/lighthouse?hl=ko">웹사이트 속도 최적화</a>를 참고하세요.</aside>
+
+<p>런타임 성능은 페이지가 로드되는 것이 아니라 실행될 때의 성능입니다. 이 튜토리얼에서는 Chrome DevTools Performance(성능) 패널을 사용하여 런타임 성능을 분석하는 방법을 설명합니다. <a href="https://web.dev/rail/?hl=ko">RAIL</a> 모델의 관점에서 이 튜토리얼에서 배우는 기술은 페이지의 응답, 애니메이션, 유휴 단계를 분석하는 데 유용합니다.</p>
+<aside class="caution"><strong>주의:</strong><span> 이 튜토리얼은 Chrome 129를 기반으로 합니다. 다른 버전의 Chrome을 사용하는 경우 DevTools의 UI와 기능이 다를 수 있습니다. <code dir="ltr" translate="no">chrome://help</code>에서 사용 중인 Chrome 버전을 확인합니다.</span></aside>
+<h2 data-text="시작하기" id="get-started" tabindex="-1">시작하기</h2>
+
+<p>이 튜토리얼에서는 <strong>성능</strong> 패널을 사용하여 실시간 페이지에서 성능 병목 현상을 찾습니다. 시작하려면 다음 단계를 따르세요.</p>
+
+<ol>
+<li><a href="https://support.google.com/chrome/answer/95464?hl=ko">시크릿 모드</a>에서 Chrome을 엽니다. 시크릿 모드를 사용하면 Chrome이 깨끗한 상태로 실행됩니다. 예를 들어 확장 프로그램이 많이 설치되어 있으면 이러한 확장 프로그램으로 인해 성능 측정에 노이즈가 발생할 수 있습니다.</li>
+<li><p>시크릿 창에서 다음 페이지를 로드합니다. 프로파일링할 데모입니다.
+페이지에 위아래로 움직이는 작은 파란색 정사각형이 여러 개 표시됩니다.</p>
+
+<p><code dir="ltr" translate="no">https://googlechrome.github.io/devtools-samples/jank/</code></p></li>
+<li><p><kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> (Mac) 또는 <kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> (Windows, Linux)를 눌러 DevTools를 엽니다.</p>
+
+<p><img alt="왼쪽에 데모, 오른쪽에 DevTools가 표시되어 있습니다." sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/demo-and-devtools.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/demo-and-devtools_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/demo-and-devtools_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/demo-and-devtools_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/demo-and-devtools_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/demo-and-devtools_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/demo-and-devtools_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/demo-and-devtools_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/demo-and-devtools_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/demo-and-devtools_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/demo-and-devtools_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/demo-and-devtools_2880.png?hl=ko 2880w" width="800" /></p>
+
+<aside class="note"><strong>참고</strong>: 나머지 스크린샷에서는 내용을 더 잘 볼 수 있도록 DevTools가 <a href="https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame">별도의 창에 도킹 해제</a>되어 있습니다.</aside></li>
+</ol>
+
+<h3 data-text="모바일 CPU 시뮬레이션" id="simulate_a_mobile_cpu" tabindex="-1">모바일 CPU 시뮬레이션</h3>
+
+<p>휴대기기의 CPU 성능은 데스크톱 및 노트북보다 훨씬 낮습니다. 페이지를 프로파일링할 때마다 CPU 제한을 사용하여 페이지가 휴대기기에서 실행되는 방식을 시뮬레이션합니다.</p>
+
+<ol>
+<li>DevTools에서 <strong>성능</strong> 탭을 클릭합니다.</li>
+<li><strong>스크린샷</strong> <span aria-hidden="true" class="material-symbols-outlined">check_box</span> 체크박스가 사용 설정되어 있는지 확인합니다.</li>
+<li><strong>Capture Settings</strong>
+<span aria-hidden="true" class="material-symbols-outlined">settings</span>를 클릭합니다.
+DevTools에는 성능 측정항목을 캡처하는 방법과 관련된 설정이 표시됩니다.</li>
+<li><p><strong>CPU</strong>의 경우 <strong>4배 감속</strong>을 선택합니다. DevTools는 CPU를 제한하여 평소보다 4배 느리게 실행합니다.</p>
+
+<p><img alt="CPU 제한을 4배 감속으로 설정합니다." sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/cpu-throttling.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/cpu-throttling_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/cpu-throttling_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/cpu-throttling_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/cpu-throttling_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/cpu-throttling_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/cpu-throttling_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/cpu-throttling_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/cpu-throttling_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/cpu-throttling_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/cpu-throttling_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/cpu-throttling_2880.png?hl=ko 2880w" width="800" /></p>
+
+<aside class="note"><strong>참고</strong>: 다른 페이지를 테스트할 때 저가형 휴대기기에서 제대로 작동하는지 확인하려면 CPU 제한을 <strong>20배 느림</strong>으로 설정하세요. 이 데모는 20배 느리게 실행하면 제대로 작동하지 않으므로 교육 목적으로 4배 느리게 실행합니다.</aside></li>
+</ol>
+
+<h3 data-text="데모 설정" id="set_up_the_demo" tabindex="-1">데모 설정</h3>
+
+<p>이 웹사이트의 모든 독자에게 일관되게 작동하는 런타임 성능 데모를 만드는 것은 어렵습니다. 이 섹션에서는 특정 설정과 관계없이 환경이 이 튜토리얼에 표시된 스크린샷 및 설명과 비교적 일치하도록 데모를 맞춤설정할 수 있습니다.</p>
+
+<ol>
+<li>파란색 정사각형이 이전보다 눈에 띄게 느리게 움직일 때까지 <strong>10 더하기</strong>를 계속 클릭합니다. 고급 머신에서는 약 20번 클릭해야 할 수 있습니다.</li>
+<li><p><strong>최적화</strong>를 클릭합니다. 파란색 정사각형이 더 빠르고 부드럽게 움직여야 합니다.</p>
+<aside class="note"><strong>참고:</strong><span> 최적화된 버전과 최적화되지 않은 버전 간에 눈에 띄는 차이가 없으면 <strong>10 빼기</strong>를 몇 번 클릭한 후 다시 시도해 보세요. 파란색 정사각형을 너무 많이 추가하면 CPU가 최대로 사용되며 두 버전의 결과에 큰 차이가 없습니다.</span></aside></li>
+<li><p><strong>최적화 해제</strong>를 클릭합니다. 파란색 정사각형이 더 느리고 버벅거림이 심하게 움직입니다.</p></li>
+</ol>
+
+<h3 data-text="런타임 성능 기록" id="record" tabindex="-1">런타임 성능 기록</h3>
+
+<p>최적화된 버전의 페이지를 실행하면 파란색 정사각형이 더 빠르게 이동합니다. 이유가 무엇인가요? 두 버전 모두 동일한 시간에 각 정사각형을 동일한 거리만큼 이동해야 합니다. <strong>성능</strong> 패널에서 녹화하여 최적화되지 않은 버전에서 성능 병목 현상을 감지하는 방법을 알아봅니다.</p>
+
+<ol>
+<li><p>DevTools에서 <strong>Record</strong>
+<span aria-hidden="true" class="material-symbols-outlined">radio_button_checked</span>를 클릭합니다. DevTools는 페이지가 실행될 때 성능 측정항목을 캡처합니다.</p>
+
+<p><img alt="데모 페이지 프로파일링" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/profiling-page.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/profiling-page_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-page_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-page_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-page_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-page_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-page_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-page_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-page_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-page_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-page_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-page_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p>몇 초 동안 기다립니다.</p></li>
+<li><p><strong>중지</strong>를 클릭합니다. DevTools가 기록을 중지하고 데이터를 처리한 후 <strong>성능</strong> 패널에 결과를 표시합니다.</p>
+
+<p><img alt="프로파일링 보고서 페이지" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/profiling-results.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/profiling-results_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-results_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-results_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-results_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-results_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-results_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-results_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-results_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-results_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-results_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/profiling-results_2880.png?hl=ko 2880w" width="800" /></p></li>
+</ol>
+
+<p>엄청난 양의 데이터네요. 걱정하지 마세요. 곧 이해하실 수 있을 겁니다.</p>
+
+<h2 data-text="결과를 분석합니다." id="analyze" tabindex="-1">결과를 분석합니다.</h2>
+
+<p>성능 녹화 파일이 있으면 페이지의 성능이 얼마나 저조한지 분석하고 원인을 찾을 수 있습니다.</p>
+
+<h3 data-text="초당 프레임 수 분석" id="analyze_frames_per_second" tabindex="-1">초당 프레임 수 분석</h3>
+
+<p>애니메이션의 성능을 측정하는 주요 측정항목은 초당 프레임 수 (FPS)입니다. 애니메이션이 60FPS로 실행되면 사용자가 만족합니다.</p>
+
+<ol>
+<li><p><strong>FPS</strong> 차트를 확인합니다. <strong>FPS</strong> 위에 빨간색 막대가 표시되면 프레임 속도가 너무 느려져 사용자 환경에 영향을 미칠 수 있음을 의미합니다.</p>
+
+<p><img alt="FPS 차트가 강조표시되어 있습니다." sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-chart.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-chart_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-chart_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-chart_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-chart_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-chart_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-chart_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-chart_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-chart_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-chart_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-chart_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-chart_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>FPS</strong> 차트 아래에 <strong>CPU</strong> 차트가 표시됩니다. <strong>CPU</strong> 차트의 색상은 <strong>성능</strong> 패널 하단의 <strong>요약</strong> 탭에 있는 색상과 일치합니다. <strong>CPU</strong> 차트가 색상으로 가득 차 있다는 것은 녹화 중에 CPU가 최대한 사용되었다는 의미입니다. CPU가 장시간 최대로 사용되는 경우 작업량을 줄이는 방법을 찾아야 합니다.</p>
+
+<p><img alt="CPU 차트 및 요약 탭" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/the-cpu-chart-summary.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/the-cpu-chart-summary_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/the-cpu-chart-summary_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/the-cpu-chart-summary_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/the-cpu-chart-summary_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/the-cpu-chart-summary_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/the-cpu-chart-summary_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/the-cpu-chart-summary_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/the-cpu-chart-summary_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/the-cpu-chart-summary_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/the-cpu-chart-summary_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/the-cpu-chart-summary_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>FPS</strong>, <strong>CPU</strong> 또는 <strong>NET</strong> 차트 위로 마우스를 가져갑니다. DevTools에는 해당 시점의 페이지 스크린샷이 표시됩니다. 마우스를 좌우로 움직여 녹음 파일을 재생합니다. 이를 스크러빙이라고 하며 애니메이션 진행 상황을 수동으로 분석하는 데 유용합니다.</p>
+
+<p><img alt="실적 녹화에서 스크린샷을 보는 모습" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/viewing-screenshot.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/viewing-screenshot_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/viewing-screenshot_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/viewing-screenshot_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/viewing-screenshot_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/viewing-screenshot_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/viewing-screenshot_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/viewing-screenshot_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/viewing-screenshot_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/viewing-screenshot_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/viewing-screenshot_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/viewing-screenshot_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>프레임</strong> 섹션에서 녹색 정사각형 중 하나 위로 마우스를 가져갑니다. DevTools에 해당 프레임의 FPS가 표시됩니다. 각 프레임이 타겟인 60FPS보다 훨씬 낮을 수 있습니다.</p>
+
+<p><img alt="프레임 위로 마우스를 가져갑니다." sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/hovering-a-frame.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/hovering-a-frame_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/hovering-a-frame_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/hovering-a-frame_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/hovering-a-frame_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/hovering-a-frame_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/hovering-a-frame_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/hovering-a-frame_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/hovering-a-frame_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/hovering-a-frame_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/hovering-a-frame_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/hovering-a-frame_2880.png?hl=ko 2880w" width="800" /></p></li>
+</ol>
+
+<p>물론 이 데모에서는 페이지의 실적이 좋지 않다는 것이 분명합니다. 하지만 실제 시나리오에서는 명확하지 않을 수 있으므로 이러한 모든 도구를 사용하여 측정하는 것이 유용합니다.</p>
+
+<h4 data-text="보너스: FPS 미터 열기" id="bonus_open_the_fps_meter" tabindex="-1">보너스: FPS 미터 열기</h4>
+
+<p>또 다른 유용한 도구는 페이지가 실행될 때 FPS의 실시간 추정치를 제공하는 <strong>FPS 측정기</strong>입니다.</p>
+
+<ol>
+<li><kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (Mac) 또는 <kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (Windows, Linux)를 눌러 명령어 메뉴를 엽니다.</li>
+<li>명령 메뉴에서 <code dir="ltr" translate="no">Rendering</code>를 입력하고 <strong>렌더링 표시</strong>를 선택합니다.</li>
+<li><p><strong>렌더링</strong> 패널에서 <strong>렌더링 통계 표시</strong>를 사용 설정합니다. 새 오버레이가 표시 영역의 오른쪽 상단에 표시됩니다.</p>
+
+<p><img alt="FPS 측정기" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-meter.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-meter_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-meter_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-meter_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-meter_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-meter_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-meter_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-meter_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-meter_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-meter_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-meter_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/the-fps-meter_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>FPS 미터</strong>를 사용 중지하고 <kbd>Esc</kbd> 키를 눌러 <strong>렌더링</strong> 패널을 닫습니다. 이 튜토리얼에서는 사용하지 않습니다.</p></li>
+</ol>
+
+<h3 data-text="병목 현상 찾기" id="find_the_bottleneck" tabindex="-1">병목 현상 찾기</h3>
+
+<p>이제 애니메이션이 제대로 실행되지 않는지 측정하고 확인했으므로 다음으로 알아야 할 것은 그 이유입니다.</p>
+
+<ol>
+<li><p><strong>요약</strong> 탭을 확인합니다. 이벤트를 선택하지 않으면 이 탭에 활동 분석이 표시됩니다.
+페이지가 렌더링하는 데 대부분의 시간을 소비했습니다. 성능은 더 적은 작업을 하는 기술이므로 렌더링 작업에 소요되는 시간을 줄이는 것이 목표입니다.</p>
+
+<p><img alt="파란색으로 윤곽선이 표시된 요약 탭" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/the-summary-tab.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/the-summary-tab_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/the-summary-tab_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/the-summary-tab_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/the-summary-tab_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/the-summary-tab_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/the-summary-tab_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/the-summary-tab_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/the-summary-tab_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/the-summary-tab_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/the-summary-tab_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/the-summary-tab_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p><strong>기본</strong> 섹션을 펼칩니다. DevTools에는 시간 경과에 따른 기본 스레드의 활동 플레임 차트가 표시됩니다. x축은 시간 경과에 따른 녹화를 나타냅니다. 각 막대는 이벤트를 나타냅니다. 막대가 넓을수록 이벤트에 더 오래 걸린 것입니다. y축은 호출 스택을 나타냅니다. 이벤트가 서로 겹쳐 표시되면 상위 이벤트가 하위 이벤트를 일으켰음을 의미합니다.</p>
+
+<p><img alt="기본 섹션" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/the-main-section.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/the-main-section_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/the-main-section_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/the-main-section_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/the-main-section_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/the-main-section_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/the-main-section_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/the-main-section_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/the-main-section_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/the-main-section_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/the-main-section_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/the-main-section_2880.png?hl=ko 2880w" width="800" /></p></li>
+<li><p>녹음 파일에 데이터가 많습니다. <strong>FPS</strong>, <strong>CPU</strong>, <strong>NET</strong> 차트가 포함된 섹션인 <strong>개요</strong>를 마우스로 클릭한 다음 길게 눌러 드래그하여 단일 <strong>Animation Frame Fired</strong> 이벤트를 확대합니다. <strong>기본</strong> 섹션 및 <strong>요약</strong> 탭에는 녹음 파일에서 선택한 부분에 대한 정보만 표시됩니다.</p>
+
+<p><img alt="단일 애니메이션 프레임 실행 이벤트를 확대한 모습." sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/zoomed-frame.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/zoomed-frame_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/zoomed-frame_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/zoomed-frame_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/zoomed-frame_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/zoomed-frame_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/zoomed-frame_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/zoomed-frame_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/zoomed-frame_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/zoomed-frame_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/zoomed-frame_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/zoomed-frame_2880.png?hl=ko 2880w" width="800" /></p>
+<aside class="tip"><strong>도움말:</strong><span> <kbd>WASD</kbd> 키를 사용하여 녹화 파일을 탐색할 수도 있습니다. 배경을 클릭하거나 이벤트를 선택하여 <strong>기본</strong> 섹션에 초점을 맞춘 다음 <kbd>W</kbd>를 눌러 확대하거나, <kbd>S</kbd>를 눌러 축소하거나, <kbd>A</kbd>를 눌러 왼쪽으로 스크롤하거나, <kbd>D</kbd>를 눌러 오른쪽으로 스크롤합니다.</span></aside></li>
+<li><p><strong>작업</strong> 및 레이아웃 이벤트의 오른쪽 상단에 있는 빨간색 삼각형을 확인합니다. 빨간색 삼각형이 표시되면 이 이벤트와 관련된 문제가 있을 수 있다는 경고입니다. <strong>할 일</strong>에 빨간색 삼각형이 표시되면 <a href="https://web.dev/articles/optimize-long-tasks?utm_source=devtools&hl=ko">긴 할 일</a>이라는 의미입니다.</p></li>
+<li><p><strong>Animation Frame Fired</strong> 이벤트를 클릭합니다. 이제 <strong>요약</strong> 탭에 해당 이벤트에 관한 정보가 표시됩니다. <strong>Initiated by</strong> 옆에 있는 링크를 클릭하면 DevTools에서 <strong>Animation Frame Fired</strong> 이벤트를 시작한 이벤트를 강조 표시합니다. <strong>app.update   @</strong> 링크도 확인합니다. 이 아이콘을 클릭하면 소스 코드의 관련 줄로 이동합니다.</p>
+
+<p><img alt="Animation Frame Fired 이벤트에 관한 자세한 정보" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/more-information.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/more-information_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/more-information_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/more-information_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/more-information_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/more-information_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/more-information_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/more-information_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/more-information_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/more-information_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/more-information_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/more-information_2880.png?hl=ko 2880w" width="800" /></p>
+
+<aside class="note"><strong>참고</strong>: 이벤트를 선택한 후 화살표 키를 사용하여 옆에 있는 이벤트를 선택합니다.</aside></li>
+<li><p><strong>app.update</strong> 이벤트 아래에 보라색 이벤트가 많이 있습니다. 더 넓으면 각 칸에 빨간색 삼각형이 있는 것처럼 보입니다. 이제 보라색 <strong>레이아웃</strong> 이벤트 중 하나를 클릭합니다. DevTools의 <strong>요약</strong> 탭에서 이벤트에 대한 자세한 정보를 확인할 수 있습니다. 실제로 강제 리플로 (레이아웃의 다른 표현)에 관한 경고가 있습니다.</p></li>
+<li><p><strong>요약</strong> 탭의 <strong>애니메이션 프레임 요청됨</strong> 아래에 있는 <strong>app.update @</strong> 옆의 링크를 클릭합니다. DevTools에서 레이아웃을 강제 적용한 코드 줄로 이동합니다.</p>
+
+<p><img alt="강제 레이아웃을 일으킨 코드 줄입니다." height="513" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.chrome.com/static/docs/devtools/performance/image/source-code-caused.png?hl=ko" srcset="https://developer.chrome.com/static/docs/devtools/performance/image/source-code-caused_36.png?hl=ko 36w,https://developer.chrome.com/static/docs/devtools/performance/image/source-code-caused_48.png?hl=ko 48w,https://developer.chrome.com/static/docs/devtools/performance/image/source-code-caused_72.png?hl=ko 72w,https://developer.chrome.com/static/docs/devtools/performance/image/source-code-caused_96.png?hl=ko 96w,https://developer.chrome.com/static/docs/devtools/performance/image/source-code-caused_480.png?hl=ko 480w,https://developer.chrome.com/static/docs/devtools/performance/image/source-code-caused_720.png?hl=ko 720w,https://developer.chrome.com/static/docs/devtools/performance/image/source-code-caused_856.png?hl=ko 856w,https://developer.chrome.com/static/docs/devtools/performance/image/source-code-caused_960.png?hl=ko 960w,https://developer.chrome.com/static/docs/devtools/performance/image/source-code-caused_1440.png?hl=ko 1440w,https://developer.chrome.com/static/docs/devtools/performance/image/source-code-caused_1920.png?hl=ko 1920w,https://developer.chrome.com/static/docs/devtools/performance/image/source-code-caused_2880.png?hl=ko 2880w" width="800" /></p>
+
+<aside class="note"><strong>참고</strong>: 이 코드의 문제는 각 애니메이션 프레임에서 각 정사각형의 스타일을 변경한 다음 페이지에서 각 정사각형의 위치를 쿼리한다는 점입니다. 스타일이 변경되었으므로 브라우저는 각 정사각형의 위치가 변경되었는지 알 수 없으므로 정사각형의 위치를 계산하기 위해 정사각형의 레이아웃을 다시 설정해야 합니다. 자세한 내용은 <a href="https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing?hl=ko#avoid-forced-synchronous-layouts">강제 동기 레이아웃 피하기</a>를 참고하세요.</aside></li>
+</ol>
+
+<p>다양한 혜택이 마음에 드셨나요? 다소 많은 내용을 다루었지만 이제 런타임 성능을 분석하기 위한 기본 워크플로에 관한 탄탄한 기반을 다지셨습니다. 수고하셨습니다.</p>
+
+<h3 data-text="보너스: 최적화된 버전 분석" id="bonus_analyze_the_optimized_version" tabindex="-1">보너스: 최적화된 버전 분석</h3>
+
+<p>방금 학습한 워크플로와 도구를 사용하여 데모에서 <strong>최적화</strong>를 클릭하여 최적화된 코드를 사용 설정하고 성능 녹화본을 다시 캡처한 다음 결과를 분석합니다. 프레임 속도의 개선에서 <strong>기본</strong> 섹션의 플레임 차트에서 이벤트 감소까지 최적화된 버전의 앱이 훨씬 적은 작업을 수행하여 성능이 향상된 것을 확인할 수 있습니다.</p>
+
+<aside class="note"><b>참고:</b> 이 최적화된 버전도 각 정사각형의 <code dir="ltr" translate="no">top</code> 속성을 계속 조작하므로 그다지 좋지 않습니다. 더 나은 방법은 컴포지션에만 영향을 미치는 속성을 사용하는 것입니다.
+자세한 내용은 <a href="https://web.dev/articles/stick-to-compositor-only-properties-and-manage-layer-count?hl=ko#use-transform-and-opacity-changes-for-animations">애니메이션에 변환 및 불투명도 변경사항 사용</a>을 참고하세요.</aside>
+
+<h2 data-text="다음 단계" id="next_steps" tabindex="-1">다음 단계</h2>
+
+<p>성능을 이해하기 위한 기반은 RAIL 모델입니다. 이 모델은 사용자에게 가장 중요한 실적 측정항목을 알려줍니다. 자세한 내용은 <a href="https://web.dev/rail/?hl=ko">RAIL 모델로 성능 측정</a>을 참고하세요.</p>
+
+<p>성능 패널을 더 능숙하게 사용하려면 연습이 필요합니다. 직접 페이지를 프로파일링하고 결과를 분석해 보세요. 결과에 관해 궁금한 점이 있으면 <a href="http://stackoverflow.com/questions/ask?tags=google-chrome-devtools"><code dir="ltr" translate="no">google-chrome-devtools</code> 태그가 지정된 StackOverflow 질문을 열어</a> 문의해 주세요. 가능하면 재현 가능한 페이지의 스크린샷이나 링크를 포함하세요.</p>
+
+<p>런타임 성능 전문가가 되려면 브라우저가 HTML, CSS, JS를 화면의 픽셀로 변환하는 방법을 알아야 합니다. 가장 먼저 <a href="https://web.dev/rendering-performance/?hl=ko">렌더링 성능 개요</a>를 살펴보세요. <a href="https://aerotwist.com/blog/the-anatomy-of-a-frame/">프레임 분석</a>에서 자세히 알아보세요.</p>
+
+<p>마지막으로 런타임 성능을 개선하는 방법에는 여러 가지가 있습니다. 이 튜토리얼에서는 성능 패널을 집중적으로 살펴볼 수 있도록 특정 애니메이션 병목 현상에 중점을 두었지만, 이는 발생할 수 있는 여러 병목 현상 중 하나일 뿐입니다. 렌더링 성능 시리즈의 나머지 부분에는 다음과 같은 런타임 성능의 다양한 측면을 개선하기 위한 유용한 팁이 많이 있습니다.</p>
+
+<ul>
+<li><a href="https://web.dev/optimize-javascript-execution/?hl=ko">JS 실행 최적화</a></li>
+<li><a href="https://web.dev/reduce-the-scope-and-complexity-of-style-calculations/?hl=ko">스타일 계산의 범위 및 복잡성 줄이기</a></li>
+<li><a href="https://web.dev/avoid-large-complex-layouts-and-layout-thrashing/?hl=ko">대규모의 복잡한 레이아웃 및 레이아웃 트래싱 방지</a></li>
+<li><a href="https://web.dev/simplify-paint-complexity-and-reduce-paint-areas/?hl=ko">페인트 복잡성 간소화 및 페인트 영역 줄이기</a></li>
+<li><a href="https://web.dev/stick-to-compositor-only-properties-and-manage-layer-count/?hl=ko">컴포저 전용 속성만 사용하고 레이어 수를 관리합니다.</a></li>
+<li><a href="https://web.dev/debounce-your-input-handlers/?hl=ko">입력 핸들러 디버스</a></li>
+</ul>

@@ -1,6 +1,5 @@
-import { ComingSoonPanel } from "@/components/guide/ComingSoonPanel";
-import { getPanelOrThrow } from "@/lib/panels";
+import { PerformanceLabWorkspace } from "@/components/labs/performance/PerformanceLabWorkspace";
 
 export default function PerformancePage() {
-  return <ComingSoonPanel panel={getPanelOrThrow("performance")} />;
+  return <PerformanceLabWorkspace />;
 }

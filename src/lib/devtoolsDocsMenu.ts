@@ -219,25 +219,61 @@ export const DEVTOOLS_DOCS_MENU: DevtoolsDocsGroup[] = [
   {
     id: "performance",
     label: "Performance",
-    href: "/performance",
-    matchPaths: ["/performance"],
+    href: "/performance/overview",
+    matchPaths: [
+      "/performance",
+      "/performance/overview",
+      "/performance/annotations",
+      "/performance/reference",
+      "/performance/timeline-reference",
+      "/performance/selector-stats",
+      "/performance/nodejs",
+      "/performance/extension",
+      "/performance/save-trace",
+      "/performance/monitor",
+    ],
     sections: [
       {
         items: [
           {
-            label: "웹사이트 속도 최적화",
-            href: "https://developer.chrome.com/docs/devtools/lighthouse?hl=ko",
-            external: true,
+            label: "개요",
+            href: "/performance/overview",
           },
           {
             label: "런타임 성능 분석",
-            href: "https://developer.chrome.com/docs/devtools/performance?hl=ko",
-            external: true,
+            href: "/performance",
+          },
+          {
+            label: "실적 발견사항에 주석을 달고 공유하기",
+            href: "/performance/annotations",
           },
           {
             label: "성능 기능 참조",
-            href: "https://developer.chrome.com/docs/devtools/performance/reference?hl=ko",
-            external: true,
+            href: "/performance/reference",
+          },
+          {
+            label: "타임라인 이벤트 참조",
+            href: "/performance/timeline-reference",
+          },
+          {
+            label: "스타일 재계산 이벤트 중에 CSS 선택자 성능 분석",
+            href: "/performance/selector-stats",
+          },
+          {
+            label: "성능 패널로 Node.js 성능 프로파일링",
+            href: "/performance/nodejs",
+          },
+          {
+            label: "확장성 API를 통한 실적 데이터 맞춤설정",
+            href: "/performance/extension",
+          },
+          {
+            label: "성능 트레이스 저장 및 공유",
+            href: "/performance/save-trace",
+          },
+          {
+            label: "성능 모니터 패널",
+            href: "/performance/monitor",
           },
         ],
       },
